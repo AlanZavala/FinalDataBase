@@ -18,7 +18,7 @@
     <body>
 
         <br> <br>
-        <a href="./adminPass.jsp">
+        <a href="./pass.jsp">
             <p>Menu</p>
         </a>
         <br>
@@ -73,25 +73,7 @@
                             <c:out value="${proyecto.descripcion}" />
                             <br />
                         </td>
-                        <!-- <td>
-                            <form action ="./AsignarTrabajador" method="post">
-                                <input type="text" id="asign" name="asign" class="input" > 
-                                <input type="text" id="test4" name="test4" class="input" value="${proyecto.id}"> 
-                                <input class="proyecto_buton btn btn-success" type="submit"  value="Asignar" >
-                                
-                            </form> 
-
-                            <br />
-                        </td> -->
-                        <!-- <td>
-                            <form action ="./BorrarProyect" method="post">
-                                <input type="text" id="test3" name="test3" class="input" value="${proyecto.id}"> 
-                                <input class="proyecto_buton btn btn-success" type="submit"  value="Borrar" >
-                                
-                            </form> 
-
-                            <br />
-                        </td> -->
+                        
                     </tr>
             </c:forEach>
         </table>
