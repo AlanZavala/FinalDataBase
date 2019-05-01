@@ -71,7 +71,7 @@ public class BuscarProyecto extends HttpServlet{
             con.close();
             
             request.setAttribute("proyectos", proyectos);
-            RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showProjects.jsp");
+            RequestDispatcher disp =  getServletContext().getRequestDispatcher("/busquedaPrjWorker.jsp");
 
             if(disp!=null){
                 disp.forward(request,response);

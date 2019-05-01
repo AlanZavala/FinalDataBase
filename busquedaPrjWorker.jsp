@@ -97,7 +97,7 @@
                             <br />
                         </td>
                         
-                        <td>
+                      <!--   <td>
                             <form action ="./BorrarPro" method="post">
                                 <input type="text" id="test3" name="test3" class="input" value="${product.id}"> 
                                 <input class="proyecto_buton btn btn-success" type="submit"  value="Borrar" >
@@ -105,7 +105,7 @@
                             </form> 
 
                             <br />
-                        </td>
+                        </td> -->
                     </tr>
             </c:forEach>
         </table>
