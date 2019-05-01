@@ -25,8 +25,8 @@ public class Login extends HttpServlet{
 		try{
 
             PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-            PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-            PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+            PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto2.txt", "UTF-8");
+            PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto3.txt", "UTF-8");
 
             writer.println("The first lines");
             writer.println("The second line");
@@ -75,6 +75,7 @@ public class Login extends HttpServlet{
 
             }
             writer3.println(nombre);
+            writer3.println(nombre+"estoy aqui");
             writer3.close();
 
 
@@ -113,14 +114,14 @@ public class Login extends HttpServlet{
 		}
 		catch(Exception e){
 			try{
-                PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+                PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
                 e.printStackTrace();
                 writer4.println(e);
                 writer4.close();
             }
             catch(Exception e2){
                 try{
-                PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+                PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto5.txt", "UTF-8");
                 e.printStackTrace();
                 writer5.println(e);
                 writer5.close();

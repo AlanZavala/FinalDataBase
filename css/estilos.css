@@ -1,8 +1,8 @@
 body{
     font-family: 'Raleway';
     margin: 0;
-    /*background-color: #201010;*/
-    background-color: black;
+    background-color: #222222;
+    /*background-color: black;*/
 }
 .logo{
     position: absolute;
@@ -84,8 +84,8 @@ form{
 }
 
 .login_button:hover{
-
-    background-color: rgba(255,255,255);
+    border: 1px solid #A2E132;
+    background-color: #A2E132;
     font-size: 20px;
 }
 

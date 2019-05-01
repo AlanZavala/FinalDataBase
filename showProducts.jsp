@@ -18,7 +18,8 @@
     <body>
 
         <br> <br>
-        <a href="./pass.jsp">
+        <a href="./adminPass.jsp">
+        
             <p>Menu</p>
         </a>
         <br>
