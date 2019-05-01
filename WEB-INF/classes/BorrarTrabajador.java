@@ -4,7 +4,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.Date;
-import escuela.Producto;
+import escuela.Trabajador;
 import javax.servlet.annotation.WebServlet;
 import java.util.Vector;
 @WebServlet("/BorrarWorker") 
