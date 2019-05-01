@@ -4,7 +4,7 @@
 
 <html>
     <head>
-        <title>Products</title>
+        <title>Proyectos</title>
         <link href="css/show.css" rel="stylesheet">   
     </head>
     <style>
