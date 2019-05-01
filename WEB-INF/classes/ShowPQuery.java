@@ -1,6 +1,6 @@
 import java.io.*;
 import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.http.*; 
 import java.sql.*;
 import escuela.Producto;
 import escuela.Alumno;

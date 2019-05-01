@@ -7,7 +7,7 @@ import java.util.Date;
 import escuela.Producto;
 import javax.servlet.annotation.WebServlet;
 import java.util.Vector;
-@WebServlet("/BorrarPro")
+@WebServlet("/BorrarPro") 
 public class BorrarProducto extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
