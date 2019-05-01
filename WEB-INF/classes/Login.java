@@ -41,7 +41,9 @@ public class Login extends HttpServlet{
             writer.close();
 
             String verifyRoll=request.getParameter("username");  
+
             int username = Integer.parseInt(request.getParameter("username"));
+            
             String password = request.getParameter("password");            
 
 

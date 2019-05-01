@@ -16,6 +16,9 @@
                 margin: 0;                
                 background-color: #222222;                           
             }
+            #cuenta{
+                display: none;
+            }
             h1{
                 color: white;
                 margin-left: 50px;
@@ -119,11 +122,12 @@
                 </div>                                        
             </section>
 
-            <form action="ShowToWorkers" method="post">
+            <form action="./ShowToWorkers" method="post">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Mis proyectos</h5>
                     <div class="card-body">
                             <p class="card-text">Revisa los proyectos en los que estas envuelto y haz las modificaciones necesarias</p>
+                        <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                         <input class="proyecto_buton btn btn-success" type="submit"  value="Proyectos">
                     </div>
                 </div>

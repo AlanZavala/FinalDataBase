@@ -18,7 +18,7 @@
     <body>
 
         <br> <br>
-        <a href="./showProjectsToWorkers.jsp.jsp">
+        <a href="./showProjectsToWorkers.jsp">
             <p>Regresar</p>
         </a>
         <br>

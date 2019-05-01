@@ -105,7 +105,7 @@ public class ShowPjtWorkers extends HttpServlet{
 			}
 			catch(Exception e2){
 				try{
-				PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+				PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
 				e.printStackTrace();
 				writer5.println(e);
 				writer5.close();
