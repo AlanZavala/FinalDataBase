@@ -47,6 +47,7 @@
                 <th>Dirrecion</th> 
                 <th>Puesto</th>  
                 <th></th> 
+                <th>Proyectos</th>
 
             </tr>
             <c:forEach items="${requestScope.trabajadores}" var="worker">

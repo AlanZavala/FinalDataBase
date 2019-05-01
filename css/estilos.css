@@ -1,0 +1,107 @@
+body{
+    font-family: 'Raleway';
+    margin: 0;
+    /*background-color: #201010;*/
+    background-color: black;
+}
+.logo{
+    position: absolute;
+    width: 700px;
+    transform: translateY(-50%);    
+    top: 45.5%;
+    right: 90%;   
+}
+form{
+    position: relative;
+    transform: translateY(25%);
+    left: 22%;
+    top: 50%;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    background: #F6EFEF;
+    border-radius: 50px;
+}
+
+.register{
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
+    text-align: center;
+}
+
+.login_img{
+    max-width: 120px;
+    margin: 20% auto 0 auto;
+    display: block;
+}
+
+.input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #222222;
+    font-family: 'Raleway', sans-serif;
+    display: block;
+    margin: 20px auto;
+    max-width: 300px;
+    width: 100%;
+    padding: 8px;
+    color: black;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.input:focus, input:focus{
+    outline: none;
+}
+
+.user_label{
+    font-weight: bold; 
+    color: #222222;
+    font-size: 12px;
+    display: block;
+    margin: -16px auto 20px auto;
+    max-width: 300px;
+    width: 100%;
+}
+
+.login_button{
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 8px 18px;
+    border-radius: 6px;
+    color: #222222;
+    max-width: 300px;
+    width: 100%;
+    display: block;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    background-color: transparent;
+}
+
+.login_button:hover{
+
+    background-color: rgba(255,255,255);
+    font-size: 20px;
+}
+
+a{
+    color: transparent;
+}
+
+p{
+    font-weight: bold;
+    color: #222222;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+    outline: none;
+}
+
+p:hover{
+    font-size: 20px;
+}

@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                     
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/estilos.css" rel="stylesheet">
 
         <script src="js/jquery-3.3.1.min.js"></script>
 
