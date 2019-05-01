@@ -9,28 +9,33 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
 
+        <script src="js/jquery-3.3.1.min.js"></script>
+
         <title>Página de inicio</title>
     </head>
 
     <body>
+       
+        <form action="./Login" method="post" data-sn="home">
+            <img src="img/logo.png" class="logo">
+            <div class="register">
+                <input type="text" id="username" name="username" class="input">            
+                <span class="user_label">Username</span>
 
-        <form action="./Login" method="post">
+                <input type="password" id="password" name="password" class="input">            
+                <span class="user_label">Password</span>                    
+                
+                <input class="login_button" type="submit"  value="LOG IN">
 
-            <img src="img/marke.jpg" class="login_img">
-
-            <input type="text" id="username" name="username" class="input">            
-            <span class="user_label">Username</span>
-
-            <input type="password" id="password" name="password" class="input">            
-            <span class="user_label">Password</span>                    
-            
-            <input class="login_button" type="submit"  value="LOG IN">
-
-            <a href="registro.jsp">
-                <p>Registrar usuario</p>
-            </a>
-            
-        
+                <a href="registro.jsp">
+                    <p>Registrar usuario</p>
+                </a>
+            </div>
         </form>
+
+        <script>
+            $("form").hide().fadeIn(1000);
+        </script>
+
     </body>
 </html>
