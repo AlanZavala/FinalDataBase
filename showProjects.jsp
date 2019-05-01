@@ -1,11 +1,10 @@
 <!DOCTYPE HTML>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <html>
     <head>
         <title>Products</title>
-        <link href="css/show.css" rel="stylesheet">   
+        <link href="css/show.css" rel="stylesheet"> 
+        <!--<link href="css/bootstrap.min.css" rel="stylesheet"> -->  
     </head>
     <style>
         #test3, #test4{
@@ -22,21 +21,21 @@
             <p>Menu</p>
         </a>
         <br>
-        <form action ="./buscarProyecto" method="post">
+
+        <form action ="./buscarProyecto" method="post" id="above">
             <select id="optBusq" name= "optBusq">
               <option value="All">All</option>
               <option value="Nombre">Nombre</option>
               <option value="Id">Id</option>
-              
             </select>
 
             <input type="text" id="valueBusca" name="valueBusca" class="input" required> 
-            <input class="proyecto_buton btn btn-success" type="submit"  value="Buscar">
+            <input class="proyecto_buton btn btn-success" type="submit"  value="Buscar" id="boton_pro">
                         </div>
-
        </form>
-       <table border="1">
-            <tr>
+
+       <table border="1" id="main_t">
+            <tr class="visible">
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Fecha de inicio</th> 
@@ -47,6 +46,18 @@
                 <th>Eliminar</th>
 
             </tr>
+
+            <tr class="invisible">
+                <th></th>
+                <th></th>
+                <th></th> 
+                <th></th>
+                <th></th>
+                <th></th> 
+                <th></th>
+                <th></th>
+            </tr>
+
             <c:forEach items="${requestScope.proyectos}" var="proyecto">
                 <tr>
                         <td>
@@ -77,7 +88,7 @@
                             <form action ="./AsignarTrabajador" method="post">
                                 <input type="text" id="asign" name="asign" class="input" > 
                                 <input type="text" id="test4" name="test4" class="input" value="${proyecto.id}"> 
-                                <input class="proyecto_buton btn btn-success" type="submit"  value="Asignar" >
+                                <input class="proyecto_buton btn btn-success" type="submit"  value="Asignar" id="boton_pro2">
                                 
                             </form> 
 
@@ -86,18 +97,15 @@
                         <td>
                             <form action ="./BorrarProyect" method="post">
                                 <input type="text" id="test3" name="test3" class="input" value="${proyecto.id}"> 
-                                <input class="proyecto_buton btn btn-success" type="submit"  value="Borrar" >
+                                <input class="proyecto_buton btn btn-success" type="submit"  value="Borrar" id="boton_pro3">
                                 
                             </form> 
 
-                            <br />
+                            <br/>
                         </td>
                     </tr>
             </c:forEach>
         </table>
-
-        
-
         <br>
         <br>
         <br>

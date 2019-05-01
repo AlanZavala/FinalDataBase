@@ -1,32 +1,101 @@
 body{
     font-family: 'Raleway';
     margin: 0;
-    background-color: #0d77b5;
+    background-color: #222222;
 }
 
 a{
+    text-decoration: none;
+    position: relative;
+    left: 45%;
     outline: none;
-    color: black;
-    margin-left: 50px;
-    margin-top: 50px;    
+    color: white;
 }
 
 a p{    
-    font-size: 30px;
+    font-size: 50px;
     display: inline;    
 }
 
 p:hover{
-    font-size: 35px;
+    color: lightgrey;
+}
+
+#valueBusca{
+    color: #222222;
+    font-size: 20px;
+    font-family: 'Raleway';
+}
+
+#above{ 
+    margin-top: 30px;
+    position: absolute;
+    transform: translateX(-97%);
+    left: 97%;
+    width: 465px;  
+}
+
+select {
+    border: 1px solid #A2E132;
+    background-color: #A2E132;
+    font-size: 20px;
+    font-family: 'Raleway';
+    margin-right: 30px;
+}
+
+#boton_pro {
+    border: 1px solid #A2E132;
+    background-color: #A2E132;
+    font-size: 20px;
+    font-family: 'Raleway';
+    border-radius: 6px;
+}
+
+#boton_pro2 {
+    border: 1px solid blue;
+    background-color: blue;
+    font-size: 15px;
+    font-family: 'Raleway';
+    border-radius: 6px;
+}
+
+#boton_pro3 {
+    border: 1px solid red;
+    background-color: red;
+    font-size: 15px;
+    font-family: 'Raleway';
+    border-radius: 6px;
+}
+
+#main_t{
+    border-color: transparent;
 }
 
 table{
-    margin: 50px auto 0 auto;
+    margin: 120px auto 0 auto;
     color: white;
-    border-color: black;
+    border-color: white;
+    border-radius: 10px;
+}
+tr.visible{
+    background-color: #A2E132;
+    color: black;
+}
+
+tr.visible th{
+    border-radius: 10px;
 }
 
 th, td{
     padding: 10px;
+}
+
+th, td{
+    border-color: white;
+    border-radius: 10px;
+}
+
+tr.invisible th{
+    border-color: transparent !important;
 }
 
