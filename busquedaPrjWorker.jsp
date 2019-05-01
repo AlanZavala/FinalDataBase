@@ -4,11 +4,11 @@
 
 <html>
     <head>
-        <title>Products</title>
+        <title>Proyectos</title>
         <link href="css/show.css" rel="stylesheet">   
     </head>
     <style>
-        #test3{
+        #test3, #test4{
             display: none;
         }
         td{
@@ -18,97 +18,67 @@
     <body>
 
         <br> <br>
-        <a href="./showProjects.jsp">
-            <p>Menu</p>
+        <a href="./showProjectsToWorkers.jsp.jsp">
+            <p>Regresar</p>
         </a>
         <br>
-        <!-- <form action ="./buscarProducto" method="post">
+        <form action ="./buscarPytWorker" method="post">
             <select id="optBusq" name= "optBusq">
               <option value="All">All</option>
               <option value="Nombre">Nombre</option>
               <option value="Id">Id</option>
-              <option value="Proveedor">Proveedor</option>
               
-            </select> -->
+            </select>
 
-<!--             <input type="text" id="valueBusca" name="valueBusca" class="input" required> 
+            <input type="text" id="valueBusca" name="valueBusca" class="input" required> 
             <input class="proyecto_buton btn btn-success" type="submit"  value="Buscar">
-                        </div> -->
+                        </div>
 
        </form>
-
-        <table border="1">
+       <table border="1">
             <tr>
                 <th>ID</th>
-                <th>Uso</th>
                 <th>Nombre</th>
-                <th>Fecha de llegada</th>
-                <th>Fecha de venta</th>
-                <th>Precio proveedor</th>
-                <th>Precio cliente</th>
-                <th>Proveedor</th>
-                <th>Tabla</th>
-                <th>Ganancia</th>
-                <th></th>
+                <th>Fecha de inicio</th> 
+                <th>Fecha de termino</th>
+                <th>Duracion</th>
+                <th>Descripcion</th> 
+                <!-- <th>Añadir</th>
+                <th>Eliminar</th> -->
+
             </tr>
-            <c:forEach items="${requestScope.productos}" var="product">
+            <c:forEach items="${requestScope.proyectos}" var="proyecto">
                 <tr>
                         <td>
-                            <c:out value="${product.id}" />
-                            <br />
-                        </td>
-                        <td >
-                            <c:out value="${product.uso}" />
+                            <c:out value="${proyecto.id}" />
                             <br />
                         </td>
                         <td>
-                            <c:out value="${product.nombre}" />
+                            <c:out value="${proyecto.nombre}" />
                             <br />
                         </td>
                         <td>
-                            <c:out value="${product.fechaLlegada}" />
+                            <c:out value="${proyecto.fechaInicio}" />
                             <br />
                         </td>
                         <td>
-                            <c:out value="${product.fechaVenta}" />
+                            <c:out value="${proyecto.fechaFin}" />
                             <br />
                         </td>
                         <td>
-                            <c:out value="${product.precioProveedor}" />
-                            <br />
-                        </td>
-
-                        <td>
-                            <c:out value="${product.precioCliente}" />
-                            <br />
-                        </td>
-
-                        <td>
-                            <c:out value="${product.proveedor}" />
-                            <br />
-                        </td>
-
-                        <td>
-                            <c:out value="${product.tabla}" />
+                            <c:out value="${proyecto.duracion}" />
                             <br />
                         </td>
                         <td>
-                            <c:out value="${product.ganancia}" />
+                            <c:out value="${proyecto.descripcion}" />
                             <br />
                         </td>
                         
-                      <!--   <td>
-                            <form action ="./BorrarPro" method="post">
-                                <input type="text" id="test3" name="test3" class="input" value="${product.id}"> 
-                                <input class="proyecto_buton btn btn-success" type="submit"  value="Borrar" >
-                                
-                            </form> 
-
-                            <br />
-                        </td> -->
                     </tr>
             </c:forEach>
         </table>
+
+        
 
         <br>
         <br>

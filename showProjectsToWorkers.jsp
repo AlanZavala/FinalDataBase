@@ -22,7 +22,7 @@
             <p>Menu</p>
         </a>
         <br>
-        <form action ="./buscarProyecto" method="post">
+        <form action ="./buscarPytWorker" method="post">
             <select id="optBusq" name= "optBusq">
               <option value="All">All</option>
               <option value="Nombre">Nombre</option>
