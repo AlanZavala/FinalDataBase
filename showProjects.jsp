@@ -3,7 +3,9 @@
 <html>
     <head>
         <title>Products</title>
-        <link href="css/show.css" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
+        <link href="css/show2.css" rel="stylesheet"> 
+
         <!--<link href="css/bootstrap.min.css" rel="stylesheet"> -->  
     </head>
     <style>
@@ -31,7 +33,7 @@
 
             <input type="text" id="valueBusca" name="valueBusca" class="input" required> 
             <input class="proyecto_buton btn btn-success" type="submit"  value="Buscar" id="boton_pro">
-                        </div>
+                      <!--  </div> -->
        </form>
 
        <table border="1" id="main_t">
