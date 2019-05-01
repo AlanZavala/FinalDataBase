@@ -8,7 +8,7 @@
         <link href="css/show.css" rel="stylesheet">   
     </head>
     <style>
-        #test3{
+        #test3, #test4{
             display: none;
         }
         td{
@@ -91,6 +91,15 @@
                             <form action ="./BorrarWorker" method="post">
                                 <input type="text" id="test3" name="test3" class="input" value="${worker.id}"> 
                                 <input class="proyecto_buton btn btn-success" type="submit"  value="Borrar" >
+                                
+                            </form> 
+
+                            <br />
+                        </td>
+                        <td>
+                            <form action ="./VerProyectos" method="post">
+                                <input type="text" id="test4" name="test4" class="input" value="${worker.id}"> 
+                                <input class="proyecto_buton btn btn-success" type="submit"  value="VerProyectos" >
                                 
                             </form> 
 

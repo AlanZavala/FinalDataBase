@@ -9,7 +9,7 @@
     </head>
     <style>
         #test3{
-            display: none;
+            display: none; 
         }
         td{
             text-align: center;

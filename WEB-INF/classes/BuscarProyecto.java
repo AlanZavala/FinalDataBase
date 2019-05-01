@@ -8,7 +8,7 @@ import escuela.Proyecto;
 import escuela.Producto;
 import javax.servlet.annotation.WebServlet;
 import java.util.Vector;
-@WebServlet("/buscarProyecto")
+@WebServlet("/buscarProyecto") 
 public class BuscarProyecto extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
@@ -71,7 +71,7 @@ public class BuscarProyecto extends HttpServlet{
             con.close();
             
             request.setAttribute("proyectos", proyectos);
-            RequestDispatcher disp =  getServletContext().getRequestDispatcher("/busquedaPrjWorker.jsp");
+            RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showProjects.jsp");
 
             if(disp!=null){
                 disp.forward(request,response);
