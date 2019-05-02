@@ -16,12 +16,12 @@ public class ShowPjtWorkers extends HttpServlet{
 
 		try{
 			
-			PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-			PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-			PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+			// PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+			// PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+			// PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 
-			writer.println("The first line");
-			writer.println("The second line");
+			// writer.println("The first line");
+			// writer.println("The second line");
 
 			String base = getServletContext().getInitParameter("base");
 			String usuario = getServletContext().getInitParameter("usuario");
@@ -33,7 +33,7 @@ public class ShowPjtWorkers extends HttpServlet{
 		
 			System.out.println(url);
 			Connection con = DriverManager.getConnection(url,usuario,password);
-			writer.close();
+			//writer.close();
 
 			Statement stat = con.createStatement();
 			String sql2="";
@@ -46,8 +46,8 @@ public class ShowPjtWorkers extends HttpServlet{
 			sql2 = "select idProyecto from trabajador_proyecto where idTrabajador=(select idTrabajador from trabajador where cuenta="+cuenta+");";
 
 			String sql3= "select * from proyecto";
-			writer2.println(sql2);
-			writer2.close();
+			//writer2.println(sql2);
+			//writer2.close();
 
 			ResultSet res2 = stat.executeQuery(sql2);
 
@@ -55,7 +55,7 @@ public class ShowPjtWorkers extends HttpServlet{
 
 			while(res2.next()){
 				idProyectos.add(res2.getInt("idProyecto"));
-				writer3.println(res2.getInt("idProyecto"));
+				//writer3.println(res2.getInt("idProyecto"));
 			}
 
 
@@ -74,16 +74,16 @@ public class ShowPjtWorkers extends HttpServlet{
 		                aux.setNombre(res.getString("nombre"));
 		                aux.setFechaInicio(res.getString("fechaDeInicio"));
 		                aux.setFechaFin(res.getString("fechaDeTermino"));
-		                writer3.println(res.getString("fechaDeTermino"));
+		                //writer3.println(res.getString("fechaDeTermino"));
 		                aux.setDuracion(res.getInt("duracion"));
 		                aux.setDescripcion(res.getString("descripcion")); 
 		                proyectos.add(aux);
 	            	}
             	
             }
-            writer3.println("después del while");
+            //writer3.println("después del while");
           
-            writer3.close();
+            //writer3.close();
 
 			stat.close();
             con.close();
@@ -98,17 +98,17 @@ public class ShowPjtWorkers extends HttpServlet{
 		}
 		catch(Exception e){			
 			try{
-				PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+				//PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 				e.printStackTrace();
-				writer4.println(e);
-				writer4.close();
+				//writer4.println(e);
+				//writer4.close();
 			}
 			catch(Exception e2){
 				try{
-				PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
+				//PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
 				e.printStackTrace();
-				writer5.println(e);
-				writer5.close();
+				//writer5.println(e);
+				//writer5.close();
 			}
 			catch(Exception e3){
 				e3.printStackTrace();
