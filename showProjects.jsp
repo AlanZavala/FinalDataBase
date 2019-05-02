@@ -5,7 +5,7 @@
         <title>Products</title>
         <meta http-equiv="content-type" content="text/html" charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
-        <link href="css/show2.css" rel="stylesheet">         
+        <link href="css/show2.css" rel="stylesheet">          
     </head>
     
     <style>
@@ -87,10 +87,15 @@
                         </td>
                         <td>
                             <form action ="./AsignarTrabajador" method="post">
-                                <input type="text" id="asign" name="asign" class="input" > 
-                                <input type="text" id="test4" name="test4" class="input" value="${proyecto.id}"> 
-                                <input class="proyecto_buton btn btn-success" type="submit"  value="Asignar" id="boton_pro2">
-                                
+                                <select>
+                                    <option>Seleccionar tarabajador</option>
+                                    <c:forEach items="${requestScope.ids_nombres}" var="id_nombre">
+                                        <option value="${id_nombre}"><c:out value="${id_nombre}"/></option>
+                                    </c:forEach>
+                                    <input type="text" id="test4" name="test4" class="input" value="${proyecto.id}"> 
+                                    <input class="proyecto_buton btn btn-success" type="submit"  value="Asignar" id="boton_pro2">
+                                </select>
+                                <!--<input type="text" id="asign" name="asign" class="input" >-->  
                             </form> 
 
                             <br />

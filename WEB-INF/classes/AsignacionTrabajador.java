@@ -1,11 +1,12 @@
 import java.sql.*;
-import java.text.SimpleDateFormat;
+import java.text.SimpleDateFormat; 
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.Date;
 import escuela.Proyecto;
 import escuela.Producto;
+import escuela.Trabajador;
 import javax.servlet.annotation.WebServlet;
 import java.util.Vector;
 @WebServlet("/AsignarTrabajador")
@@ -55,6 +56,7 @@ public class AsignacionTrabajador extends HttpServlet{
                 }
 
             }
+
             String verifySql="Select * from trabajador";
 
             ResultSet res = stat.executeQuery(verifySql);
@@ -75,6 +77,18 @@ public class AsignacionTrabajador extends HttpServlet{
             }
 
 
+            Vector<Integer> ids_workers = new Vector<Integer>();
+
+            while(res.next()){
+                Trabajador aux = new Trabajador();
+                aux.setId(res.getInt("idTrabajador"));
+                aux.setNombre(res.getString("nombre"));
+                if (!ids_workers.contains(aux.getId())) {
+                    ids_workers.add(aux.getId());
+                }
+            }
+
+            request.setAttribute("ids_nombres", ids_workers);
 
             //String sql2 = "INSERT INTO cuenta VALUES ("+ username+" ,'" +password+ "');";
           
