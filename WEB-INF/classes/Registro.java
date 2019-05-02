@@ -24,12 +24,12 @@ public class Registro extends HttpServlet{
 
 		try{
 			
-			PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-            PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-            PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+			// PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+   //          PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+   //          PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 
-            writer.println("The first lines");
-            writer.println("The second line");
+   //          writer.println("The first lines");
+   //          writer.println("The second line");
 
 
 			String base = getServletContext().getInitParameter("base");
@@ -59,14 +59,14 @@ public class Registro extends HttpServlet{
 			Statement stat = con.createStatement();
 
 			String sql2 = "INSERT INTO cuenta VALUES ("+ username+" ,'" +password+ "');";
-			writer3.println(sql2);
+			//writer3.println(sql2);
             String sql = "INSERT INTO trabajador values("+id+", '" + direccion + "', " + telefono + ", '"  + correo + "', '"  + puesto + "', "  + edad + ", '"   + nombre + "', '"   + apellido + "', "  + username + ", '" + password +   "');";
-            writer2.println(sql);
+            //writer2.println(sql);
 			stat.executeUpdate(sql2);
 			stat.executeUpdate(sql);
 			System.out.println("Sí se guard el nuevo trabajador");
-			writer2.close();
-			writer3.close();
+			//writer2.close();
+			//writer3.close();
 			stat.close();
 			con.close();
         
@@ -84,17 +84,17 @@ public class Registro extends HttpServlet{
 		}
 		catch(Exception e){
 			try{
-                PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+                //PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
                 e.printStackTrace();
                 writer4.println(e);
                 writer4.close();
             }
             catch(Exception e2){
                 try{
-                PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+                //PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
                 e.printStackTrace();
-                writer5.println(e);
-                writer5.close();
+                //writer5.println(e);
+                //writer5.close();
             }
             catch(Exception e3){
                 e3.printStackTrace();

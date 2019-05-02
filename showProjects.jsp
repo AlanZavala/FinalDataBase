@@ -87,15 +87,19 @@
                         </td>
                         <td>
                             <form action ="./AsignarTrabajador" method="post">
-                                <select>
+                                <!--<select>
                                     <option>Seleccionar tarabajador</option>
                                     <c:forEach items="${requestScope.ids_nombres}" var="id_nombre">
                                         <option value="${id_nombre}"><c:out value="${id_nombre}"/></option>
                                     </c:forEach>
                                     <input type="text" id="test4" name="test4" class="input" value="${proyecto.id}"> 
                                     <input class="proyecto_buton btn btn-success" type="submit"  value="Asignar" id="boton_pro2">
-                                </select>
+                                </select>-->
                                 <!--<input type="text" id="asign" name="asign" class="input" >-->  
+                                <input type="text" id="test4" name="test4" class="input" value="${proyecto.id}"> 
+                                <input type="text" id="asign" name="asign" class="input" >
+                                <input class="proyecto_buton btn btn-success" type="submit"  value="Asignar" id="boton_pro2">
+
                             </form> 
 
                             <br />

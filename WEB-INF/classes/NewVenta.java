@@ -14,15 +14,15 @@ public class NewVenta extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
-			PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-            PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-            PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+			// PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+   //          PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+   //          PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 			
 			String base = getServletContext().getInitParameter("base");
 			String usuario = getServletContext().getInitParameter("usuario");
 			String password = getServletContext().getInitParameter("pass");
-			writer.println("The first lines");
-            writer.println("The second line");
+			//writer.println("The first lines");
+            //writer.println("The second line");
 
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
@@ -53,7 +53,7 @@ public class NewVenta extends HttpServlet{
 
 			String sql3 = "SELECT * FROM venta where idVenta="+idVenta+";";
 
-            writer2.println(sql2);
+            //writer2.println(sql2);
             
 
 
@@ -66,7 +66,7 @@ public class NewVenta extends HttpServlet{
 
                	aux.setId(res.getInt("idVenta"));
 
-               	writer2.println("HolaBB "+res.getInt("idVenta"));
+               	//writer2.println("HolaBB "+res.getInt("idVenta"));
 
                 aux.setFecha(res.getString("fechaDeExpedicion"));                
 
@@ -76,7 +76,7 @@ public class NewVenta extends HttpServlet{
                 
                 ventas.add(aux);
             }
-            writer2.close();
+            //writer2.close();
             
             stat.close();
             con.close();
@@ -90,17 +90,17 @@ public class NewVenta extends HttpServlet{
 		}
 		catch(Exception e){			
 			try{
-                PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+                //PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
                 e.printStackTrace();
-                writer4.println(e);
-                writer4.close();
+                //writer4.println(e);
+                //writer4.close();
             }
             catch(Exception e2){
                 try{
-                PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+                //PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
                 e.printStackTrace();
-                writer5.println(e);
-                writer5.close();
+                //writer5.println(e);
+                //writer5.close();
             }
             catch(Exception e3){
                 e3.printStackTrace();

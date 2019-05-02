@@ -13,11 +13,11 @@ public class BorrarQuery extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
-			PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-			PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-			PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-			writer.println("The first line");
-			writer.println("The second line");
+			// PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+			// PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+			// PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+			// writer.println("The first line");
+			// writer.println("The second line");
 			
 			String base = getServletContext().getInitParameter("base");
 			String usuario = getServletContext().getInitParameter("usuario");
@@ -27,7 +27,7 @@ public class BorrarQuery extends HttpServlet{
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
 			//String url = "jdbc:mysql://localhost/"+base; probarlo asi
-			writer.close();
+			//writer.close();
 			System.out.println(url);
 			Connection con = DriverManager.getConnection(url,usuario,password);
 
@@ -38,22 +38,22 @@ public class BorrarQuery extends HttpServlet{
 
 			String carrera2 = request.getParameter("carrera2");
 			
-			writer2.println(sql);
-			writer2.close();
+			// writer2.println(sql);
+			// writer2.close();
 
 
 			if(!carrera2.equals("")){
 				
 				sql = "DELETE FROM alumno where carrera='"+ carrera2 + "';";
-				writer3.println(sql);
-				writer3.close();
+				// writer3.println(sql);
+				// writer3.close();
 			
 
 				stat.executeUpdate(sql);
 			}
 			else{
-				writer3.println(":(");
-				writer3.close();
+				// writer3.println(":(");
+				// writer3.close();
 			}
 			// ResultSet res = stat.executeUpdate(sql);
 			// Vector<Alumno> alumnos = new Vector<Alumno>();
@@ -79,10 +79,10 @@ public class BorrarQuery extends HttpServlet{
 		}
 		catch(Exception e){
 			try{
-				PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+				// PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 				e.printStackTrace();
-				writer4.println(e);
-				writer4.close();
+				// writer4.println(e);
+				// writer4.close();
 			}
 			catch(Exception e2){
 				e2.printStackTrace();
