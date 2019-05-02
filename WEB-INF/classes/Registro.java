@@ -86,8 +86,8 @@ public class Registro extends HttpServlet{
 			try{
                 //PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
                 e.printStackTrace();
-                writer4.println(e);
-                writer4.close();
+                //writer4.println(e);
+                //writer4.close();
             }
             catch(Exception e2){
                 try{
