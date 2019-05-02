@@ -108,7 +108,7 @@
                         <td>
                             <form action ="./BorrarWorker" method="post">
                                 <input type="text" id="test3" name="test3" class="input" value="${worker.id}"> 
-                                <input class="proyecto_buton btn btn-success" type="submit"  value="Borrar" >
+                                <input class="proyecto_buton btn btn-success" type="submit"  value="Borrar" id="boton_pro3">
                                 
                             </form> 
 
@@ -117,7 +117,7 @@
                         <td>
                             <form action ="./VerProyectos" method="post">
                                 <input type="text" id="test4" name="test4" class="input" value="${worker.id}"> 
-                                <input class="proyecto_buton btn btn-success" type="submit"  value="VerProyectos" >
+                                <input class="proyecto_buton btn btn-success" type="submit"  value="VerProyectos" id="boton_pro2" >
                                 
                             </form> 
 
