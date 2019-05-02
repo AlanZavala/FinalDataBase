@@ -3,11 +3,11 @@
 <html>
     <head>
         <title>Products</title>
+        <meta http-equiv="content-type" content="text/html" charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
-        <link href="css/show2.css" rel="stylesheet"> 
-
-        <!--<link href="css/bootstrap.min.css" rel="stylesheet"> -->  
+        <link href="css/show2.css" rel="stylesheet">         
     </head>
+    
     <style>
         #test3, #test4{
             display: none;
@@ -46,7 +46,6 @@
                 <th>Descripcion</th> 
                 <th>Añadir</th>
                 <th>Eliminar</th>
-
             </tr>
 
             <tr class="invisible">

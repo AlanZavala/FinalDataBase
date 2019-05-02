@@ -5,7 +5,9 @@
 <html>
     <head>
         <title>Products</title>
-        <link href="css/show.css" rel="stylesheet">   
+        <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
+        <link href="css/show2.css" rel="stylesheet">   
     </head>
     <style>
         #test3, #test4{
@@ -18,11 +20,12 @@
     <body>
 
         <br> <br>
-        <a href="./adminPass.jsp"> 
+        <a href="./adminPass.jsp">
             <p>Menu</p>
         </a>
         <br>
-        <form action ="./buscarWorker" method="post">
+
+        <form action ="./buscarWorker" method="post" id="above">
             <select id="optBusq" name= "optBusq">
               <option value="All">All</option>
               <option value="Nombre">Nombre</option>
@@ -31,12 +34,12 @@
             </select>
 
             <input type="text" id="valueBusca" name="valueBusca" class="input" required> 
-            <input class="proyecto_buton btn btn-success" type="submit"  value="Buscar">
-                        </div>
-
+            <input class="proyecto_buton btn btn-success" type="submit"  value="Buscar" id="boton_pro">
+                        <!-- </div> -->
        </form>
-       <table border="1">
-            <tr>
+
+       <table border="1" id="main_t">
+            <tr class="visible">
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Apellido</th> 
@@ -48,8 +51,22 @@
                 <th>Puesto</th>  
                 <th></th> 
                 <th>Proyectos</th>
-
             </tr>
+
+            <tr class="invisible">
+                <th></th>
+                <th></th>
+                <th></th> 
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>  
+                <th></th> 
+                <th></th>  
+                <th></th> 
+                <th></th>
+            </tr>
+            
             <c:forEach items="${requestScope.trabajadores}" var="worker">
                 <tr>
                         <td>
