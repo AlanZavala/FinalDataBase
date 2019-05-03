@@ -50,7 +50,7 @@ public class Session extends HttpServlet{
 		
 			request.setAttribute("response", nombre);
 			request.setAttribute("response2", cuenta);
-			//request.setAttribute("response3", window);
+			request.setAttribute("response3", window);
 
 			RequestDispatcher disp = getServletContext().getRequestDispatcher("/showVenta.jsp");
 

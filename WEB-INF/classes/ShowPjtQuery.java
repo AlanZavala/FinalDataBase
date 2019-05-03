@@ -36,6 +36,7 @@ public class ShowPjtQuery extends HttpServlet{
 			//writer.close();
 			String name=request.getParameter("nombre");
 			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+			int pestana= Integer.parseInt(request.getParameter("pestana"));
 
 			Statement stat = con.createStatement();
 			String sql;
@@ -69,6 +70,7 @@ public class ShowPjtQuery extends HttpServlet{
 			request.setAttribute("proyectos", proyectos);
 			request.setAttribute("response", name);
 			request.setAttribute("response2", cuenta);
+			
 
 			RequestDispatcher disp = getServletContext().getRequestDispatcher("/showProjects.jsp");
 

@@ -35,7 +35,12 @@ public class ShowPQuery extends HttpServlet{
 			//writer.close();
 
 			Statement stat = con.createStatement();
+			String nombre=request.getParameter("nombre");
+			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+			int window= Integer.parseInt(request.getParameter("pestana"));
+
 			String sql;
+
 			
 			String sql2 = "SELECT * FROM producto;";
 			//writer2.println(sql2);
@@ -95,6 +100,9 @@ public class ShowPQuery extends HttpServlet{
             con.close();
 
 			request.setAttribute("productos", productos);
+			request.setAttribute("response", nombre);
+			request.setAttribute("response2", cuenta);
+			request.setAttribute("response3", window);
 
 			RequestDispatcher disp = getServletContext().getRequestDispatcher("/showProducts.jsp");
 

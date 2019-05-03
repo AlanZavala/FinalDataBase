@@ -16,7 +16,7 @@
                 margin: 0;                
                 background-color: #222222;                           
             }
-            #cuenta, #nombre{
+            #cuenta, #nombre, #pestana{
                 display: none;
             }
             h1{
@@ -129,7 +129,8 @@
                             <p class="card-text">Revisa los proyectos en los que estas envuelto y haz las modificaciones necesarias</p>
                         
                         <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
-                        <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+                        <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
+                        <input type="text" id="pestana" name="pestana" class="input" value="2">  
                         <input class="proyecto_buton btn btn-success" type="submit"  value="Proyectos">
                     </div>
                 </div>
@@ -153,6 +154,9 @@
                         <h5 class="card-header card-title">Ver diseños</h5>
                         <div class="card-body">
                                 <p class="card-text">Observa todos los diseños que están en la tienda y la descripcion de cada uno.</p>
+                                <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
+                                <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
+                                <input type="text" id="pestana" name="pestana" class="input" value="2">  
                             <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
                         </div>
                     </div>

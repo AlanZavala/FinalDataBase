@@ -10,7 +10,7 @@
         <link href="css/show2.css" rel="stylesheet">   
     </head>
     <style>
-        #test3{
+        #test3, #cuenta, #pestana, #name{
             display: none; 
         }
         td{
@@ -20,9 +20,16 @@
     <body>
 
         <br> <br>
-        <a href="./adminPass.jsp">        
+        <!-- <a href="./adminPass.jsp">        
             <p>Menu</p>
-        </a>
+        </a> -->
+        <form action ="./Session" method= "post">
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
+            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+
+            <input class="proyecto_buton btn btn-success" type="submit"  value="Menu" id="boton_pro">
+        </form>  
         <br>
 
         <form action ="./buscarProducto" method="post" id="above">
