@@ -8,7 +8,7 @@
         <link href="css/show.css" rel="stylesheet">   
     </head>
     <style>
-        #test3, #test4{
+        #test3, #test4, #cuenta, #pestana, #name{
             display: none;
         }
         td{
@@ -18,9 +18,16 @@
     <body>
 
         <br> <br>
-        <a href="./pass.jsp">
+        <!-- <a href="./pass.jsp">
             <p>Menu</p>
-        </a>
+        </a> -->
+        <form action ="./Session" method= "post">
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="2"> 
+            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+
+            <input class="proyecto_buton btn btn-success" type="submit"  value="Menu" id="boton_pro">
+        </form> 
         <br>
         <form action ="./buscarPytWorker" method="post">
             <select id="optBusq" name= "optBusq">

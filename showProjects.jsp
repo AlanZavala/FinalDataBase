@@ -1,15 +1,16 @@
 <!DOCTYPE HTML>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.*"%>
 <html>
     <head>
-        <title>Products</title>
+        <title>Proyectos</title>
         <meta http-equiv="content-type" content="text/html" charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
         <link href="css/show2.css" rel="stylesheet">          
     </head>
     
     <style>
-        #test3, #test4{
+        #test3, #test4, #name, #cuenta, #pestana{
             display: none;
         }
         td{
@@ -19,9 +20,17 @@
     <body>
 
         <br> <br>
-        <a href="./adminPass.jsp">
+
+        <!-- <a href="./adminPass.jsp">
             <p>Menu</p>
-        </a>
+        </a> -->
+        <form action ="./Session" method= "post">
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="1"> 
+            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+
+            <input class="proyecto_buton btn btn-success" type="submit"  value="Menu" id="boton_pro">
+        </form>    
         <br>
 
         <form action ="./buscarProyecto" method="post" id="above">

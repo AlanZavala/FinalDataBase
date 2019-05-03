@@ -25,6 +25,9 @@
                 min-height: 100%;
                 margin-top: 80px;
             }
+            #nombre, #cuenta{
+                display: none;
+            }
             .card{
                 min-height: 235px !important;
                 margin-bottom: 30px !important;
@@ -97,7 +100,8 @@
 
         <br> <br>
         <h1> 
-            ¡ Bienvenido <c:out value = "${requestScope.response}" /> !
+            ¡ Bienvenido <c:out value = "${requestScope.response}"/> !
+            <!-- ¡ Bienvenido <%= request.getParameter("name")%>! -->
         </h1>
   
 
@@ -120,6 +124,8 @@
                     <h5 class="card-header card-title">Ver proyectos</h5>
                     <div class="card-body">
                         <p class="card-text">Revisa los proyectos en los que estas envuelto y haz las modificaciones necesarias</p>
+                        <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
+                        <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                         <input class="proyecto_buton btn btn-success" type="submit"  value="Proyectos">
                     </div>
                 </div>

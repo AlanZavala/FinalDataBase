@@ -9,8 +9,8 @@ import java.util.Vector;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/ShowProjects")
-public class ShowPjtQuery extends HttpServlet{
+@WebServlet("/Session")
+public class Session extends HttpServlet{
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
@@ -34,31 +34,12 @@ public class ShowPjtQuery extends HttpServlet{
 			System.out.println(url);
 			Connection con = DriverManager.getConnection(url,usuario,password);
 			//writer.close();
-			String name=request.getParameter("nombre");
+			String nombre=request.getParameter("name");
 			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+			int window= Integer.parseInt(request.getParameter("pestana"));
 
 			Statement stat = con.createStatement();
-			String sql;
 			
-			String sql2 = "SELECT * FROM proyecto;";
-			//writer2.println(sql2);
-			//writer2.close();
-
-			ResultSet res = stat.executeQuery(sql2);
-
-			Vector<Proyecto> proyectos = new Vector<Proyecto>();
-
-            while(res.next()){
-                Proyecto aux = new Proyecto();
-                aux.setId(res.getInt("idProyecto"));
-                aux.setNombre(res.getString("nombre"));
-                aux.setFechaInicio(res.getString("fechaDeInicio"));
-                aux.setFechaFin(res.getString("fechaDeTermino"));
-                //writer3.println(res.getString("fechaDeTermino"));
-                aux.setDuracion(res.getInt("duracion"));
-                aux.setDescripcion(res.getString("descripcion")); 
-                proyectos.add(aux);
-            }
             //writer3.println("después del while");
           
             //writer3.close();
@@ -66,11 +47,21 @@ public class ShowPjtQuery extends HttpServlet{
 			stat.close();
             con.close();
 
-			request.setAttribute("proyectos", proyectos);
-			request.setAttribute("response", name);
+		
+			request.setAttribute("response", nombre);
 			request.setAttribute("response2", cuenta);
+			//request.setAttribute("response3", window);
 
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/showProjects.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/showVenta.jsp");
+
+			if(window==1){
+				disp = getServletContext().getRequestDispatcher("/adminPass.jsp");
+
+
+			}
+			else if(window==2){
+				disp = getServletContext().getRequestDispatcher("/pass.jsp");
+			}
 
 			if(disp!=null){
 				disp.forward(request, response);

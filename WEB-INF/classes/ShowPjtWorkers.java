@@ -39,6 +39,7 @@ public class ShowPjtWorkers extends HttpServlet{
 			String sql2="";
 			
 			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+			String nombre=request.getParameter("nombre");
 
 			//select idTrabajador where cuenta=cuenta;
 
@@ -89,6 +90,8 @@ public class ShowPjtWorkers extends HttpServlet{
             con.close();
 
 			request.setAttribute("proyectos", proyectos);
+			request.setAttribute("response", nombre);
+			request.setAttribute("response2", cuenta);
 
 			RequestDispatcher disp = getServletContext().getRequestDispatcher("/showProjectsToWorkers.jsp");
 

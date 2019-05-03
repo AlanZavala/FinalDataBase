@@ -16,7 +16,7 @@
                 margin: 0;                
                 background-color: #222222;                           
             }
-            #cuenta{
+            #cuenta, #nombre{
                 display: none;
             }
             h1{
@@ -127,6 +127,8 @@
                     <h5 class="card-header card-title">Mis proyectos</h5>
                     <div class="card-body">
                             <p class="card-text">Revisa los proyectos en los que estas envuelto y haz las modificaciones necesarias</p>
+                        
+                        <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
                         <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                         <input class="proyecto_buton btn btn-success" type="submit"  value="Proyectos">
                     </div>
