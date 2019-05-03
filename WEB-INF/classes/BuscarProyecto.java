@@ -30,7 +30,9 @@ public class BuscarProyecto extends HttpServlet{
             //writer.close();
     
             Statement stat = con.createStatement();
-            
+
+            int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+            String nombre=request.getParameter("name");
             String comboBChoice=request.getParameter("optBusq");
             String busqueda = request.getParameter("valueBusca");
             String sql=" ";
@@ -71,6 +73,8 @@ public class BuscarProyecto extends HttpServlet{
             con.close();
             
             request.setAttribute("proyectos", proyectos);
+            request.setAttribute("response", nombre);
+            request.setAttribute("response2", cuenta);
             RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showProjects.jsp");
 
             if(disp!=null){

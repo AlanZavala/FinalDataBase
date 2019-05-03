@@ -20,9 +20,16 @@
     <body>
 
         <br> <br>
-        <a href="./adminPass.jsp">
+        <!-- <a href="./adminPass.jsp">
             <p>Back</p>
-        </a>
+        </a> -->
+        <form action ="./Session" method= "post">
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
+            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+        
+            <input class="proyecto_buton btn btn-success" type="submit"  value="Back" id="boton_pro">
+        </form> 
         <br>
         <!--<form action ="./buscarProyecto" method="post">
             <select id="optBusq" name= "optBusq">

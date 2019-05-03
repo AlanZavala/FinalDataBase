@@ -31,6 +31,9 @@ public class BorrarTrabajador extends HttpServlet{
             Statement stat = con.createStatement();
 
             int id = Integer.parseInt(request.getParameter("test3"));
+            int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+            String nombre=request.getParameter("name");
+            int window= Integer.parseInt(request.getParameter("pestana"));
 
             String sql="Delete from trabajador where idTrabajador="+id+";";
             //writer2.println(sql);
@@ -73,6 +76,9 @@ public class BorrarTrabajador extends HttpServlet{
             con.close();
 
             request.setAttribute("trabajadores", trabajadores);
+            request.setAttribute("response", nombre);
+            request.setAttribute("response2", cuenta);
+            request.setAttribute("response3", window);
 
             RequestDispatcher disp = getServletContext().getRequestDispatcher("/showWorkers.jsp");
 

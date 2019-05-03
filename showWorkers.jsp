@@ -10,7 +10,7 @@
         <link href="css/show2.css" rel="stylesheet">   
     </head>
     <style>
-        #test3, #test4{
+        #test3, #test4, #cuenta, #name, #pestana{
             display: none;
         }
         td{
@@ -20,9 +20,16 @@
     <body>
 
         <br> <br>
-        <a href="./adminPass.jsp">
+        <!-- <a href="./adminPass.jsp">
             <p>Menu</p>
-        </a>
+        </a> -->
+        <form action ="./Session" method= "post">
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
+            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+        
+            <input class="proyecto_buton btn btn-success" type="submit"  value="Menu" id="boton_pro">
+        </form> 
         <br>
 
         <form action ="./buscarWorker" method="post" id="above">
@@ -32,7 +39,9 @@
               <option value="Id">Id</option>
               
             </select>
-
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
+            <input type="text" id="name" name="name" class="input" value="${requestScope.response}">
             <input type="text" id="valueBusca" name="valueBusca" class="input" required> 
             <input class="proyecto_buton btn btn-success" type="submit"  value="Buscar" id="boton_pro">
                         <!-- </div> -->
@@ -108,6 +117,9 @@
                         <td>
                             <form action ="./BorrarWorker" method="post">
                                 <input type="text" id="test3" name="test3" class="input" value="${worker.id}"> 
+                                <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+                                <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
+                                <input type="text" id="name" name="name" class="input" value="${requestScope.response}">
                                 <input class="proyecto_buton btn btn-success" type="submit"  value="Borrar" id="boton_pro3">
                                 
                             </form> 
@@ -117,6 +129,9 @@
                         <td>
                             <form action ="./VerProyectos" method="post">
                                 <input type="text" id="test4" name="test4" class="input" value="${worker.id}"> 
+                                <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+                                <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
+                                <input type="text" id="name" name="name" class="input" value="${requestScope.response}">
                                 <input class="proyecto_buton btn btn-success" type="submit"  value="VerProyectos" id="boton_pro2" >
                                 
                             </form> 

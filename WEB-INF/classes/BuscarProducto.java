@@ -30,6 +30,10 @@ public class BuscarProducto extends HttpServlet{
     
             Statement stat = con.createStatement();
 
+            int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+            String nombre=request.getParameter("name");
+            int window= Integer.parseInt(request.getParameter("pestana"));
+
             String comboBChoice=request.getParameter("optBusq");
             String busqueda = request.getParameter("valueBusca");
             String sql=" ";
@@ -76,6 +80,9 @@ public class BuscarProducto extends HttpServlet{
             con.close();
             
             request.setAttribute("productos",productos);
+            request.setAttribute("response", nombre);
+            request.setAttribute("response2", cuenta);
+            request.setAttribute("response3", window);
             RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showProducts.jsp");
 
             if(disp!=null){

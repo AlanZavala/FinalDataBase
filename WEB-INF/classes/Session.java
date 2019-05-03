@@ -36,7 +36,7 @@ public class Session extends HttpServlet{
 			//writer.close();
 			String nombre=request.getParameter("name");
 			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
-			int window= Integer.parseInt(request.getParameter("pestana"));
+			int window=Integer.parseInt(request.getParameter("pestana"));
 
 			Statement stat = con.createStatement();
 			

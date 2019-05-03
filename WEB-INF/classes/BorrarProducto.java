@@ -31,6 +31,9 @@ public class BorrarProducto extends HttpServlet{
             Statement stat = con.createStatement();
 
             int id= Integer.parseInt(request.getParameter("test3"));
+            int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+            String nombre=request.getParameter("name");
+            int window= Integer.parseInt(request.getParameter("pestana"));
 
             String sql="Delete from producto where idProducto="+id+";";
             //writer2.println(sql);
@@ -94,6 +97,9 @@ public class BorrarProducto extends HttpServlet{
             con.close();
 
             request.setAttribute("productos", productos);
+            request.setAttribute("response", nombre);
+            request.setAttribute("response2", cuenta);
+            request.setAttribute("response3", window);
 
             RequestDispatcher disp = getServletContext().getRequestDispatcher("/showProducts.jsp");
 

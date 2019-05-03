@@ -36,6 +36,9 @@ public class VerProyectos extends HttpServlet{
 			//writer.close();
 
 			Statement stat = con.createStatement();
+			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+            String nombre=request.getParameter("nombre");
+            int window= Integer.parseInt(request.getParameter("pestana"));
 			String sql2="";
 			
 			int workerID=Integer.parseInt(request.getParameter("test4"));
@@ -89,6 +92,9 @@ public class VerProyectos extends HttpServlet{
             con.close();
 
 			request.setAttribute("proyectos", proyectos);
+			request.setAttribute("response", nombre);
+            request.setAttribute("response2", cuenta);
+            request.setAttribute("response3", window);
 
 			RequestDispatcher disp = getServletContext().getRequestDispatcher("/showProjOfWorker.jsp");
 

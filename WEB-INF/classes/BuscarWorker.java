@@ -29,6 +29,9 @@ public class BuscarWorker extends HttpServlet{
             //writer.close();
     
             Statement stat = con.createStatement();
+            int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+            String nombre=request.getParameter("name");
+            int window= Integer.parseInt(request.getParameter("pestana"));
 
             String comboBChoice=request.getParameter("optBusq");
             String busqueda = request.getParameter("valueBusca");
@@ -73,6 +76,10 @@ public class BuscarWorker extends HttpServlet{
             con.close();
             
             request.setAttribute("trabajadores", trabajadores);
+            
+            request.setAttribute("response", nombre);
+            request.setAttribute("response2", cuenta);
+            request.setAttribute("response3", window);
             RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showWorkers.jsp");
 
             if(disp!=null){

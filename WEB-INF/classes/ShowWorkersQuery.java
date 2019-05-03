@@ -36,6 +36,10 @@ public class ShowWorkersQuery extends HttpServlet{
 
 			Statement stat = con.createStatement();
 			String sql;
+			String nombre=request.getParameter("nombre");
+			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+            
+            int window= Integer.parseInt(request.getParameter("pestana"));
 			
 			String sql2 = "SELECT * FROM trabajador;";
 			//writer2.println(sql2);
@@ -67,6 +71,9 @@ public class ShowWorkersQuery extends HttpServlet{
             con.close();
 
 			request.setAttribute("trabajadores", trabajadores);
+			request.setAttribute("response", nombre);
+            request.setAttribute("response2", cuenta);
+            request.setAttribute("response3", window);
 
 			RequestDispatcher disp = getServletContext().getRequestDispatcher("/showWorkers.jsp");
 

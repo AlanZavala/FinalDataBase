@@ -188,6 +188,9 @@
                         <h5 class="card-header card-title">Ver trabajadores</h5>
                         <div class="card-body">
                             <p class="card-text"> Observa a todos los trabajadores de tu empresa y sus detalles. </p>
+                            <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
+                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+                            <input type="text" id="pestana" name="pestana" class="input" value="1"> 
                             <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
                         </div>
                     </div>
