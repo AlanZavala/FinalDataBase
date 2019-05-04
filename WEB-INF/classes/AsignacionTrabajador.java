@@ -31,6 +31,10 @@ public class AsignacionTrabajador extends HttpServlet{
             //writer.close();
     
             Statement stat = con.createStatement();
+            int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+            String nombre=request.getParameter("name");
+
+            int window= Integer.parseInt(request.getParameter("pestana"));
             int idTrabajador= Integer.parseInt(request.getParameter("asign"));
 
             int idProyecto= Integer.parseInt(request.getParameter("test4"));
@@ -114,6 +118,9 @@ public class AsignacionTrabajador extends HttpServlet{
             con.close();
             
             request.setAttribute("proyectos", proyectos);
+            request.setAttribute("response", nombre);
+            request.setAttribute("response2", cuenta);
+            request.setAttribute("response3", window);
             RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showProjects.jsp");
 
             if(disp!=null){
