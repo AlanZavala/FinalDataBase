@@ -36,8 +36,9 @@ public class Registro extends HttpServlet{
 			String usuario = getServletContext().getInitParameter("usuario");
             String pass = getServletContext().getInitParameter("pass");
 
+
             int id= Integer.parseInt(request.getParameter("id"));
-            String nombre = request.getParameter("nombre");
+            String nombre = request.getParameter("nombres");
             String apellido = request.getParameter("apellido");
             int username = Integer.parseInt(request.getParameter("username"));
             String password = request.getParameter("password");
@@ -58,6 +59,11 @@ public class Registro extends HttpServlet{
 
 			Statement stat = con.createStatement();
 
+			String name=request.getParameter("nombre");
+			int cuentas=Integer.parseInt(request.getParameter("cuenta"));
+            
+            int window= Integer.parseInt(request.getParameter("pestana"));
+
 			String sql2 = "INSERT INTO cuenta VALUES ("+ username+" ,'" +password+ "');";
 			//writer3.println(sql2);
             String sql = "INSERT INTO trabajador values("+id+", '" + direccion + "', " + telefono + ", '"  + correo + "', '"  + puesto + "', "  + edad + ", '"   + nombre + "', '"   + apellido + "', "  + username + ", '" + password +   "');";
@@ -75,8 +81,11 @@ public class Registro extends HttpServlet{
 			// PrintWriter out = res.getWriter();
 
 			// req.setAttribute("trabajador", newTrabajador);
+			request.setAttribute("response", name);
+            request.setAttribute("response2", cuentas);
+            request.setAttribute("response3", window);
 
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/index.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/altaTrabajadores.jsp");
 
 			if(disp!=null){
 				disp.forward(request,response);

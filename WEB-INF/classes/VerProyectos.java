@@ -37,7 +37,7 @@ public class VerProyectos extends HttpServlet{
 
 			Statement stat = con.createStatement();
 			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
-            String nombre=request.getParameter("nombre");
+            String nombre=request.getParameter("name");
             int window= Integer.parseInt(request.getParameter("pestana"));
 			String sql2="";
 			

@@ -25,7 +25,7 @@
                 min-height: 100%;
                 margin-top: 80px;
             }
-            #nombre, #cuenta, #pestana{
+            #nombre, #cuenta, #pestana, #name{
                 display: none;
             }
             .card{
@@ -158,18 +158,21 @@
                     </div>
             </form>
 
-            <section class="mt-0">
+            <form action="./Session" method="post">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Dar de alta trabajadores</h5>
                     <div class="card-body">
                         <p class="card-text"> Agrega a un nuevo empleado e ingresa los datos necesarios para darlo de alta en tu empresa.</p>
-                        <a href="altaTrabajadores.jsp">
+                        <!-- <a href="altaTrabajadores.jsp"> -->
+                            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+                            <input type="text" id="pestana" name="pestana" class="input" value="3"> 
                             <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
-                        </a>
+                        <!-- </a> -->
                         
                     </div>
                 </div>
-            </section>
+            </form>
 
             <section class="mt-0">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">

@@ -13,8 +13,8 @@ public class BorrarTrabajador extends HttpServlet{
 
 		try{
             // PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-            // PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-            // PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+            // PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto2.txt", "UTF-8");
+            // PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto3.txt", "UTF-8");
 
             // writer.println("The firster lines");
             // writer.println("The second line");
@@ -34,14 +34,15 @@ public class BorrarTrabajador extends HttpServlet{
             int cuenta=Integer.parseInt(request.getParameter("cuenta"));
             String nombre=request.getParameter("name");
             int window= Integer.parseInt(request.getParameter("pestana"));
+            String sql2="Delete from trabajador_proyecto where idTrabajador="+id+";";
+            //writer2.println(sql2);
+            stat.executeUpdate(sql2);
 
             String sql="Delete from trabajador where idTrabajador="+id+";";
             //writer2.println(sql);
             stat.executeUpdate(sql);
 
-            String sql2="Delete from trabajador_proyecto where idTrabajador="+id+";";
-            //writer2.println(sql2);
-            stat.executeUpdate(sql2);
+            
             
             //
             String sql3 = "SELECT * FROM trabajador;";
@@ -69,8 +70,8 @@ public class BorrarTrabajador extends HttpServlet{
 
             }
 
-            //writer3.println("the vector size is "+trabajadores.size());
-            //writer3.close();
+            // writer3.println("the vector size is "+trabajadores.size());
+            // writer3.close();
 
             stat.close();
             con.close();
@@ -89,17 +90,17 @@ public class BorrarTrabajador extends HttpServlet{
 		}
 		catch(Exception e){
 			try{
-                //PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+                // PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
                 e.printStackTrace();
-                //writer4.println(e);
-                //writer4.close();
+                // writer4.println(e);
+                // writer4.close();
             }
             catch(Exception e2){
                 try{
-                PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+                // PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
                 e.printStackTrace();
-                //writer5.println(e);
-                //writer5.close();
+                // writer5.println(e);
+                // writer5.close();
             }
             catch(Exception e3){
                 e3.printStackTrace();

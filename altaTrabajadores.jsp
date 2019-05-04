@@ -12,6 +12,12 @@
 
         <title>Registro</title>
     </head>
+    <style>
+        #name, #cuenta, #pestana{
+            display: none;
+        }
+        
+    </style>
 
     <body>
         <!-- <br> <br>
@@ -28,7 +34,7 @@
             <input type="text" id="id" name="id" class="input" required>            
             <span class="user_label">ID</span>
     
-            <input type="text" id="nombre" name="nombre" class="input" required>            
+            <input type="text" id="nombres" name="nombres" class="input" required>            
             <span class="user_label">Nombre</span>
 
             <input type="text" id="apellido" name="apellido" class="input" required>            
@@ -54,14 +60,26 @@
 
             <input type="text" id="puesto" name="puesto" class="input" required>            
             <span class="user_label">Puesto</span>
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="1"> 
+            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
             
             <input class="login_button" type="submit"  value="GUARDAR">
 
-            <a href="adminPass.jsp">
-                <p>Atrás</p>
-            </a>
+            
             
         
         </form>
+        <form action ="./Session" method= "post">
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="1"> 
+            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+
+            <input class="proyecto_buton btn btn-success" type="submit"  value="Atras" id="boton_pro">
+        </form>  
+        <!-- <a href="adminPass.jsp">
+                <p>Atrás</p>
+            </a> -->
+
     </body>
 </html>
