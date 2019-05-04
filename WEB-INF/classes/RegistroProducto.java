@@ -30,8 +30,14 @@ public class RegistroProducto extends HttpServlet{
     
             Statement stat = con.createStatement();
 
+            String name=request.getParameter("nombre");
+            int cuentas=Integer.parseInt(request.getParameter("cuenta"));
+            
+            int window= Integer.parseInt(request.getParameter("pestana"));
+
+
             int id= Integer.parseInt(request.getParameter("id"));
-            String nombre = request.getParameter("nombre");
+            String nombre = request.getParameter("nombres");
             String uso = request.getParameter("uso");            
             String fechaLlegada = request.getParameter("fecha");  
             String fechaVenta = request.getParameter("fechaVenta");
@@ -81,6 +87,9 @@ public class RegistroProducto extends HttpServlet{
             con.close();
             
             request.setAttribute("productos",productos);
+            request.setAttribute("response", name);
+            request.setAttribute("response2", cuentas);
+            request.setAttribute("response3", window);
             RequestDispatcher disp =  getServletContext().getRequestDispatcher("/productoRegistrado.jsp");
 
             if(disp!=null){

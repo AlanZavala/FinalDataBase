@@ -13,7 +13,7 @@
         <title>Registro</title>
     </head>
     <style>
-        #name, #cuenta, #pestana{
+        #name, #cuenta, #pestana, #nombre{
             display: none;
         }
         
@@ -62,7 +62,7 @@
             <span class="user_label">Puesto</span>
             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
             <input type="text" id="pestana" name="pestana" class="input" value="1"> 
-            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+            <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
             
             <input class="login_button" type="submit"  value="GUARDAR">
 

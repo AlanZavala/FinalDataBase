@@ -30,6 +30,8 @@ public class RegistroProyecto extends HttpServlet{
     
             Statement stat = con.createStatement();
 
+            
+
             int id= Integer.parseInt(request.getParameter("id"));
             String nombre = request.getParameter("nombre");           
             String fechaInicio = request.getParameter("fechaInicio");  

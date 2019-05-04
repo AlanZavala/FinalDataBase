@@ -12,7 +12,12 @@
 
         <title>Nuevo producto</title>
     </head>
-    
+    <style>
+        #pestana, #name, #cuenta, #nombre{
+            display: none;
+        }
+        
+    </style>
     <body>
 
         <h4 class="text-center mt-5 font-weight-bold">Registro de un nuevo producto</h4>
@@ -24,7 +29,7 @@
             <input type="text" id="id" name="id" class="input" required>            
             <span class="user_label">IDProducto</span>
 
-            <input type="text" id="nombre" name="nombre" class="input" required>            
+            <input type="text" id="nombres" name="nombres" class="input" required>            
             <span class="user_label">Nombre</span>
 
             <input type="text" id="uso" name="uso" class="input" required>            
@@ -50,15 +55,25 @@
 
             <input type="text" id="ganancia" name="ganancia" class="input" required>            
             <span class="user_label">Ganancia</span>
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
+            <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
                    
             <input class="login_button" type="submit"  value="GUARDAR">
             
-
+<!-- 
             <a href="pass.jsp">
                 <p>Atrás</p>
-            </a>
+            </a> -->
             
         
         </form>
+        <form action ="./Session" method= "post">
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
+            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+
+            <input class="proyecto_buton btn btn-success" type="submit"  value="Atras" id="boton_pro">
+        </form>  
     </body>
 </html>
