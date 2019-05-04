@@ -27,7 +27,7 @@
             <input type="text" id="nombre" name="nombre" class="input" required>            
             <span class="user_label">Nombre</span>
 
-            <input type="text" id="apellido" name="apellido" class="input" required>            
+            <input type="text" id="apellido" name="apellido" class="input" required>             
             <span class="user_label">Apellido</span>  
             
             <input type="text" id="username" name="username" class="input" required>            

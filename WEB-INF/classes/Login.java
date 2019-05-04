@@ -100,9 +100,12 @@ public class Login extends HttpServlet{
                     
                     disp = getServletContext().getRequestDispatcher("/adminPass.jsp");
                 }
-                else{
+                else if(verifyRoll.charAt(0)== '2'){
                     
                     disp = getServletContext().getRequestDispatcher("/pass.jsp");
+                } else if(verifyRoll.charAt(0)== '3'){
+                    
+                    disp = getServletContext().getRequestDispatcher("/clientPass.jsp");
                 }
             }
             else{

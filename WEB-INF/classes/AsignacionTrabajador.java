@@ -77,7 +77,7 @@ public class AsignacionTrabajador extends HttpServlet{
             }
 
 
-            Vector<Integer> ids_workers = new Vector<Integer>();
+            /*Vector<Integer> ids_workers = new Vector<Integer>();
 
             while(res.next()){
                 Trabajador aux = new Trabajador();
@@ -88,7 +88,7 @@ public class AsignacionTrabajador extends HttpServlet{
                 }
             }
 
-            request.setAttribute("ids_nombres", ids_workers);
+            request.setAttribute("ids_nombres", ids_workers);*/
 
             //String sql2 = "INSERT INTO cuenta VALUES ("+ username+" ,'" +password+ "');";
           
