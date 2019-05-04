@@ -6,8 +6,9 @@
     <head>
         <meta http-equiv="content-type" content="text/html" charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link href="css/show2.css" rel="stylesheet">  
-        <title>Products</title>
+        <title>Diseños</title>
     </head>
     <style>
         #pestana, #name, #cuenta, #nombre{
@@ -24,6 +25,8 @@
 
             <input class="proyecto_buton btn btn-success" type="submit"  value="Menu" id="boton_pro">
         </form>  
+
+        <h4 class="text-center mt-2 font-weight-bold">Diseño Registrado</h4>
 
         <table border="1" id="main_t">
             <tr class="visible">

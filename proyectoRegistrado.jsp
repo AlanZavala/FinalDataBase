@@ -4,12 +4,23 @@
 
 <html>
     <head>
+        <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/all.css">     
+        <link rel="stylesheet" href="css/bootstrap.min.css">   
+        <link href="css/show2.css" rel="stylesheet"> 
         <title>Proyectos</title>
     </head>
     <body>
 
-        <table border="1">
-            <tr>
+        <a href="pass.jsp">
+            <i class="fas fa-arrow-circle-left"></i>
+        </a>
+
+        <h4 class="text-center mt-2 font-weight-bold">Proyecto Registrado</h4>
+
+        <table border="1" id="main_t">
+            <tr class="visible">
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Fecha de inicio</th> 
@@ -17,6 +28,15 @@
                 <th>Duracion</th>
                 <th>Descripcion</th> 
             </tr>
+
+            <tr class="invisible">
+                    <th></th>
+                    <th></th>
+                    <th></th> 
+                    <th></th>
+                    <th></th>
+                    <th></th> 
+                </tr>
             <c:forEach items="${requestScope.proyectos}" var="proyecto">
                 <tr>
                         <td>
