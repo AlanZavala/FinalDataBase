@@ -40,8 +40,41 @@ public class Session extends HttpServlet{
 
 			Statement stat = con.createStatement();
 			
-            //writer3.println("después del while");
-          
+			/*
+			Esto es para proyecto venta
+			*/
+			String sql4 = "select * from cliente;";			
+			ResultSet res2 = stat.executeQuery(sql4);
+
+			Vector<Cliente> clientes = new Vector<Cliente>();
+
+			while(res2.next()){
+				Cliente aux2 = new Cliente();
+				aux2.setId(res2.getInt("ID"));
+				aux2.setCuenta(res2.getInt("cuenta"));				
+				clientes.add(aux2);
+			}
+
+			String sql5 = "select * from trabajador;";			
+			ResultSet res3 = stat.executeQuery(sql5);
+
+			Vector<Trabajador> trabajadores = new Vector<Trabajador>();
+
+			while(res3.next()){
+				if(    res3.getInt(res3.getInt("cuenta")) == cuenta  ){
+					Trabajador aux3 = new Trabajador();
+					aux3.setId(res3.getInt("idTrabajador"));
+					aux3.setNombre(res3.getString("nombre"));
+					aux3.setCuenta(res3.getInt("cuenta"));
+					trabajadores.add(aux3);
+					break;
+				}				
+			}
+			/*
+			Fin del proyecto venta
+			*/
+
+
             //writer3.close();
 
 			stat.close();
@@ -85,11 +118,15 @@ public class Session extends HttpServlet{
 			else if(window == 7){
 				window=1;
 				request.setAttribute("response3", window);
+				request.setAttribute("clientes", clientes);
+            	request.setAttribute("trabajadores", trabajadores);
 				disp = getServletContext().getRequestDispatcher("/ProyectoVenta.jsp");
 			}
 			else if(window==8){
 				window=2;
 				request.setAttribute("response3", window);
+				request.setAttribute("clientes", clientes);
+            	request.setAttribute("trabajadores", trabajadores);
 				disp = getServletContext().getRequestDispatcher("/ProyectoVenta.jsp");
 			}
 			else if(window==9){

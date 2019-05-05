@@ -94,39 +94,39 @@ public class ProyectoVenta extends HttpServlet{
                 proyectos.add(aux);
             }
 
-            String sql4 = "select * from cliente;";
-            stat.executeUpdate(sql4);
-            ResultSet res2 = stat.executeQuery(sql4);
+            // String sql4 = "select * from cliente;";
+            // stat.executeUpdate(sql4);
+            // ResultSet res2 = stat.executeQuery(sql4);
 
-            Vector<Cliente> clientes = new Vector<Cliente>();
+            // Vector<Cliente> clientes = new Vector<Cliente>();
 
-            while(res2.next()){
-                Cliente aux2 = new Cliente();
-                aux2.setId(res2.getInt("ID"));
-                aux2.setCuenta(res2.getInt("cuenta"));
-                aux2.setCorreo(res2.getString("correo"));
-                clientes.add(aux2);
-            }
+            // while(res2.next()){
+            //     Cliente aux2 = new Cliente();
+            //     aux2.setId(res2.getInt("ID"));
+            //     aux2.setCuenta(res2.getInt("cuenta"));
+            //     aux2.setCorreo(res2.getString("correo"));
+            //     clientes.add(aux2);
+            // }
 
-            String sql5 = "select * from trabajador;";
-            stat.executeUpdate(sql5);
-            ResultSet res3 = stat.executeQuery(sql5);
+            // String sql5 = "select * from trabajador;";
+            // stat.executeUpdate(sql5);
+            // ResultSet res3 = stat.executeQuery(sql5);
 
-            Vector<Trabajador> trabajadores = new Vector<Trabajador>();
+            // Vector<Trabajador> trabajadores = new Vector<Trabajador>();
 
-            while(res3.next()){
-                Trabajador aux3 = new Trabajador();
-                aux3.setId(res3.getInt("idTrabajador"));
-                aux3.setNombre(res3.getString("nombre"));
-                trabajadores.add(aux3);
-            }
+            // while(res3.next()){
+            //     Trabajador aux3 = new Trabajador();
+            //     aux3.setId(res3.getInt("idTrabajador"));
+            //     aux3.setNombre(res3.getString("nombre"));
+            //     trabajadores.add(aux3);
+            // }
 
 
             stat.close();
             con.close();
 
-            request.setAttribute("clientes", clientes);
-            request.setAttribute("trabajadores", trabajadores);
+            // request.setAttribute("clientes", clientes);
+            // request.setAttribute("trabajadores", trabajadores);
             
             request.setAttribute("proyectos", proyectos);
             request.setAttribute("response", name);
