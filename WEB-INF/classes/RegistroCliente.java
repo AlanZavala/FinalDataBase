@@ -38,15 +38,15 @@ public class RegistroCliente extends HttpServlet{
 
 
             int id = Integer.parseInt(request.getParameter("id"));
-            int username = Integer.parseInt(request.getParameter("username"));
-            String password = request.getParameter("password");
+            int cuenta = Integer.parseInt(request.getParameter("cuentaCliente"));
+            String contrasenia = request.getParameter("contrasenia");
             String correo = request.getParameter("correo");
             int telefono = Integer.parseInt(request.getParameter("telefono"));
 
-			Cuenta cuenta = new Cuenta(username, password);
+			Cliente newCliente = new Cliente(id, cuenta, contrasenia, telefono, correo);
 
-
-			Cliente newCliente = new Cliente(id, telefono, correo, password);
+			Cuenta newCuenta = new Cuenta(cuenta, contrasenia);
+			// Cliente newCliente = new Cliente(id, telefono, correo, password);
             
             Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
@@ -59,9 +59,9 @@ public class RegistroCliente extends HttpServlet{
             
             int window= Integer.parseInt(request.getParameter("pestana"));
 
-			String sql2 = "INSERT INTO cuenta VALUES ("+ username+" ,'" +password+ "');";
+			String sql2 = "INSERT INTO cuenta VALUES ("+ cuenta+" ,'" +contrasenia+ "');";
 			//writer3.println(sql2);
-            String sql = "INSERT INTO cliente values("+id+", '" + telefono + "', '" + correo + "', "  + username + ", '"  + password +   "');";
+            String sql = "INSERT INTO cliente values("+id+", '" + cuenta + "', '" + contrasenia + "', "  + telefono + ", '"  + correo +   "');";
             //writer2.println(sql);
 			stat.executeUpdate(sql2);
 			stat.executeUpdate(sql);

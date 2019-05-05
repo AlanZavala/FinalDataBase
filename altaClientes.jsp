@@ -46,24 +46,24 @@
                 </div>
     
                 <div class="section d-flex flex-column">
-                    <input type="text" id="username" name="username" class="input" required>            
-                    <span class="user_label">Username</span>
+                    <input type="text" id="cuentaCliente" name="cuentaCliente" class="input" required>            
+                    <span class="user_label">Cuenta</span>
                 </div>
     
                 <div class="section d-flex flex-column">
-                    <input type="password" id="password" name="password" class="input" required>            
+                    <input type="password" id="contrasenia" name="contrasenia" class="input" required>            
                     <span class="user_label">Contraseña</span>
-                </div>
-                
-                <div class="section d-flex flex-column">
-                    <input type="email" id="correo" name="correo" class="input" required>            
-                    <span class="user_label">Correo</span> 
                 </div>
     
                 <div class="section d-flex flex-column">
                     <input type="text" id="telefono" name="telefono" class="input" required>            
                     <span class="user_label">Teléfono</span>
                 </div>   
+                
+                <div class="section d-flex flex-column">
+                    <input type="email" id="correo" name="correo" class="input" required>            
+                    <span class="user_label">Correo</span> 
+                </div>
 
             </div>
             

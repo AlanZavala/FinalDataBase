@@ -1,22 +1,26 @@
 package escuela;
 public class Cliente{
     private int id; 
+    private int cuenta;
+    private String contrasenia; 
     private int telefono; 
     private String correo;
-    private String contrasenia; 
 
     public Cliente(){
 
     }
 
-    public Cliente(int id, int telefono, String correo, String contrasenia){
+    public Cliente(int id, int cuenta, String contrasenia, int telefono, String correo){
         this.id = id; 
+        this.cuenta = cuenta;
+        this.contrasenia = contrasenia;
         this.telefono = telefono; 
         this.correo = correo;
-        this.contrasenia = contrasenia;
     }
 
-    public Cliente(int id, int telefono, String correo){
+    public Cliente(int cuenta, String contrasenia, int telefono, String correo){ 
+        this.cuenta = cuenta;
+        this.contrasenia = contrasenia;
         this.telefono = telefono; 
         this.correo = correo;
     }
@@ -26,6 +30,21 @@ public class Cliente{
     }
     public int getId(){
         return id;
+    }
+
+    public void setCuenta(int cuenta){
+        this.cuenta = cuenta;
+    }
+    public int getCuenta(){
+        return cuenta;
+    }
+
+    public String getContrasenia(){
+        return contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia){
+        this.contrasenia = contrasenia;
     }
 
     public void setTelefono(int telefono){
@@ -43,11 +62,5 @@ public class Cliente{
         return correo;
     }
 
-    public String getContrasenia(){
-        return contrasenia;
-    }
-
-    public void setContrasenia(String contrasenia){
-        this.contrasenia = contrasenia;
-    }
+    
 }
