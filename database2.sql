@@ -1,8 +1,43 @@
 CREATE DATABASE IF NOT EXISTS `neszuz`;
 use `neszuz`; 
+-- ---- TABLA DE CUENTA ----
+
+CREATE TABLE IF NOT EXISTS `cuenta`(
+	`ID` int(21) NOT NULL AUTO_INCREMENT,
+	`contrasenia` varchar(20) DEFAULT NULL,
+
+	PRIMARY KEY (`ID`)
+	
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+DELETE FROM `cuenta`;
+
+INSERT INTO `cuenta` (`ID`,`contrasenia`) VALUES 
+(1,'neszuz'),
+(2,'neszuz');
+
+-- ---- TABLA DE CLIENTES ----
+
+CREATE TABLE IF NOT EXISTS `cliente`(
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`cuenta` int(21) NOT NULL,
+	`contrasenia` varchar(20) DEFAULT NULL,
+	`telefono` int (8) NOT NULL,
+	`correo` tinytext, 
+
+	PRIMARY KEY (`ID`),
+	KEY `cuenta` (`cuenta`),
+	CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`cuenta`) REFERENCES `cuenta` (`ID`)
+	
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+DELETE FROM `cliente`;
+
+INSERT INTO `cliente` (`ID`, `cuenta`,`contrasenia`,`telefono`,`correo`) VALUES 
+(1, 2, 'neszuz', 50129093,'cliente1@hotmail.com'),
+(2, 2, 'neszuz',50210939,'cliente2@hotmail.com');
 
 -- ---- TABLA DE PROYECTOS ----
-
 CREATE TABLE IF NOT EXISTS `proyecto`(
 	`idProyecto` int(11) NOT NULL AUTO_INCREMENT,
 	`nombre` varchar(100) NOT NULL,
@@ -10,16 +45,23 @@ CREATE TABLE IF NOT EXISTS `proyecto`(
 	`fechaDeTermino` datetime NOT NULL, 
 	`duracion` int(6) DEFAULT 0, 
 	`descripcion` text,
+	`idCliente` int(11) NOT NULL,
+	`cantidad` int(5) DEFAULT NULL,
+	`precioTotal` float(9,2) DEFAULT NULL,
 
-	PRIMARY KEY (`idProyecto`)
+
+	PRIMARY KEY (`idProyecto`),
+	KEY `idCliente` (`idCliente`),
+	
+	CONSTRAINT `proyecto_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`ID`)
 	
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 DELETE FROM `proyecto`;
 
-INSERT INTO `proyecto` (`idProyecto`,`nombre`,`fechaDeInicio`,`fechaDeTermino`,`duracion`,`descripcion`) VALUES 
-(50,'Proyecto Final','2019-04-19 10:34:09.000' ,'2020-04-19 10:34:09.000' ,365,'Proyecto Final!'),
-(30,'Proyecto Parcial','2019-04-19 10:34:09.000' ,'2021-04-19 10:34:09.000' ,730,'Proyecto Parcial!');
+INSERT INTO `proyecto` (`idProyecto`,`nombre`,`fechaDeInicio`,`fechaDeTermino`,`duracion`,`descripcion`,`idCliente`,`cantidad`,`precioTotal`) VALUES 
+(50,'Proyecto Final','2019-04-19 10:34:09.000' ,'2020-04-19 10:34:09.000' ,365,'Proyecto Final!', 2, 200, 10.00),
+(30,'Proyecto Parcial','2019-04-19 10:34:09.000' ,'2021-04-19 10:34:09.000' ,730,'Proyecto Parcial!', 2, 500, 11.00);
 
 -- ---- TABLA DE CUENTA ----
 
@@ -102,39 +144,20 @@ INSERT INTO `producto` (`idProducto`,`nombre`,`Uso`,`fechaDeLlegada`,`fechaDeVen
 
 -- ---- TABLA DE PRODUCTOS Y TRABAJADORES ----
 
-CREATE TABLE IF NOT EXISTS `producto_trabajador`(
-	`idProducto` int(11) NOT NULL, 
-	`idTrabajador` int(11) NOT NULL,
+-- CREATE TABLE IF NOT EXISTS `producto_trabajador`(
+-- 	`idProducto` int(11) NOT NULL, 
+-- 	`idTrabajador` int(11) NOT NULL,
 	
-	PRIMARY KEY (`idTrabajador`,`idProducto`),
-	KEY `idProducto` (`idProducto`),
-	KEY `idTrabajador` (`idTrabajador`),
-	CONSTRAINT `producto_trabajdor_ibfk_1` FOREIGN KEY (`idTrabajador`) REFERENCES `trabajador` (`idTrabajador`),
-	CONSTRAINT `producto_trabajador_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`idProducto`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+-- 	PRIMARY KEY (`idTrabajador`,`idProducto`),
+-- 	KEY `idProducto` (`idProducto`),
+-- 	KEY `idTrabajador` (`idTrabajador`),
+-- 	CONSTRAINT `producto_trabajdor_ibfk_1` FOREIGN KEY (`idTrabajador`) REFERENCES `trabajador` (`idTrabajador`),
+-- 	CONSTRAINT `producto_trabajador_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`idProducto`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
-DELETE FROM `producto_trabajador`;
+-- DELETE FROM `producto_trabajador`;
 
--- ---- TABLA DE CLIENTES ----
 
-CREATE TABLE IF NOT EXISTS `cliente`(
-	`ID` int(11) NOT NULL AUTO_INCREMENT,
-	`cuenta` int(21) NOT NULL,
-	`contrasenia` varchar(20) DEFAULT NULL,
-	`telefono` int (8) NOT NULL,
-	`correo` tinytext, 
-
-	PRIMARY KEY (`ID`)
-	KEY `cuenta` (`cuenta`),
-	CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`cuenta`) REFERENCES `cuenta` (`ID`)
-	
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
-DELETE FROM `cliente`;
-
-INSERT INTO `cliente` (`ID`,`telefono`,`correo`) VALUES 
-(1,50129093,'cliente1@hotmail.com'),
-(2,50210939,'cliente2@hotmail.com');
 
 -- ---- TABLA DE VENTAS ----
 
@@ -156,23 +179,23 @@ CREATE TABLE IF NOT EXISTS `venta`(
 DELETE FROM `venta`;
 
 INSERT INTO `venta` (`idVenta`,`fechaDeExpedicion`,`precioTotal`,`idCliente`,`idTrabajador`) VALUES 
-(121,'2019-04-19 10:34:09.000'  ,122.22, 1, 30),
+(121,'2019-04-19 10:34:09.000'  ,122.22, 2, 30),
 (122,'2019-04-19 10:34:09.000'  ,124.24, 2, 31);
 
 -- ---- TABLA DE PRODUCTOS Y VENTAS ----
-CREATE TABLE IF NOT EXISTS `producto_venta`(
-	`idProducto` int(11) NOT NULL AUTO_INCREMENT, 
-	`idVenta` int(11) NOT NULL,
-	`costoTotal` float(9,2) DEFAULT NULL,
-	`precioVenta` float(9,2) DEFAULT NULL,
-	`cantidad` float(9,2) DEFAULT NULL,
+-- CREATE TABLE IF NOT EXISTS `producto_venta`(
+-- 	`idProducto` int(11) NOT NULL AUTO_INCREMENT, 
+-- 	`idVenta` int(11) NOT NULL,
+-- 	`costoTotal` float(9,2) DEFAULT NULL,
+-- 	`precioVenta` float(9,2) DEFAULT NULL,
+-- 	`cantidad` float(9,2) DEFAULT NULL,
 	
-	PRIMARY KEY (`idVenta`,`idProducto`),
-	KEY `idProducto` (`idProducto`),
-	KEY `idVenta` (`idVenta`),
-	CONSTRAINT `producto_venta_ibfk_1` FOREIGN KEY (`idVenta`) REFERENCES `venta` (`idVenta`),
-	CONSTRAINT `prodcuto_venta_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`idProducto`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+-- 	PRIMARY KEY (`idVenta`,`idProducto`),
+-- 	KEY `idProducto` (`idProducto`),
+-- 	KEY `idVenta` (`idVenta`),
+-- 	CONSTRAINT `producto_venta_ibfk_1` FOREIGN KEY (`idVenta`) REFERENCES `venta` (`idVenta`),
+-- 	CONSTRAINT `prodcuto_venta_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`idProducto`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 DELETE FROM `trabajador_proyecto`;
 
