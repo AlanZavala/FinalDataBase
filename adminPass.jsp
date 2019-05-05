@@ -219,7 +219,7 @@
                 </div>
             </form>
  
-            <form action="./ShowWorkers" method="post">
+            <form action="./ShowClients" method="post">
                     <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                         <h5 class="card-header card-title">Ver clientes</h5>
                         <div class="card-body">
