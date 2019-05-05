@@ -10,12 +10,12 @@ import java.util.Date;
 import javax.servlet.annotation.WebServlet;
 import java.util.Vector;
 
-@WebServlet("/RecenVentas")
+@WebServlet("/RecentVentas")
 public class RecentVentas extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
-            // PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+            PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
             // PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
             // PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 
@@ -36,6 +36,8 @@ public class RecentVentas extends HttpServlet{
             String name=request.getParameter("name");
 			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
             int window=Integer.parseInt(request.getParameter("pestana"));
+
+            
             
             String sql = "SELECT * from venta where idCliente = " + cuenta + ";";
             ResultSet res = stat.executeQuery(sql);
@@ -73,10 +75,10 @@ public class RecentVentas extends HttpServlet{
 		}
 		catch(Exception e){
 			try{
-                //PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+                PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
                 e.printStackTrace();
-                //writer4.println(e);
-                //writer4.close();
+                writer4.println(e);
+                writer4.close();
             }
             catch(Exception e2){
                 try{
