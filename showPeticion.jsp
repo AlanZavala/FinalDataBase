@@ -17,6 +17,7 @@
             text-align: center;
         }
     </style>
+    
     <body>
 
         <br> <br>
@@ -38,7 +39,7 @@
                 <th>ID</th>
                 <!-- <th>ID cliente</th> -->
                 <th>Nombre del proyecto</th>
-                <th>Fecha tentativa</th>
+                
                 <th>Descripción</th>
                 <th>Cantidad</th>
                 <th>Teléfono</th>
@@ -66,10 +67,7 @@
                             <c:out value="${pet.nombreProyecto}" />
                             <br />
                         </td>
-                        <td>
-                            <c:out value="${pet.fechaTentiva}" />
-                            <br />
-                        </td>
+                        
                         <td>
                             <c:out value="${pet.descripcion}" />
                             <br />

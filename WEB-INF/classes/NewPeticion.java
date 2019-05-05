@@ -91,11 +91,21 @@ public class NewPeticion extends HttpServlet{
             con.close();
             
             request.setAttribute("peticiones",peticiones);
+            
 
             request.setAttribute("response", name);
             request.setAttribute("response2", cuenta);
             request.setAttribute("response3", window);
-            RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showPeticion2.jsp");
+
+            // request.setAttribute("response5", id);
+            // request.setAttribute("response6", idCliente);
+            // request.setAttribute("response7", nombreProyecto);
+            // request.setAttribute("response8", fechaTentativa);
+            // request.setAttribute("response9", descripcion);
+            // request.setAttribute("response10", cantidad);
+            // request.setAttribute("response11", telefono);
+
+            RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showPeticion.jsp");
 
             if(disp!=null){
                 disp.forward(request,response);

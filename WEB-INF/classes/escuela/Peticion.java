@@ -40,7 +40,7 @@ public class Peticion{
         return id; 
     }
 
-    public void setCliente(int idCliente){
+    public void setCliente(int idClient){
         this.idClient = idClient; 
     }
     public int getCliente(){

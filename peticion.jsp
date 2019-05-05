@@ -14,6 +14,11 @@
 
         <title>Peticion</title>
     </head>
+    <style>
+        #nombre, #cuenta, #pestana, #name{
+                display: none;
+        }
+    </style>
     
     <body>
 <!--         

@@ -88,7 +88,7 @@ public class Login extends HttpServlet{
                 while(res2.next()){
                     
                     if(res2.getInt("cuenta")==username && res2.getString("contrasenia").equals(password)){
-                        nombre="neutro";
+                        nombre=res2.getString("cuenta");
 
                         checkLog=true;
                         break;
