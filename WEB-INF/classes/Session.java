@@ -4,6 +4,8 @@ import javax.servlet.http.*;
 import java.sql.*;
 import escuela.Producto;
 import escuela.Proyecto;
+import escuela.Cliente;
+import escuela.Trabajador;
 
 import java.util.Vector;
 
