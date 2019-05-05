@@ -64,17 +64,24 @@
                     <span class="user_label">Descripcion</span>
                 </div>
 
-                <div class="section d-flex flex-column">
+                <!--<div class="section d-flex flex-column">
                     <input type="text" id="cliente" name="cliente" class="input" required>            
                     <span class="user_label">idCliente</span> 
-                </div>
+                </div>-->
+                <!--<select name= "asign" id="asign">
+                    <option>Seleccionar id de cliente</option>
+                    <c:forEach items="${requestScope.clientes}" var="cliente">
+                        <option value="${cliente.id}"><c:out value="${cliente.nombre}"/>-<c:out value="${cliente.id}"/></option>
+                    </c:forEach>
+                </select>-->
+
                 <div class="section d-flex flex-column">
                     <input type="text" id="cantidad" name="cantidad" class="input" required>            
                     <span class="user_label">Cantidad</span> 
                 </div>
                 <div class="section d-flex flex-column">
                     <input type="text" id="idTrabajador" name="idTrabajador" class="input" required>            
-                    <span class="user_label">idTrabajador que atendio</span>
+                    <span class="user_label">idTrabajador que atendio</span> 
                 </div>
 
                 <div class="section d-flex flex-column">
