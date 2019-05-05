@@ -40,14 +40,20 @@ public class RecentVentas extends HttpServlet{
             String sql= "SELECT ID from cliente where cuenta = " + cuenta + ";";
             ResultSet res2 = stat.executeQuery(sql);
 
-            int idCl= res2.getInt("ID");
+
+            Vector<Integer> idClientes = new Vector<Integer>();
+
+            while(res2.next()){
+                idClientes.add(res2.getInt("ID"));
+                //writer3.println(res2.getInt("idProyecto"));
+            }
+
+
+
 
 
             
-
-
-            
-            String sql2 = "SELECT * from venta where idCliente = " + idCl + ";";
+            String sql2 = "SELECT * from venta";
             ResultSet res = stat.executeQuery(sql2);
             // stat.executeUpdate(sql);
 
@@ -57,15 +63,17 @@ public class RecentVentas extends HttpServlet{
             Vector<Venta> ventasRec = new Vector<Venta>();
 
             while(res.next()){
-                Venta aux = new Venta();
-                // aux.setId(res.getInt("idProducto"));
-                // productos.add(aux);
-                aux.setId(res.getInt("idVenta"));
-                aux.setFecha(res.getString("fechaDeExpedicion"));
-                aux.setPrecio(res.getFloat("precioTotal"));
-                aux.setCliente(res.getInt("idCliente"));
-                aux.setTrabajador(res.getInt("idTrabajador")); 
-                ventasRec.add(aux);               
+                if(idClientes.contains(res.getInt("idCliente"))){
+                    Venta aux = new Venta();
+                    // aux.setId(res.getInt("idProducto"));
+                    // productos.add(aux);
+                    aux.setId(res.getInt("idVenta"));
+                    aux.setFecha(res.getString("fechaDeExpedicion"));
+                    aux.setPrecio(res.getFloat("precioTotal"));
+                    aux.setCliente(res.getInt("idCliente"));
+                    aux.setTrabajador(res.getInt("idTrabajador")); 
+                    ventasRec.add(aux);  
+                }             
             }
             
             stat.close();

@@ -36,19 +36,14 @@
 
         <table border="1" id="main_t">
             <tr class="visible">
-                <th>ID</th>
-                <th>Fecha de expedición</th>
-                <th>Precio total</th>
-                <th>ID cliente</th>
-                <th>ID cliente</th>                
+                <th>Folio de tus compras anteriores</th>
+                            
             </tr>
 
             <tr class="invisible">
                 <th></th>
                 <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+                
             </tr>
 
 
@@ -58,22 +53,9 @@
                             <c:out value="${rec.id}" />
                             <br />
                         </td>
-                        <td >
-                            <c:out value="${rec.fechaExpedicion}" />
-                            <br />
-                        </td>
-                        <td>
-                            <c:out value="${rec.precioTotal}" />
-                            <br />
-                        </td>
-                        <td>
-                            <c:out value="${rec.idCliente}" />
-                            <br />
-                        </td>
-                        <td>
-                            <c:out value="${rec.idTrabajador}" />
-                            <br />
-                        </td>                        
+                        
+                        
+                                             
                     </tr>
             </c:forEach>
         </table>
