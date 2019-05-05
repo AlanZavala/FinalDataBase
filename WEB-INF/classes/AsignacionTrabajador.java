@@ -80,20 +80,6 @@ public class AsignacionTrabajador extends HttpServlet{
                 stat.executeUpdate(sql);
             }
 
-
-            /*Vector<Integer> ids_workers = new Vector<Integer>();
-
-            while(res.next()){
-                Trabajador aux = new Trabajador();
-                aux.setId(res.getInt("idTrabajador"));
-                aux.setNombre(res.getString("nombre"));
-                if (!ids_workers.contains(aux.getId())) {
-                    ids_workers.add(aux.getId());
-                }
-            }
-
-            request.setAttribute("ids_nombres", ids_workers);*/
-
             //String sql2 = "INSERT INTO cuenta VALUES ("+ username+" ,'" +password+ "');";
           
             //writer2.close();
@@ -119,7 +105,7 @@ public class AsignacionTrabajador extends HttpServlet{
             
             stat.close();
             con.close();
-            
+
             request.setAttribute("proyectos", proyectos);
             request.setAttribute("response", nombre);
             request.setAttribute("response2", cuenta);

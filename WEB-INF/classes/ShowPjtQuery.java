@@ -4,6 +4,7 @@ import javax.servlet.http.*;
 import java.sql.*;
 import escuela.Producto;
 import escuela.Proyecto;
+import escuela.Trabajador;
 
 import java.util.Vector;
 
@@ -67,8 +68,26 @@ public class ShowPjtQuery extends HttpServlet{
           
             //writer3.close();
 
+            String verifySql="Select * from trabajador";
+
+            ResultSet res2 = stat.executeQuery(verifySql);
+
+            Vector<Trabajador> ids_workers = new Vector<Trabajador>();
+
+            while(res2.next()){
+                Trabajador aux2 = new Trabajador();
+                aux2.setId(res2.getInt("idTrabajador"));
+                aux2.setNombre(res2.getString("nombre"));
+                ids_workers.add(aux2);
+                /*if (!ids_workers.contains(aux2.getNombre())) {
+                    ids_workers.add(aux2);
+                }*/
+            }
+
 			stat.close();
             con.close();
+
+            request.setAttribute("ids_nombres", ids_workers);
 
 			request.setAttribute("proyectos", proyectos);
 			request.setAttribute("response", name);

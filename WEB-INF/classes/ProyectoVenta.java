@@ -13,12 +13,12 @@ public class ProyectoVenta extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
-            PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-            PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto2.txt", "UTF-8");
-            PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto3.txt", "UTF-8");
+            // PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+            // PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto2.txt", "UTF-8");
+            // PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto3.txt", "UTF-8");
 
-            writer.println("The first lines");
-            writer.println("The second line");
+            // writer.println("The first lines");
+            // writer.println("The second line");
 
             String base = getServletContext().getInitParameter("base");
             String usuario = getServletContext().getInitParameter("usuario");
@@ -27,7 +27,7 @@ public class ProyectoVenta extends HttpServlet{
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url,usuario,pass);
-            writer.close();
+            //writer.close();
 
     
             Statement stat = con.createStatement();
@@ -38,9 +38,9 @@ public class ProyectoVenta extends HttpServlet{
 
             int window= Integer.parseInt(request.getParameter("pestana"));
 
-            writer2.println(cuenta);
-            writer2.println(name);
-            writer2.println(window);
+            //writer2.println(cuenta);
+            //writer2.println(name);
+            //writer2.println(window);
 
             int id= Integer.parseInt(request.getParameter("id"));
             String nombre = request.getParameter("nombres");           
@@ -62,7 +62,7 @@ public class ProyectoVenta extends HttpServlet{
             String sql = "INSERT INTO proyecto values("+id+",'"+nombre+"','" + fechaInicio + "', '"  + fechaFin + "', " + duracion + ", '"  + descripcion + "',"+idCliente+","+cantidad+","+precioTotal+");";
                 
             stat.executeUpdate(sql);
-            writer2.println(sql);
+            //writer2.println(sql);
             String sql2=  "INSERT INTO venta VALUES( "+idVenta+", '" + fechaInicio + "', " + precioTotal + ", " + idCliente + ", "  + idTrabajador + ");";
             System.out.println("se agrego el nuevo proyecto");
             stat.executeUpdate(sql2);
@@ -70,8 +70,8 @@ public class ProyectoVenta extends HttpServlet{
 
             String sql3 = "SELECT * FROM proyecto where idProyecto="+id+";";
 
-            writer2.println(sql2);
-            writer2.close();
+            //writer2.println(sql2);
+            //writer2.close();
 
 
             ResultSet res = stat.executeQuery(sql3);
@@ -107,10 +107,10 @@ public class ProyectoVenta extends HttpServlet{
 		}
 		catch(Exception e){
 			try{
-                PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
+                //PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
                 e.printStackTrace();
-                writer4.println(e);
-                writer4.close();
+                //writer4.println(e);
+                //writer4.close();
             }
             catch(Exception e2){
                 try{

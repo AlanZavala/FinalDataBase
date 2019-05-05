@@ -115,21 +115,24 @@
                         </td>
                         <td>
                             <form action ="./AsignarTrabajador" method="post">
-                                <!--<select>
+                                <select name= "asign" id="asign">
                                     <option>Seleccionar tarabajador</option>
                                     <c:forEach items="${requestScope.ids_nombres}" var="id_nombre">
-                                        <option value="${id_nombre}"><c:out value="${id_nombre}"/></option>
+                                        <option value="${id_nombre.id}"><c:out value="${id_nombre.nombre}"/>-<c:out value="${id_nombre.id}"/></option>
                                     </c:forEach>
-                                    <input type="text" id="test4" name="test4" class="input" value="${proyecto.id}"> 
+                                </select>
+                                    <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+                                    <input type="text" id="pestana" name="pestana" class="input" value="1"> 
+                                    <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+                                    <input type="text" id="test4" name="test4" class="input" value="${proyecto.id}">
                                     <input class="proyecto_buton btn btn-success" type="submit"  value="Asignar" id="boton_pro2">
-                                </select>-->
                                 <!--<input type="text" id="asign" name="asign" class="input" >-->  
-                                <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+                                <!--<input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                                 <input type="text" id="pestana" name="pestana" class="input" value="1"> 
                                 <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                                 <input type="text" id="test4" name="test4" class="input" value="${proyecto.id}"> 
                                 <input type="text" id="asign" name="asign" class="input" >
-                                <input class="proyecto_buton btn btn-success" type="submit"  value="Asignar" id="boton_pro2">
+                                <input class="proyecto_buton btn btn-success" type="submit"  value="Asignar" id="boton_pro2">-->
 
                             </form> 
 
