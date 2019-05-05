@@ -169,17 +169,30 @@
             </form>
 
             <form action="./ShowProducts" method="post">
-                    <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                        <h5 class="card-header card-title">Ver diseños</h5>
-                        <div class="card-body">
-                                <p class="card-text">Observa todos los diseños que están en la tienda y la descripcion de cada uno.</p>
-                                <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
-                                <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
-                                <input type="text" id="pestana" name="pestana" class="input" value="2">  
-                            <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
-                        </div>
+                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
+                    <h5 class="card-header card-title">Ver diseños</h5>
+                    <div class="card-body">
+                            <p class="card-text">Observa todos los diseños que están en la tienda y la descripcion de cada uno.</p>
+                            <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
+                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
+                            <input type="text" id="pestana" name="pestana" class="input" value="2">  
+                        <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
                     </div>
-                </form>
+                </div>
+            </form>
+
+            <form action="./ShowPeticion" method="post">
+                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
+                    <h5 class="card-header card-title">Ver peticiones</h5>
+                    <div class="card-body">
+                            <p class="card-text">Observa todos las peticiones de proyectos que los clientes han realizado.</p>
+                            <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
+                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
+                            <input type="text" id="pestana" name="pestana" class="input" value="2">  
+                        <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
+                    </div>
+                </div>
+            </form>
 
         </section>
             

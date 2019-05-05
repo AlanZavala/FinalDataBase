@@ -16,6 +16,9 @@
         td{
             text-align: center;
         }
+        h4{
+            text-align: center;
+        }
     </style>
     
     <body>
@@ -32,7 +35,7 @@
         </form>  
         <br>
 
-        <h4 class="text-center mt-2 font-weight-bold">Nueva petición</h4>
+        <h4 class="text-center mt-2 font-weight-bold">Petición</h4>
 
         <table border="1" id="main_t">
             <tr class="visible">
