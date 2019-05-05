@@ -50,6 +50,7 @@ public class Login extends HttpServlet{
             Statement stat = con.createStatement();
 
             String sql ="select * from trabajador;";
+
             // String sql = "SELECT EXISTS(select * FROM trabajador where cuenta="+username+" and contrasenia='"+password+"');";
             
             ResultSet res = stat.executeQuery(sql);
@@ -76,6 +77,25 @@ public class Login extends HttpServlet{
                 }
 
             }
+
+
+            String sql2= "select * from cliente;";
+
+            ResultSet res2 = stat.executeQuery(sql2);
+
+            if(verifyRoll.charAt(0)=='3'){
+                
+                while(res2.next()){
+                    
+                    if(res2.getInt("cuenta")==username && res2.getString("contrasenia").equals(password)){
+                        nombre="neutro";
+
+                        checkLog=true;
+                        break;
+                    }
+
+                }
+            }
             // writer3.println(nombre);
             // writer3.println(nombre+"estoy aqui");
             // writer3.close();
@@ -83,6 +103,7 @@ public class Login extends HttpServlet{
 
             stat.close();
             con.close();
+
 
 
             
