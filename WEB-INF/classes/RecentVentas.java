@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import java.util.Vector;
 
 @WebServlet("/RecenVentas")
-public class RecenVentas extends HttpServlet{
+public class RecentVentas extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{

@@ -78,9 +78,9 @@ public class BorrarProyecto extends HttpServlet{
             con.close();
 
             request.setAttribute("proyectos", proyectos);
-            /*request.setAttribute("response", nombre);
+            request.setAttribute("response", nombre);
             request.setAttribute("response2", cuenta);
-            request.setAttribute("response3", window);*/
+            request.setAttribute("response3", window);
 
             RequestDispatcher disp = getServletContext().getRequestDispatcher("/showProjects.jsp");
 
