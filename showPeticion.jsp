@@ -36,7 +36,7 @@
         <table border="1" id="main_t">
             <tr class="visible">
                 <th>ID</th>
-                <th>ID cliente</th>
+                <!-- <th>ID cliente</th> -->
                 <th>Nombre del proyecto</th>
                 <th>Fecha tentativa</th>
                 <th>Descripción</th>
@@ -46,7 +46,7 @@
 
             <tr class="invisible">
                 <th></th>
-                <th></th>
+                <!-- <th></th> -->
                 <th></th>
                 <th></th>
                 <th></th>
@@ -61,10 +61,7 @@
                             <c:out value="${pet.id}" />
                             <br />
                         </td>
-                        <td >
-                            <c:out value="${pet.idClient}" />
-                            <br />
-                        </td>
+                        
                         <td>
                             <c:out value="${pet.nombreProyecto}" />
                             <br />

@@ -11,11 +11,16 @@
         <link href="css/show2.css" rel="stylesheet"> 
         <title>Proyectos</title>
     </head>
+    <style>
+        #nombre, #cuenta, #pestana, #name{
+                display: none;
+        }
+    </style>
     <body>
 
-        <a href="pass.jsp">
+        <!-- <a href="pass.jsp">
             <i class="fas fa-arrow-circle-left"></i>
-        </a>
+        </a> -->
 
         <h4 class="text-center mt-2 font-weight-bold">Proyecto Registrado</h4>
 
@@ -90,6 +95,13 @@
         <br>
         <br>
         <br>
-        <a href="./adminPass.jsp">Menu</a>
+        <form action ="./Session" method= "post">
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
+            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+
+            <input class="proyecto_buton btn btn-success ml-5 mt-3" type="submit"  value="Menu" id="boton_pro">
+        </form>  
+        <!-- <a href="./adminPass.jsp">Menu</a> -->
     </body>
 </html>

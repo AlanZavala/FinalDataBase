@@ -116,7 +116,7 @@
                         <p class="card-text">Realiza una nueva compra o encarga un nuevo proyecto</p>                        
                         <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                         <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
-                        <input type="text" id="pestana" name="pestana" class="input" value="2">  
+                        <input type="text" id="pestana" name="pestana" class="input" value="9">  
                         <input class="proyecto_buton btn btn-success" type="submit"  value="Nuevo">
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                         <!-- <a href="RegistroProducto.jsp"> -->
                             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
-                            <input type="text" id="pestana" name="pestana" class="input" value="5"> 
+                            <input type="text" id="pestana" name="pestana" class="input" value="9"> 
                             <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
                         <!-- </a> -->
                         

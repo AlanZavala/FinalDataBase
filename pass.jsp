@@ -110,7 +110,7 @@
       
         <section class="row justify-content-center align-items-center mx-0">
             
-            <section class="mt-0">                  
+            <!-- <section class="mt-0">                  
                 <div class="card text-white bg-secondary my-0 mr-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Hacer una nueva venta</h5>
                     <div class="card-body">
@@ -120,7 +120,23 @@
                         </a>                        
                     </div>
                 </div>                                        
-            </section>
+            </section> -->
+
+            <form action="./Session" method="post">
+                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
+                    <h5 class="card-header card-title">Proyecto/Venta</h5>
+                    <div class="card-body">
+                        <p class="card-text"> Agrega un nuevo proyecto/venta a la tienda.</p>
+                        <!-- <a href="ProyectoVenta.jsp"> -->
+                            <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
+                            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+                            <input type="text" id="pestana" name="pestana" class="input" value="8">
+                        <!-- </a> -->
+                        
+                    </div>
+                </div>
+            </form>
 
             <form action="./ShowToWorkers" method="post">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">

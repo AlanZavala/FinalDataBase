@@ -13,14 +13,14 @@ public class Peticion{
 
     }
 
-    public Peticion(int idClient, String nombreProyecto, String fechaTentiva, String descripcion, int cantidad,
-            String telefono){        
-        this.nombreProyecto = nombreProyecto; 
-        this.fechaTentiva = fechaTentiva; 
-        this.descripcion = descripcion;
-        this.cantidad = cantidad;
-        this.telefono = telefono;
-    }
+    // public Peticion(int idClient, String nombreProyecto, String fechaTentiva, String descripcion, int cantidad,
+    //         String telefono){        
+    //     this.nombreProyecto = nombreProyecto; 
+    //     this.fechaTentiva = fechaTentiva; 
+    //     this.descripcion = descripcion;
+    //     this.cantidad = cantidad;
+    //     this.telefono = telefono;
+    // }
 
     public Peticion(int id, int idClient, String nombreProyecto, String fechaTentiva, String descripcion, int cantidad,
             String telefono){
@@ -33,50 +33,50 @@ public class Peticion{
         this.telefono = telefono;
     }
 
-    public void setId(int a){
-        this.id = a; 
+    public void setId(int id){
+        this.id = id; 
     }
     public int getId(){
         return id; 
     }
 
-    public void setCliente(int a){
-        this.idClient = a; 
+    public void setCliente(int idCliente){
+        this.idClient = idClient; 
     }
     public int getCliente(){
         return idClient;
     }
 
-    public void setNombreProyecto(String a){
-        this.nombreProyecto = a; 
+    public void setNombreProyecto(String nombreProyecto){
+        this.nombreProyecto = nombreProyecto; 
     }
     public String getNombreProyecto(){
         return nombreProyecto;
     }
 
-    public void setFecha(String a){
-        this.fechaTentiva = a; 
+    public void setFecha(String fechaTentiva){
+        this.fechaTentiva = fechaTentiva; 
     }
     public String getFecha(){
         return fechaTentiva;
     }
 
-    public void setDescripcion(String a){
-        this.descripcion = a; 
+    public void setDescripcion(String descripcion){
+        this.descripcion = descripcion; 
     }
     public String getDescripcion(){
         return descripcion;
     }
 
-    public void setCantidad(int a){
-        this.cantidad = a; 
+    public void setCantidad(int cantidad){
+        this.cantidad = cantidad; 
     }
     public int getCantidad(){
         return cantidad;
     }
 
-    public void setTelefono(String a){
-        this.telefono = a; 
+    public void setTelefono(String telefono){
+        this.telefono = telefono; 
     }
     public String getTelefono(){
         return telefono;

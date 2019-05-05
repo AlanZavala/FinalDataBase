@@ -87,6 +87,20 @@ public class Session extends HttpServlet{
 				request.setAttribute("response3", window);
 				disp = getServletContext().getRequestDispatcher("/ProyectoVenta.jsp");
 			}
+			else if(window==8){
+				window=2;
+				request.setAttribute("response3", window);
+				disp = getServletContext().getRequestDispatcher("/ProyectoVenta.jsp");
+			}
+			else if(window==9){
+				window=10;
+				request.setAttribute("response3", window);
+				disp = getServletContext().getRequestDispatcher("/peticion.jsp");
+			}
+			else if(window==10){
+				disp = getServletContext().getRequestDispatcher("/clientPass.jsp");
+
+			}
 
 			if(disp!=null){
 				disp.forward(request, response);

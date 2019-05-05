@@ -13,7 +13,7 @@ public class NewPeticion extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
-            // PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+            PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
             // PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
             // PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 
@@ -45,8 +45,12 @@ public class NewPeticion extends HttpServlet{
 
 
 
-            String sql = "INSERT INTO peticion values(" + id + ", " + idCliente + ", " + nombreProyecto + ", " + fechaTentativa + ", " + descripcion + ", " + cantidad + ", " + telefono + ");";
-            ResultSet res = stat.executeQuery(sql);
+            String sql = "INSERT INTO peticion values(" + id + ", " + idCliente + ", '" + nombreProyecto + "','" + fechaTentativa + "', '" + descripcion + "', " + cantidad + ", '"+ telefono + "');";
+            stat.executeUpdate(sql);
+
+            String sql2="Select * from peticion where idPeticion="+id+";";
+
+            ResultSet res = stat.executeQuery(sql2);
             // stat.executeUpdate(sql);
 
               
@@ -65,22 +69,33 @@ public class NewPeticion extends HttpServlet{
                 // aux.setId(res.getInt("idProducto"));
                 // productos.add(aux);
                 aux.setId(res.getInt("idPeticion"));
+                writer.println(aux.getId());
                 aux.setCliente(res.getInt("idCliente"));
+                writer.println(aux.getCliente());
                 aux.setNombreProyecto(res.getString("nombreProyecto"));
+                writer.println(aux.getNombreProyecto());
                 aux.setFecha(res.getString("fechaTentativa"));
+                writer.println(aux.getFecha());
                 aux.setDescripcion(res.getString("descripcion"));
+                writer.println(aux.getDescripcion());
                 aux.setCantidad(res.getInt("cantidad"));
+                writer.println(aux.getCantidad());
                 aux.setTelefono(res.getString("telefono"));
+                writer.println(aux.getTelefono());
+
+                peticiones.add(aux);
             }
+            writer.close();
             
             stat.close();
             con.close();
             
             request.setAttribute("peticiones",peticiones);
+
             request.setAttribute("response", name);
             request.setAttribute("response2", cuenta);
             request.setAttribute("response3", window);
-            RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showPeticion.jsp");
+            RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showPeticion2.jsp");
 
             if(disp!=null){
                 disp.forward(request,response);
@@ -88,10 +103,10 @@ public class NewPeticion extends HttpServlet{
 		}
 		catch(Exception e){
 			try{
-                //PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+                PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
                 e.printStackTrace();
-                //writer4.println(e);
-                //writer4.close();
+                writer4.println(e);
+                writer4.close();
             }
             catch(Exception e2){
                 try{

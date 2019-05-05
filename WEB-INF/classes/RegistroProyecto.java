@@ -30,6 +30,10 @@ public class RegistroProyecto extends HttpServlet{
     
             Statement stat = con.createStatement();
 
+            String nombres=request.getParameter("nombre");
+            int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+            int window=Integer.parseInt(request.getParameter("pestana"));
+
             
 
             int id= Integer.parseInt(request.getParameter("id"));
@@ -81,6 +85,9 @@ public class RegistroProyecto extends HttpServlet{
             con.close();
             
             request.setAttribute("proyectos", proyectos);
+            request.setAttribute("response", nombres);
+            request.setAttribute("response2", cuenta);
+            request.setAttribute("response3", window);
             RequestDispatcher disp =  getServletContext().getRequestDispatcher("/proyectoRegistrado.jsp");
 
             if(disp!=null){
