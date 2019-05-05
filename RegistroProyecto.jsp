@@ -19,7 +19,7 @@
 
         <form action="./RegistroProyecto" method="post" class="mt-5">
 
-            <img src="img/product.jpg" alt="">
+            <img src="img/product.jpg" alt=""> 
 
             <input type="text" id="id" name="id" class="input" required>            
             <span class="user_label">IDProyecto</span>

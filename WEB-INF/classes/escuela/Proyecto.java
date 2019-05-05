@@ -4,7 +4,7 @@ public class Proyecto{
     private String nombre;
     private String fechaInicio;
     private String fechaFin;
-    private int duracion;
+    private int duracion; 
     private String descripcion;
     private int cuenta;
     private int cantidad;
