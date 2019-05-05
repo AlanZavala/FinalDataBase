@@ -1,4 +1,3 @@
-
 package escuela;
 
 public class Peticion{
@@ -8,7 +7,7 @@ public class Peticion{
     private String fechaTentiva; 
     private String descripcion; 
     private int cantidad;
-    private int String;
+    private String telefono;
 
     public Peticion(){
 
