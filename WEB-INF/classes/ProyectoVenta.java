@@ -5,12 +5,14 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.Date;
 import escuela.Proyecto;
+import escuela.Cliente;
 import escuela.Venta;
+import escuela.Trabajador;
 import javax.servlet.annotation.WebServlet;
 import java.util.Vector;
 @WebServlet("/proyectoVenta")
 public class ProyectoVenta extends HttpServlet{
-	public void doPost(HttpServletRequest request, HttpServletResponse response){ 
+	public void doPost(HttpServletRequest request, HttpServletResponse response){  
 
 		try{
             // PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
@@ -91,9 +93,40 @@ public class ProyectoVenta extends HttpServlet{
                 aux.setPrecioTotal(res.getFloat("precioTotal"));
                 proyectos.add(aux);
             }
-            
+
+            String sql4 = "select * from cliente;";
+            stat.executeUpdate(sql4);
+            ResultSet res2 = stat.executeQuery(sql4);
+
+            Vector<Cliente> clientes = new Vector<Cliente>();
+
+            while(res2.next()){
+                Cliente aux2 = new Cliente();
+                aux2.setId(res2.getInt("ID"));
+                aux2.setCuenta(res2.getInt("cuenta"));
+                aux2.setCorreo(res2.getString("correo"));
+                clientes.add(aux2);
+            }
+
+            String sql5 = "select * from trabajador;";
+            stat.executeUpdate(sql5);
+            ResultSet res3 = stat.executeQuery(sql5);
+
+            Vector<Trabajador> trabajadores = new Vector<Trabajador>();
+
+            while(res3.next()){
+                Trabajador aux3 = new Trabajador();
+                aux3.setId(res3.getInt("idTrabajador"));
+                aux3.setNombre(res3.getString("nombre"));
+                trabajadores.add(aux3);
+            }
+
+
             stat.close();
             con.close();
+
+            request.setAttribute("clientes", clientes);
+            request.setAttribute("trabajadores", trabajadores);
             
             request.setAttribute("proyectos", proyectos);
             request.setAttribute("response", name);
