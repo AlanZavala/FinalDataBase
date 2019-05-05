@@ -38,6 +38,7 @@ public class RegistroCliente extends HttpServlet{
 
 
             int id = Integer.parseInt(request.getParameter("id"));
+            
             int cuenta = Integer.parseInt(request.getParameter("cuentaCliente"));
             String contrasenia = request.getParameter("contrasenia");
             String correo = request.getParameter("correo");

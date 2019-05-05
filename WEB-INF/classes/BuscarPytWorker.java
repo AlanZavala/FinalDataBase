@@ -67,6 +67,9 @@ public class BuscarPytWorker extends HttpServlet{
                 aux.setFechaFin(res.getString("fechaDeTermino"));
                 aux.setDuracion(res.getInt("duracion"));
                 aux.setDescripcion(res.getString("descripcion")); 
+                aux.setCuenta(res.getInt("idCliente"));
+                aux.setCantidad(res.getInt("cantidad"));
+                aux.setPrecioTotal(res.getFloat("precioTotal"));
                 proyectos.add(aux);
             }
             

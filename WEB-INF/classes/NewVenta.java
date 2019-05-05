@@ -38,14 +38,14 @@ public class NewVenta extends HttpServlet{
 			Float precio = Float.parseFloat(request.getParameter("precio"));
 			int userTrabajador =Integer.parseInt(request.getParameter("user_trabajador"));
 
-			Cliente newCliente = new Cliente(cliente, telefono, correo);
+			// Cliente newCliente = new Cliente(cliente, telefono, correo);
 			Venta venta = new Venta(idVenta, fecha, precio, cliente, userTrabajador);
 
 			Statement stat = con.createStatement();
 			String sql = "INSERT INTO venta VALUES( "+idVenta+", '" + fecha + "', " + precio + ", " + cliente + ", "  + userTrabajador + ");";		
-			String sql2 = "INSERT INTO cliente VALUES(" + cliente + "," + telefono+ ",'" + correo +"');";
+			// String sql2 = "INSERT INTO cliente VALUES(" + cliente + "," + telefono+ ",'" + correo +"');";
 
-			stat.executeUpdate(sql2);
+			// stat.executeUpdate(sql2);
 
 			stat.executeUpdate(sql);
 

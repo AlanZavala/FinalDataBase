@@ -47,6 +47,9 @@ public class BuscarProyecto extends HttpServlet{
             else if(comboBChoice.equals("Nombre")){
                 sql= "SELECT * FROM proyecto where nombre='"+busqueda+"';";
             }
+            else if(comboBChoice.equals("idCliente")){
+                sql= "SELECT * FROM proyecto where nombre='"+busqueda+"';";
+            }
             
             else if(comboBChoice.equals("All")){
                 sql= "SELECT * FROM proyecto;";
@@ -69,6 +72,9 @@ public class BuscarProyecto extends HttpServlet{
                 aux.setFechaFin(res.getString("fechaDeTermino"));
                 aux.setDuracion(res.getInt("duracion"));
                 aux.setDescripcion(res.getString("descripcion")); 
+                aux.setCuenta(res.getInt("idCliente"));
+                aux.setCantidad(res.getInt("cantidad"));
+                aux.setPrecioTotal(res.getFloat("precioTotal"));
                 proyectos.add(aux);
             }
             

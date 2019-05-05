@@ -55,6 +55,9 @@
                 <th>Fecha de termino</th>
                 <th>Duracion</th>
                 <th>Descripcion</th> 
+                <th>idCliente</th> 
+                <th>Cantidad</th> 
+                <th>PrecioTotal</th> 
             </tr>
 
             <tr class="invisible">
@@ -90,6 +93,18 @@
                         </td>
                         <td>
                             <c:out value="${proyecto.descripcion}" />
+                            <br />
+                        </td>
+                        <td>
+                            <c:out value="${proyecto.cuenta}" />
+                            <br />
+                        </td>
+                        <td>
+                            <c:out value="${proyecto.cantidad}" />
+                            <br />
+                        </td>
+                        <td>
+                            <c:out value="${proyecto.precioTotal}" />
                             <br />
                         </td>
                         

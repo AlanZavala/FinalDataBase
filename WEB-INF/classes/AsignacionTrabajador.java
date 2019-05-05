@@ -111,6 +111,9 @@ public class AsignacionTrabajador extends HttpServlet{
                 aux.setFechaFin(res2.getString("fechaDeTermino"));
                 aux.setDuracion(res2.getInt("duracion"));
                 aux.setDescripcion(res2.getString("descripcion")); 
+                aux.setCuenta(res2.getInt("idCliente"));
+                aux.setCantidad(res2.getInt("cantidad"));
+                aux.setPrecioTotal(res2.getFloat("precioTotal"));
                 proyectos.add(aux);
             }
             

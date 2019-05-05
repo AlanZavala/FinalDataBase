@@ -79,7 +79,10 @@ public class VerProyectos extends HttpServlet{
 		                aux.setFechaFin(res.getString("fechaDeTermino"));
 		                //writer3.println(res.getString("fechaDeTermino"));
 		                aux.setDuracion(res.getInt("duracion"));
-		                aux.setDescripcion(res.getString("descripcion")); 
+		                aux.setDescripcion(res.getString("descripcion"));
+		                aux.setCuenta(res.getInt("idCliente"));
+                		aux.setCantidad(res.getInt("cantidad"));
+                		aux.setPrecioTotal(res.getFloat("precioTotal")); 
 		                proyectos.add(aux);
 	            	}
             	
