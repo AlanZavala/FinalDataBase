@@ -14,6 +14,13 @@
         #pestana, #name, #cuenta, #nombre{
             display: none;
         }
+        td{
+            text-align: center;
+        }
+
+        table{
+            border-collapse: separate !important;
+        }
         
     </style>
     <body>
@@ -23,7 +30,7 @@
             <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
 
-            <input class="proyecto_buton btn btn-success" type="submit"  value="Menu" id="boton_pro">
+            <input class="proyecto_buton btn btn-success ml-5 mt-3" type="submit"  value="Menu" id="boton_pro">
         </form>  
 
         <h4 class="text-center mt-2 font-weight-bold">Diseño Registrado</h4>
