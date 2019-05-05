@@ -73,7 +73,7 @@
 
                 <div class="section d-flex flex-column">
                     <input type="text" id="telefono" name="telefono" class="input" required>            
-                    <span class="user_label">Teléfono</span> 
+                    <span class="user_label">Teléfono (Máximo 8 dígitos)</span> 
                 </div>                            
     
             </div>           

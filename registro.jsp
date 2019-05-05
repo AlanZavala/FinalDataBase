@@ -43,7 +43,7 @@
             <span class="user_label">Correo</span> 
 
             <input type="text" id="telefono" name="telefono" class="input" required>            
-            <span class="user_label">Teléfono</span>
+            <span class="user_label">Teléfono (Máximo 8 dígitos)</span>
 
             <input type="text" id="direccion" name="direccion" class="input" required>            
             <span class="user_label">Dirección</span>

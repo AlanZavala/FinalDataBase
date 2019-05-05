@@ -31,7 +31,7 @@
             <span class="user_label mt-3">Correo</span>
 
             <input type="text" id="telefono" name="telefono" class="input" required>            
-            <span class="user_label mt-3">Teléfono</span>
+            <span class="user_label mt-3">Teléfono (Máximo 8 dígitos)</span>
 
             <span class="user_label my-4">Productos</span>
 
