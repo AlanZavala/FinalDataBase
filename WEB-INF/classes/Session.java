@@ -100,6 +100,10 @@ public class Session extends HttpServlet{
 			else if(window==10){
 				disp = getServletContext().getRequestDispatcher("/clientPass.jsp");
 
+			} else if (window == 11) {
+				window=1;
+				request.setAttribute("response3", window);
+				disp = getServletContext().getRequestDispatcher("/showProjects.jsp");
 			}
 
 			if(disp!=null){

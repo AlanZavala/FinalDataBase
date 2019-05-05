@@ -10,7 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import java.util.Vector;
 @WebServlet("/proyectoVenta")
 public class ProyectoVenta extends HttpServlet{
-	public void doPost(HttpServletRequest request, HttpServletResponse response){
+	public void doPost(HttpServletRequest request, HttpServletResponse response){ 
 
 		try{
             // PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
