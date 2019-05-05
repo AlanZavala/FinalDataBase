@@ -100,9 +100,9 @@
                 </div> -->
                 <div class="section d-flex flex-column">
                     <c:forEach items="${requestScope.trabajadores}" var="trabaja">
-                        <input type="text" id="idTrabajador" name="idTrabajador" class="input" value="trabaja.id" required>            
+                        <input type="text" id="idTrabajador" name="idTrabajador" class="input" value="${trabaja.id}" required>            
                     </c:forEach>                    
-                    <span class="user_label">idTrabajador que atendio</span> 
+                    <span class="user_label">idTrabajador que atendió</span> 
                 </div>
 
 
