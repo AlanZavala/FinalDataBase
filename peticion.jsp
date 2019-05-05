@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="section d-flex flex-column">
-                    <input type="text" id="nombre" name="nombre" class="input" required>            
+                    <input type="text" name="nombre" class="input" required>            
                     <span class="user_label">Nombre del proyecto</span> 
                 </div>
 

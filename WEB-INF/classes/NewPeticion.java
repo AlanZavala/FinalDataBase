@@ -13,7 +13,7 @@ public class NewPeticion extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
-            PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+            //PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
             // PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
             // PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 
@@ -69,23 +69,23 @@ public class NewPeticion extends HttpServlet{
                 // aux.setId(res.getInt("idProducto"));
                 // productos.add(aux);
                 aux.setId(res.getInt("idPeticion"));
-                writer.println(aux.getId());
+                //writer.println(aux.getId());
                 aux.setCliente(res.getInt("idCliente"));
-                writer.println(aux.getCliente());
+                //writer.println(aux.getCliente());
                 aux.setNombreProyecto(res.getString("nombreProyecto"));
-                writer.println(aux.getNombreProyecto());
+                //writer.println(aux.getNombreProyecto());
                 aux.setFecha(res.getString("fechaTentativa"));
-                writer.println(aux.getFecha());
+                //writer.println(aux.getFecha());
                 aux.setDescripcion(res.getString("descripcion"));
-                writer.println(aux.getDescripcion());
+                //writer.println(aux.getDescripcion());
                 aux.setCantidad(res.getInt("cantidad"));
-                writer.println(aux.getCantidad());
+                //writer.println(aux.getCantidad());
                 aux.setTelefono(res.getString("telefono"));
-                writer.println(aux.getTelefono());
+                //writer.println(aux.getTelefono());
 
                 peticiones.add(aux);
             }
-            writer.close();
+            //writer.close();
             
             stat.close();
             con.close();
@@ -113,10 +113,10 @@ public class NewPeticion extends HttpServlet{
 		}
 		catch(Exception e){
 			try{
-                PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
+                //PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
                 e.printStackTrace();
-                writer4.println(e);
-                writer4.close();
+                //writer4.println(e);
+                //writer4.close();
             }
             catch(Exception e2){
                 try{
