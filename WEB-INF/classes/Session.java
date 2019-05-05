@@ -55,20 +55,18 @@ public class Session extends HttpServlet{
 				clientes.add(aux2);
 			}
 
-			String sql5 = "select * from trabajador;";			
+			String sql5 = "select * from trabajador where cuenta="+cuenta+";";			
 			ResultSet res3 = stat.executeQuery(sql5);
 
 			Vector<Trabajador> trabajadores = new Vector<Trabajador>();
 
-			while(res3.next()){
-				if(    res3.getInt(res3.getInt("cuenta")) == cuenta  ){
-					Trabajador aux3 = new Trabajador();
-					aux3.setId(res3.getInt("idTrabajador"));
-					aux3.setNombre(res3.getString("nombre"));
-					aux3.setCuenta(res3.getInt("cuenta"));
-					trabajadores.add(aux3);
-					break;
-				}				
+			while(res3.next()){				
+				Trabajador aux3 = new Trabajador();
+				aux3.setId(res3.getInt("idTrabajador"));
+				aux3.setNombre(res3.getString("nombre"));
+				aux3.setCuenta(res3.getInt("cuenta"));
+				trabajadores.add(aux3);
+				break;						
 			}
 			/*
 			Fin del proyecto venta
