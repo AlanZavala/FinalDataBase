@@ -24,7 +24,7 @@ public class Registro extends HttpServlet{
 
 		try{
 			
-			// PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+			//PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
    //          PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
    //          PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 
@@ -36,7 +36,31 @@ public class Registro extends HttpServlet{
 			String usuario = getServletContext().getInitParameter("usuario");
             String pass = getServletContext().getInitParameter("pass");
 
+            String idValidation=request.getParameter("id");
+            String telValidation=request.getParameter("telefono");
+            String userValidation=request.getParameter("username");
+            String mensaje=request.getParameter("mensaje");
 
+            String name=request.getParameter("nombre");
+			int cuentas=Integer.parseInt(request.getParameter("cuenta"));
+            
+            int window= Integer.parseInt(request.getParameter("pestana"));
+
+            if(idValidation.charAt(0)<48 || idValidation.charAt(0)>57 || telValidation.length()>8 || (userValidation.charAt(0)!='2'&& userValidation.charAt(0)!='1')){
+            	mensaje="¡Llena correctamente los datos!";
+            	request.setAttribute("response", name);
+            	request.setAttribute("response2", cuentas);
+            	request.setAttribute("response3", window);
+            	request.setAttribute("mensaje", mensaje);
+            	//writer.println("pepesss");
+
+
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/altaTrabajadores.jsp");
+				if(disp!=null){
+					disp.forward(request,response);
+				}
+            }
+			else{
             int id= Integer.parseInt(request.getParameter("id"));
             String nombre = request.getParameter("nombres");
             String apellido = request.getParameter("apellido");
@@ -49,7 +73,7 @@ public class Registro extends HttpServlet{
 			String puesto = request.getParameter("puesto");
 
 			Cuenta cuenta = new Cuenta(username, password);
-
+			mensaje="¡Alta exitosa!";
 
 			Trabajador newTrabajador = new Trabajador(id, nombre, apellido, username, edad, correo, telefono, direccion, puesto, password);
             
@@ -59,10 +83,7 @@ public class Registro extends HttpServlet{
 
 			Statement stat = con.createStatement();
 
-			String name=request.getParameter("nombre");
-			int cuentas=Integer.parseInt(request.getParameter("cuenta"));
-            
-            int window= Integer.parseInt(request.getParameter("pestana"));
+			
 
 			String sql2 = "INSERT INTO cuenta VALUES ("+ username+" ,'" +password+ "');";
 			//writer3.println(sql2);
@@ -71,7 +92,7 @@ public class Registro extends HttpServlet{
 			stat.executeUpdate(sql2);
 			stat.executeUpdate(sql);
 			System.out.println("Sí se guard el nuevo trabajador");
-			//writer2.close();
+			// writer.close();
 			//writer3.close();
 			stat.close();
 			con.close();
@@ -84,19 +105,21 @@ public class Registro extends HttpServlet{
 			request.setAttribute("response", name);
             request.setAttribute("response2", cuentas);
             request.setAttribute("response3", window);
+            request.setAttribute("mensaje", mensaje);
 
 			RequestDispatcher disp = getServletContext().getRequestDispatcher("/altaTrabajadores.jsp");
 
 			if(disp!=null){
 				disp.forward(request,response);
 			}
+			}
 		}
 		catch(Exception e){
 			try{
-                //PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-                e.printStackTrace();
-                //writer4.println(e);
-                //writer4.close();
+                // PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+                 e.printStackTrace();
+                // writer4.println(e);
+                // writer4.close();
             }
             catch(Exception e2){
                 try{

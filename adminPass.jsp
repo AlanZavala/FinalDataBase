@@ -25,7 +25,7 @@
                 min-height: 100%;
                 margin-top: 80px;
             }
-            #nombre, #cuenta, #pestana, #name{
+            #nombre, #cuenta, #pestana, #name, #mensaje{
                 display: none;
             }
             .card{
@@ -199,6 +199,7 @@
                             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                             <input type="text" id="pestana" name="pestana" class="input" value="3"> 
+                            <input type="text" id="mensaje" name="mensaje" class="input" value=" "> 
                             <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
                         <!-- </a> -->
                         

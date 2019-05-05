@@ -17,6 +17,7 @@
         #name, #cuenta, #pestana, #nombre{
             display: none;
         }
+      
         
     </style>
 
@@ -34,6 +35,15 @@
         </form> 
 
         <h4 class="text-center mt-2 font-weight-bold">Nuevo empleado</h4>
+        <br>
+        <br>
+
+        <h4 class="text-center mt-2 font-weight-bold"> 
+            <c:out  value = "${requestScope.mensaje}"/> 
+            <!-- ¡ Bienvenido <%= request.getParameter("name")%>! -->
+        </h4>
+
+        
 
         <form action="./registro" method="post" class="mt-5">
 
@@ -57,7 +67,7 @@
     
                 <div class="section d-flex flex-column">
                     <input type="text" id="username" name="username" class="input" required>            
-                    <span class="user_label">Username (Número)</span>
+                    <span class="user_label">Username (Número empezando con 1 o 2)</span>
                 </div>
     
                 <div class="section d-flex flex-column">
@@ -95,6 +105,7 @@
             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
             <input type="text" id="pestana" name="pestana" class="input" value="1"> 
             <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
+            <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.mensaje}"> 
             
             <input class="login_button" type="submit"  value="GUARDAR">
         
