@@ -58,6 +58,9 @@ public class ShowPjtQuery extends HttpServlet{
                 //writer3.println(res.getString("fechaDeTermino"));
                 aux.setDuracion(res.getInt("duracion"));
                 aux.setDescripcion(res.getString("descripcion")); 
+                aux.setCuenta(res.getInt("idCliente"));
+                aux.setCantidad(res.getInt("cantidad"));
+                aux.setPrecioTotal(res.getFloat("precioTotal"));
                 proyectos.add(aux);
             }
             //writer3.println("después del while");

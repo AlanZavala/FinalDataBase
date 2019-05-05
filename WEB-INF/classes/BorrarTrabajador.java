@@ -34,6 +34,7 @@ public class BorrarTrabajador extends HttpServlet{
             int cuenta=Integer.parseInt(request.getParameter("cuenta"));
             String nombre=request.getParameter("name");
             int window= Integer.parseInt(request.getParameter("pestana"));
+
             String sql2="Delete from trabajador_proyecto where idTrabajador="+id+";";
             //writer2.println(sql2);
             stat.executeUpdate(sql2);
@@ -42,14 +43,15 @@ public class BorrarTrabajador extends HttpServlet{
             //writer2.println(sql);
             stat.executeUpdate(sql);
 
-            
+            //String sql0 = "Delete from cuenta where ID="+cuenta+";";
+            //stat.executeUpdate(sql0);
             
             //
-            String sql3 = "SELECT * FROM trabajador;";
+            String sql4 = "SELECT * FROM trabajador;";
             //writer2.println(sql3);
             //writer2.close();
 
-            ResultSet res = stat.executeQuery(sql3);
+            ResultSet res = stat.executeQuery(sql4);
 
             Vector<Trabajador> trabajadores = new Vector<Trabajador>();
 

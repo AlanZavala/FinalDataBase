@@ -38,6 +38,15 @@
             
             <input type="text" id="descripcion" name="descripcion" class="input" required>            
             <span class="user_label">Descripcion</span> 
+
+            <input type="text" id="idCliente" name="idCliente" class="input" required>            
+            <span class="user_label">idCliente</span> 
+
+            <input type="text" id="cantidad" name="cantidad" class="input" required>            
+            <span class="user_label">Cantidad</span> 
+
+            <input type="text" id="precioTotal" name="precioTotal" class="input" required>            
+            <span class="user_label">Precio Total</span> 
                    
             <input class="login_button" type="submit"  value="GUARDAR">
             

@@ -38,13 +38,16 @@ public class RegistroProyecto extends HttpServlet{
             String fechaFin = request.getParameter("fechaFin");
 
             int duracion = Integer.parseInt(request.getParameter("duracion")) ;                        
-            String descripcion = request.getParameter("descripcion");                 
+            String descripcion = request.getParameter("descripcion");
+            int idCliente = Integer.parseInt(request.getParameter("idCliente")) ;  
+            int cantidad = Integer.parseInt(request.getParameter("cantidad")) ;  
+            float precioTotal = Float.parseFloat(request.getParameter("precioTotal")) ;                   
             
-            Proyecto newProyecto = new Proyecto(id, nombre, fechaInicio, fechaFin, duracion, descripcion);
+            Proyecto newProyecto = new Proyecto(id, nombre, fechaInicio, fechaFin, duracion, descripcion, idCliente, cantidad, precioTotal);
 
             
             
-            String sql = "INSERT INTO proyecto values("+id+",'"+nombre+"','" + fechaInicio + "', '"  + fechaFin + "', " + duracion + ", '"  + descripcion + "');";
+            String sql = "INSERT INTO proyecto values("+id+",'"+nombre+"','" + fechaInicio + "', '"  + fechaFin + "', " + duracion + ", '"  + descripcion + "',"+idCliente+","+cantidad+","+precioTotal+");";
                 
             stat.executeUpdate(sql);
             //writer2.println(sql);
@@ -68,6 +71,9 @@ public class RegistroProyecto extends HttpServlet{
                 aux.setFechaFin(res.getString("fechaDeTermino"));
                 aux.setDuracion(res.getInt("duracion"));
                 aux.setDescripcion(res.getString("descripcion")); 
+                aux.setCuenta(res.getInt("idCliente"));
+                aux.setCantidad(res.getInt("cantidad"));
+                aux.setPrecioTotal(res.getFloat("precioTotal"));
                 proyectos.add(aux);
             }
             
