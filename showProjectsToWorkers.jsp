@@ -38,6 +38,9 @@
             </select>
 
             <input type="text" id="valueBusca" name="valueBusca" class="input" required> 
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="2"> 
+            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
             <input class="proyecto_buton btn btn-success" type="submit"  value="Buscar">
                         </div>
 

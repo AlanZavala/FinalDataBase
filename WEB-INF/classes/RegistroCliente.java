@@ -2,12 +2,12 @@ import java.sql.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*; 
-import escuela.Trabajador;
+import escuela.Cliente;
 import escuela.Cuenta;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/registro")
-public class Registro extends HttpServlet{
+@WebServlet("/registroCliente")
+public class RegistroCliente extends HttpServlet{
 
 	// public void init(ServletConfig config){
 	// 	try{
@@ -37,21 +37,16 @@ public class Registro extends HttpServlet{
             String pass = getServletContext().getInitParameter("pass");
 
 
-            int id= Integer.parseInt(request.getParameter("id"));
-            String nombre = request.getParameter("nombres");
-            String apellido = request.getParameter("apellido");
+            int id = Integer.parseInt(request.getParameter("id"));
             int username = Integer.parseInt(request.getParameter("username"));
             String password = request.getParameter("password");
-            int edad = Integer.parseInt(request.getParameter("edad"));
             String correo = request.getParameter("correo");
             int telefono = Integer.parseInt(request.getParameter("telefono"));
-            String direccion = request.getParameter("direccion");
-			String puesto = request.getParameter("puesto");
 
 			Cuenta cuenta = new Cuenta(username, password);
 
 
-			Trabajador newTrabajador = new Trabajador(id, nombre, apellido, username, edad, correo, telefono, direccion, puesto, password);
+			Cliente newCliente = new Cliente(id, telefono, correo, password);
             
             Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
@@ -66,11 +61,11 @@ public class Registro extends HttpServlet{
 
 			String sql2 = "INSERT INTO cuenta VALUES ("+ username+" ,'" +password+ "');";
 			//writer3.println(sql2);
-            String sql = "INSERT INTO trabajador values("+id+", '" + direccion + "', " + telefono + ", '"  + correo + "', '"  + puesto + "', "  + edad + ", '"   + nombre + "', '"   + apellido + "', "  + username + ", '" + password +   "');";
+            String sql = "INSERT INTO cliente values("+id+", '" + telefono + "', '" + correo + "', "  + username + ", '"  + password +   "');";
             //writer2.println(sql);
 			stat.executeUpdate(sql2);
 			stat.executeUpdate(sql);
-			System.out.println("Sí se guard el nuevo trabajador");
+			System.out.println("Sí se guard el nuevo cliente");
 			//writer2.close();
 			//writer3.close();
 			stat.close();
@@ -85,7 +80,7 @@ public class Registro extends HttpServlet{
             request.setAttribute("response2", cuentas);
             request.setAttribute("response3", window);
 
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/altaTrabajadores.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/altaClientes.jsp");
 
 			if(disp!=null){
 				disp.forward(request,response);

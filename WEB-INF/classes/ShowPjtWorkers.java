@@ -40,6 +40,7 @@ public class ShowPjtWorkers extends HttpServlet{
 			
 			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
 			String nombre=request.getParameter("nombre");
+			//int window=request.getParameter("pestana");
 
 			//select idTrabajador where cuenta=cuenta;
 

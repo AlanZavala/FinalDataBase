@@ -30,6 +30,9 @@ public class BuscarPytWorker extends HttpServlet{
             //writer.close();
     
             Statement stat = con.createStatement();
+            int cuenta=Integer.parseInt(request.getParameter("cuenta"));
+            String nombre=request.getParameter("name");
+            //int window=request.getParameter("pestana");
             
             String comboBChoice=request.getParameter("optBusq");
             String busqueda = request.getParameter("valueBusca");
@@ -71,7 +74,9 @@ public class BuscarPytWorker extends HttpServlet{
             con.close();
             
             request.setAttribute("proyectos", proyectos);
-            RequestDispatcher disp =  getServletContext().getRequestDispatcher("/busquedaPrjWorker.jsp");
+            request.setAttribute("response", nombre);
+            request.setAttribute("response2", cuenta);
+            RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showProjectsToWorkers.jsp");
 
             if(disp!=null){
                 disp.forward(request,response);
