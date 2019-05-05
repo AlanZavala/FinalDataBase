@@ -132,6 +132,22 @@
                 </div>
             </section>
 
+            <form action="./Session" method="post">
+                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
+                    <h5 class="card-header card-title">Proyecto/Venta</h5>
+                    <div class="card-body">
+                        <p class="card-text"> Agrega un nuevo proyecto/venta a la tienda.</p>
+                        <!-- <a href="ProyectoVenta.jsp"> -->
+                            <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
+                            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+                            <input type="text" id="pestana" name="pestana" class="input" value="7">
+                        <!-- </a> -->
+                        
+                    </div>
+                </div>
+            </form>
+
             <form action="./ShowProjects" method="post">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Ver proyectos</h5>
