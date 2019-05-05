@@ -37,10 +37,18 @@ public class RecentVentas extends HttpServlet{
 			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
             int window=Integer.parseInt(request.getParameter("pestana"));
 
+            String sql= "SELECT ID from cliente where cuenta = " + cuenta + ";";
+            ResultSet res2 = stat.executeQuery(sql);
+
+            int idCl= res2.getInt("ID");
+
+
             
+
+
             
-            String sql = "SELECT * from venta where idCliente = " + cuenta + ";";
-            ResultSet res = stat.executeQuery(sql);
+            String sql2 = "SELECT * from venta where idCliente = " + idCl + ";";
+            ResultSet res = stat.executeQuery(sql2);
             // stat.executeUpdate(sql);
 
             //writer2.println(sql2);
