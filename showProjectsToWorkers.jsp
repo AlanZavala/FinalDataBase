@@ -5,7 +5,9 @@
 <html>
     <head>
         <title>Proyectos</title>
-        <link href="css/show.css" rel="stylesheet">   
+        <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
+        <link href="css/show2.css" rel="stylesheet">   
     </head>
     <style>
         #test3, #test4, #cuenta, #pestana, #name{
@@ -42,11 +44,11 @@
             <input type="text" id="pestana" name="pestana" class="input" value="2"> 
             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
             <input class="proyecto_buton btn btn-success" type="submit"  value="Buscar">
-                        </div>
-
+                        <!-- </div> -->
        </form>
-       <table border="1">
-            <tr>
+       
+       <table border="1" id="main_t">
+            <tr class="visible">
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Fecha de inicio</th> 
@@ -58,7 +60,17 @@
                 <th>PrecioTotal</th> 
                 <!-- <th>Añadir</th>
                 <th>Eliminar</th> -->
-
+            </tr>
+            <tr class="invisible">
+                <th></th>
+                <th></th>
+                <th></th> 
+                <th></th>
+                <th></th>
+                <th></th> 
+                <th></th> 
+                <th></th> 
+                <th></th>                 
             </tr>
             <c:forEach items="${requestScope.proyectos}" var="proyecto">
                 <tr>
