@@ -31,7 +31,7 @@
             <input class="proyecto_buton btn btn-success" type="submit"  value="Menu" id="boton_pro">
         </form> 
         <br>
-        <form action ="./buscarPytWorker" method="post">
+        <form action ="./buscarPytWorker" method="post" id="above">
             <select id="optBusq" name= "optBusq">
               <option value="All">All</option>
               <option value="Nombre">Nombre</option>
@@ -46,7 +46,7 @@
             <input class="proyecto_buton btn btn-success" type="submit"  value="Buscar">
                         <!-- </div> -->
        </form>
-       
+
        <table border="1" id="main_t">
             <tr class="visible">
                 <th>ID</th>
