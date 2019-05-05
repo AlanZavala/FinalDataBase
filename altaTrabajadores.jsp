@@ -42,7 +42,7 @@
             <div id="registro" class="row justify-content-center mx-0">
                 <div class="section d-flex flex-column">
                     <input type="text" id="id" name="id" class="input" required>            
-                    <span class="user_label">ID</span>
+                    <span class="user_label">ID(Número)</span>
                 </div>
     
                 <div class="section d-flex flex-column">
@@ -57,7 +57,7 @@
     
                 <div class="section d-flex flex-column">
                     <input type="text" id="username" name="username" class="input" required>            
-                    <span class="user_label">Username</span>
+                    <span class="user_label">Username (Número)</span>
                 </div>
     
                 <div class="section d-flex flex-column">
