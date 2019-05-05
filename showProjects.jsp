@@ -143,7 +143,7 @@
                                 <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                                 <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
                                 <input type="text" id="name" name="name" class="input" value="${requestScope.response}">
-                                <input type="text" id="test3" name="test3" class="input" value="${proyecto.id}"> 
+                                <input type="text" id="test3" name="test3" class="input" value="${proyecto.id}">  
                                 <input class="proyecto_buton btn btn-success" type="submit"  value="Borrar" id="boton_pro3">
                                 
                             </form> 

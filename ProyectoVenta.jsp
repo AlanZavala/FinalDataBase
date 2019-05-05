@@ -15,7 +15,7 @@
     </head>
     <style>
         #pestana, #name, #cuenta, #nombre{
-            display: none;
+            display: none; 
         }
         
     </style>
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="section d-flex flex-column">
-                    <input type="text" id="fechaInicio" name="fechaInicio" class="input" required>            
+                    <input type="date" id="fechaInicio" name="fechaInicio" class="input" required>            
                     <span class="user_label">Fecha de Inicio</span>  
                 </div>
 
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="section d-flex flex-column">
-                    <input type="date" id="duracion" name="duracion" class="input" required>            
+                    <input type="text" id="duracion" name="duracion" class="input" required>            
                     <span class="user_label">Duracion (En Semanas)</span>
                 </div>
 

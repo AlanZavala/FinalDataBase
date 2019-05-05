@@ -45,7 +45,7 @@ public class ProyectoVenta extends HttpServlet{
             int id= Integer.parseInt(request.getParameter("id"));
             String nombre = request.getParameter("nombres");           
             String fechaInicio = request.getParameter("fechaInicio");  
-            String fechaFin = request.getParameter("fechaTermino");
+            String fechaFin = request.getParameter("fechaTermino"); 
 
             int duracion = Integer.parseInt(request.getParameter("duracion"));                        
             String descripcion = request.getParameter("descripcion");
