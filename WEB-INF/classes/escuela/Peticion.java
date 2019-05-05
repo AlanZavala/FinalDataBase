@@ -8,14 +8,14 @@ public class Peticion{
     private String fechaTentiva; 
     private String descripcion; 
     private int cantidad;
-    private int telefono;
+    private int String;
 
     public Peticion(){
 
     }
 
     public Peticion(int idClient, String nombreProyecto, String fechaTentiva, String descripcion, int cantidad,
-            int telefono){        
+            String telefono){        
         this.nombreProyecto = nombreProyecto; 
         this.fechaTentiva = fechaTentiva; 
         this.descripcion = descripcion;
@@ -24,7 +24,7 @@ public class Peticion{
     }
 
     public Peticion(int id, int idClient, String nombreProyecto, String fechaTentiva, String descripcion, int cantidad,
-            int telefono){
+            String telefono){
         this.id = id;
         this.idClient = idClient; 
         this.nombreProyecto = nombreProyecto; 
@@ -76,10 +76,10 @@ public class Peticion{
         return cantidad;
     }
 
-    public void setTelefono(int a){
+    public void setTelefono(String a){
         this.telefono = a; 
     }
-    public int getTelefono(){
+    public String getTelefono(){
         return telefono;
     }
 }
