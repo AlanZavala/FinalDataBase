@@ -119,6 +119,19 @@
                 </div>                                        
             </section>
 
+            <section class="mt-0">
+                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
+                    <h5 class="card-header card-title">Nuevo Proyecto</h5>
+                    <div class="card-body">
+                        <p class="card-text"> Agrega un nuevo proyecto a la tienda y asignale trabajadores.</p>
+                        <a href="RegistroProyecto.jsp">
+                            <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
+                        </a>
+                        
+                    </div>
+                </div>
+            </section>
+
             <form action="./ShowProjects" method="post">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Ver proyectos</h5>
@@ -165,7 +178,7 @@
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Dar de alta trabajadores</h5>
                     <div class="card-body">
-                        <p class="card-text"> Agrega a un nuevo empleado e ingresa los datos necesarios para darlo de alta en tu empresa.</p>
+                        <p class="card-text"> Agrega a un nuevo empleado e ingresa los datos necesarios para darlo de alta en la empresa.</p>
                         <!-- <a href="altaTrabajadores.jsp"> -->
                             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
@@ -176,28 +189,45 @@
                     </div>
                 </div>
             </form>
-
-            <section class="mt-0">
-                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Nuevo Proyecto</h5>
-                    <div class="card-body">
-                        <p class="card-text"> Agrega un nuevo proyecto a la tienda y asignale trabajadores.</p>
-                        <a href="RegistroProyecto.jsp">
-                            <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
-                        </a>
-                        
-                    </div>
-                </div>
-            </section>
+ 
             <form action="./ShowWorkers" method="post">
                     <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                         <h5 class="card-header card-title">Ver trabajadores</h5>
                         <div class="card-body">
-                            <p class="card-text"> Observa a todos los trabajadores de tu empresa y sus detalles. </p>
+                            <p class="card-text"> Observa a todos los trabajadores de la empresa y sus detalles. </p>
                             <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                             <input type="text" id="pestana" name="pestana" class="input" value="1"> 
                             <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
+                        </div>
+                    </div>
+            </form>
+
+            <form action="./Session" method="post">
+                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
+                    <h5 class="card-header card-title">Dar de alta clientes</h5>
+                    <div class="card-body">
+                        <p class="card-text"> Agrega a un nuevo cliente e ingresa los datos necesarios para darlo de alta en la empresa.</p>
+                        <!-- <a href="altaTrabajadores.jsp"> -->
+                            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+                            <input type="text" id="pestana" name="pestana" class="input" value="6"> 
+                            <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
+                        <!-- </a> -->
+                        
+                    </div>
+                </div>
+            </form>
+ 
+            <form action="./ShowWorkers" method="post">
+                    <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
+                        <h5 class="card-header card-title">Ver clientes</h5>
+                        <div class="card-body">
+                            <p class="card-text"> Observa a todos los clientes de la empresa y sus detalles. </p>
+                            <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
+                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+                            <input type="text" id="pestana" name="pestana" class="input" value="1"> 
+                            <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">   
                         </div>
                     </div>
             </form>

@@ -77,6 +77,10 @@ public class Session extends HttpServlet{
 				window=2;
 				request.setAttribute("response3", window);
 				disp = getServletContext().getRequestDispatcher("/RegistroProducto.jsp");
+			} else if(window == 6){
+				window=1;
+				request.setAttribute("response3", window);
+				disp = getServletContext().getRequestDispatcher("/altaClientes.jsp");
 			}
 
 			if(disp!=null){

@@ -17,7 +17,7 @@ public class Trabajador{
             this.id=id;
             this.nombre = nombre; 
             this.apellido = apellido; 
-            this.cuenta = cuenta;
+            this.cuenta = cuenta; 
             this.edad = edad; 
             this.correo = correo;
             this.telefono = telefono; 
