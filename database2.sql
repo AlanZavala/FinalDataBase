@@ -143,23 +143,6 @@ INSERT INTO `producto` (`idProducto`,`nombre`,`Uso`,`fechaDeLlegada`,`fechaDeVen
 (4,'SpriteAce', 'lavar','2019-04-19 10:34:09.000' ,'2020-04-19 10:34:09.000' ,120.50, 122.22,'nose',10,2.30),
 (5,'Clorox', 'cocinar','2019-04-19 10:34:09.000' ,'2020-04-19 10:34:09.000' ,30.00, 20.00,'nose',11,10.00);
 
--- ---- TABLA DE PRODUCTOS Y TRABAJADORES ----
-
--- CREATE TABLE IF NOT EXISTS `producto_trabajador`(
--- 	`idProducto` int(11) NOT NULL, 
--- 	`idTrabajador` int(11) NOT NULL,
-	
--- 	PRIMARY KEY (`idTrabajador`,`idProducto`),
--- 	KEY `idProducto` (`idProducto`),
--- 	KEY `idTrabajador` (`idTrabajador`),
--- 	CONSTRAINT `producto_trabajdor_ibfk_1` FOREIGN KEY (`idTrabajador`) REFERENCES `trabajador` (`idTrabajador`),
--- 	CONSTRAINT `producto_trabajador_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`idProducto`)
--- ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- DELETE FROM `producto_trabajador`;
-
-
-
 -- ---- TABLA DE VENTAS ----
 
 CREATE TABLE IF NOT EXISTS `venta`(
@@ -183,21 +166,6 @@ INSERT INTO `venta` (`idVenta`,`fechaDeExpedicion`,`precioTotal`,`idCliente`,`id
 (121,'2019-04-19 10:34:09.000'  ,122.22, 2, 30),
 (122,'2019-04-19 10:34:09.000'  ,124.24, 2, 31);
 
--- ---- TABLA DE PRODUCTOS Y VENTAS ----
--- CREATE TABLE IF NOT EXISTS `producto_venta`(
--- 	`idProducto` int(11) NOT NULL AUTO_INCREMENT, 
--- 	`idVenta` int(11) NOT NULL,
--- 	`costoTotal` float(9,2) DEFAULT NULL,
--- 	`precioVenta` float(9,2) DEFAULT NULL,
--- 	`cantidad` float(9,2) DEFAULT NULL,
-	
--- 	PRIMARY KEY (`idVenta`,`idProducto`),
--- 	KEY `idProducto` (`idProducto`),
--- 	KEY `idVenta` (`idVenta`),
--- 	CONSTRAINT `producto_venta_ibfk_1` FOREIGN KEY (`idVenta`) REFERENCES `venta` (`idVenta`),
--- 	CONSTRAINT `prodcuto_venta_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`idProducto`)
--- ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
 DELETE FROM `trabajador_proyecto`;
 
 CREATE TABLE IF NOT EXISTS `peticion`(
@@ -217,3 +185,6 @@ CREATE TABLE IF NOT EXISTS `peticion`(
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 DELETE FROM `peticion`;
+
+CREATE USER 'escolares'@'localhost' IDENTIFIED BY 'mipass';
+GRANT SELECT,UPDATE,INSERT ON escuela.* TO 'escolares'@'localhost';
