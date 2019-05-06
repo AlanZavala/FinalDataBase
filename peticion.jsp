@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/all.css">        
         <link href="css/formulario.css" rel="stylesheet">
 
-        <title>Peticion</title>
+        <title>Petición</title>
     </head>
     <style>
         #nombre, #cuenta, #pestana, #name{
@@ -42,7 +42,7 @@
 
                 <div class="section d-flex flex-column">
                     <input type="text" id="id" name="id" class="input" required>            
-                    <span class="user_label">ID Peticion</span>
+                    <span class="user_label">ID Petición</span>
                 </div>
 
                 <div class="section d-flex flex-column">
@@ -52,7 +52,7 @@
 
                 <div class="section d-flex flex-column">
                     <input type="text" name="nombre" class="input" required>            
-                    <span class="user_label">Nombre del proyecto</span> 
+                    <span class="user_label">Nombre del Proyecto</span> 
                 </div>
 
                 <div class="section d-flex flex-column">
