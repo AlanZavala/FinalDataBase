@@ -60,7 +60,7 @@
                 <th>idCliente</th> 
                 <th>Cantidad</th> 
                 <th>PrecioTotal</th> 
-                <th>Añadir</th>
+                <th>Asignar</th>
                 <th>Eliminar</th>
             </tr>
 
