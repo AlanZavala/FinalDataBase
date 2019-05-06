@@ -26,7 +26,7 @@
             <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
 
-            <input class="proyecto_buton fas fa-arrow-circle-left" type="submit"  value="Atras" id="boton_pro">
+            <input class="proyecto_buton fas fa-arrow-circle-left" type="submit"  value="Atrás" id="boton_pro">
         </form>  
 
         <h4 class="text-center mt-2 font-weight-bold">Nuevo diseño</h4>

@@ -105,7 +105,7 @@
 
         <br> <br>
         <h1> 
-            ¡ Bienvenido <c:out value = "${requestScope.response}" /> !
+            ¡ Bienvenido !
         </h1>
       
         <section class="row justify-content-center align-items-center mx-0">
@@ -113,7 +113,7 @@
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Realizar Compra/Proyecto</h5>
                     <div class="card-body">
-                        <p class="card-text">Realiza una nueva compra o encarga un nuevo proyecto</p>                        
+                        <p class="card-text">Realiza una nueva compra o encarga un nuevo proyecto.</p>                        
                         <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                         <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
                         <input type="text" id="pestana" name="pestana" class="input" value="9">  
@@ -126,7 +126,7 @@
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Ver compras anteriores</h5>
                     <div class="card-body">
-                        <p class="card-text">Visualiza tus compras o proyectos que ya has realizado</p>
+                        <p class="card-text">Visualiza tus compras o proyectos que ya has realizado.</p>
                         <!-- <a href="RegistroProducto.jsp"> -->
                             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 

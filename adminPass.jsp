@@ -152,7 +152,7 @@
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Ver proyectos</h5>
                     <div class="card-body">
-                        <p class="card-text">Revisa los proyectos en los que estas envuelto y haz las modificaciones necesarias</p>
+                        <p class="card-text">Revisa los proyectos en los que estás envuelto y haz las modificaciones necesarias.</p>
                         <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
                         <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                         <input type="text" id="pestana" name="pestana" class="input" value="1"> 
@@ -165,7 +165,7 @@
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Nuevo diseño</h5>
                     <div class="card-body">
-                        <p class="card-text">Agrega un nuevo diseño a la tienda y ponerlo a la venta.</p>
+                        <p class="card-text">Agrega un nuevo diseño a la tienda y pónlo a la venta.</p>
                         <!-- <a href="RegistroProducto.jsp"> -->
                             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
@@ -253,7 +253,7 @@
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Ver peticiones</h5>
                     <div class="card-body">
-                            <p class="card-text">Observa todos las peticiones de proyectos que los clientes han realizado.</p>
+                            <p class="card-text">Observa todas las peticiones de proyectos que los clientes han realizado.</p>
                             <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
                             <input type="text" id="pestana" name="pestana" class="input" value="1">  
