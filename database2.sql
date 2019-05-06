@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `neszuz`;
-use `neszuz`; 
+CREATE DATABASE IF NOT EXISTS `escuela`;
+use `escuela`; 
 -- ---- TABLA DE CUENTA ----
 
 CREATE TABLE IF NOT EXISTS `cuenta`(
@@ -34,8 +34,8 @@ CREATE TABLE IF NOT EXISTS `cliente`(
 DELETE FROM `cliente`;
 
 INSERT INTO `cliente` (`ID`, `cuenta`,`contrasenia`,`telefono`,`correo`) VALUES 
-(1, 2, 'neszuz', 50129093,'cliente1@hotmail.com'),
-(2, 2, 'neszuz',50210939,'cliente2@hotmail.com');
+(1, 3, 'neszuz', 50129093,'cliente1@hotmail.com'),
+(2, 33, 'neszuz',50210939,'cliente2@hotmail.com');
 
 -- ---- TABLA DE PROYECTOS ----
 CREATE TABLE IF NOT EXISTS `proyecto`(
@@ -77,7 +77,8 @@ DELETE FROM `cuenta`;
 
 INSERT INTO `cuenta` (`ID`,`contrasenia`) VALUES 
 (1,'neszuz'),
-(2,'neszuz');
+(2,'neszuz'), (3,'neszuz'),
+(33,'neszuz');
 -- ---- TABLA DE TRABAJADORES ----
 
 CREATE TABLE IF NOT EXISTS `trabajador`(

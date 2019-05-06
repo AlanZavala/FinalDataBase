@@ -91,10 +91,10 @@ public class RecentVentas extends HttpServlet{
 		}
 		catch(Exception e){
 			try{
-                PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
+                // PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
                 e.printStackTrace();
-                writer4.println(e);
-                writer4.close();
+                // writer4.println(e);
+                // writer4.close();
             }
             catch(Exception e2){
                 try{
