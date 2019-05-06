@@ -5,22 +5,31 @@
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html" charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
-        <link rel="stylesheet" href="css/all.css">     
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">           
         <link rel="stylesheet" href="css/bootstrap.min.css">   
-        <link href="css/show2.css" rel="stylesheet"> 
+        <link href="css/show.css" rel="stylesheet"> 
         <title>Proyectos</title>
     </head>
     <style>
         #nombre, #cuenta, #pestana, #name{
-                display: none;
+            display: none;
+        }
+        td{
+            text-align: center;
+        }
+        table{
+            border-collapse: separate !important;
         }
     </style>
     <body>
+        
+        <form action ="./Session" method= "post">
+            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+            <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
+            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
 
-        <!-- <a href="pass.jsp">
-            <i class="fas fa-arrow-circle-left"></i>
-        </a> -->
+            <input class="proyecto_buton btn btn-success ml-5 mt-3" type="submit"  value="Menu" id="boton_pro">
+        </form>  
 
         <h4 class="text-center mt-2 font-weight-bold">Proyecto Registrado</h4>
 
@@ -35,21 +44,19 @@
                 <th>idCliente</th>
                 <th>Cantidad</th>
                 <th>PrecioTotal</th> 
- 
-
- 
-
-
             </tr>
 
             <tr class="invisible">
-                    <th></th>
-                    <th></th>
-                    <th></th> 
-                    <th></th>
-                    <th></th>
-                    <th></th> 
-                </tr>
+                <th></th>
+                <th></th>
+                <th></th> 
+                <th></th>
+                <th></th>
+                <th></th> 
+                <th></th>
+                <th></th>
+                <th></th>  
+            </tr>
             <c:forEach items="${requestScope.proyectos}" var="proyecto">
                 <tr>
                         <td>
@@ -95,13 +102,6 @@
         <br>
         <br>
         <br>
-        <form action ="./Session" method= "post">
-            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
-            <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
-            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
-
-            <input class="proyecto_buton btn btn-success ml-5 mt-3" type="submit"  value="Menu" id="boton_pro">
-        </form>  
-        <!-- <a href="./adminPass.jsp">Menu</a> -->
+                
     </body>
 </html>
