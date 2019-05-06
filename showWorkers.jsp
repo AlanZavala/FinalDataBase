@@ -55,8 +55,8 @@
                 <th>Cuenta</th>
                 <th>Edad</th>
                 <th>Correo</th>
-                <th>Telefono</th>  
-                <th>Dirrecion</th> 
+                <th>Teléfono</th>  
+                <th>Dirreción</th> 
                 <th>Puesto</th>  
                 <th></th> 
                 <th>Proyectos</th>

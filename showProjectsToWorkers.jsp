@@ -52,9 +52,9 @@
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Fecha de inicio</th> 
-                <th>Fecha de termino</th>
-                <th>Duracion</th>
-                <th>Descripcion</th> 
+                <th>Fecha de término</th>
+                <th>Duración</th>
+                <th>Descripción</th> 
                 <th>idCliente</th> 
                 <th>NoProductos</th> 
                 <th>PrecioTotal</th> 

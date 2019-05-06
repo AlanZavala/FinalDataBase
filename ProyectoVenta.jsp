@@ -26,7 +26,7 @@
             <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
 
-            <input class="proyecto_buton fas fa-arrow-circle-left" type="submit"  value="Atras" id="boton_pro">
+            <input class="proyecto_buton fas fa-arrow-circle-left" type="submit"  value="Atrás" id="boton_pro">
         </form>  
 
         <h4 class="text-center mt-2 font-weight-bold">Nueva Venta/Proyecto</h4>
@@ -56,12 +56,12 @@
 
                 <div class="section d-flex flex-column">
                     <input type="text" id="duracion" name="duracion" class="input" required>            
-                    <span class="user_label">Duracion (En Semanas)</span>
+                    <span class="user_label">Duración (En Semanas)</span>
                 </div>
 
                 <div class="section d-flex flex-column">
                     <input type="text" id="descripcion" name="descripcion" class="input" required>            
-                    <span class="user_label">Descripcion</span>
+                    <span class="user_label">Descripción</span>
                 </div>
 
                 <!--<div class="section d-flex flex-column">
@@ -102,7 +102,7 @@
                     <c:forEach items="${requestScope.trabajadores}" var="trabaja">
                         <input type="text" id="idTrabajador" name="idTrabajador" class="input" value="${trabaja.id}" required>            
                     </c:forEach>                    
-                    <span class="user_label">idTrabajador que atendió</span> 
+                    <span class="user_label">ID Trabajador que atendió</span> 
                 </div>
 
 
