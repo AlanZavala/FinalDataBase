@@ -33,7 +33,7 @@
             <input class="proyecto_buton btn btn-success" type="submit"  value="Menu" id="boton_pro">
         </form>  
 
-        <h4 class="text-center mt-2 font-weight-bold">Nuevo petición</h4>
+        <h4 class="text-center mt-2 font-weight-bold">Nueva petición</h4>
 
         <form action="./NewPeticion" method="post" class="mt-5">
 
