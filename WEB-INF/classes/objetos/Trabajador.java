@@ -1,4 +1,4 @@
-package escuela;
+package objetos;
 public class Trabajador{
     private int id;
     private String nombre;

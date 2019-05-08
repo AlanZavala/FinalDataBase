@@ -1,4 +1,4 @@
-package escuela;
+package objetos;
 public class Cuenta{
     private int username;
     private String password;

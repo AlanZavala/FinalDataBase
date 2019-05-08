@@ -1,4 +1,4 @@
-package escuela;
+package objetos;
 
 public class Peticion{
     private int id;
@@ -13,17 +13,7 @@ public class Peticion{
 
     }
 
-    // public Peticion(int idClient, String nombreProyecto, String fechaTentiva, String descripcion, int cantidad,
-    //         String telefono){        
-    //     this.nombreProyecto = nombreProyecto; 
-    //     this.fechaTentiva = fechaTentiva; 
-    //     this.descripcion = descripcion;
-    //     this.cantidad = cantidad;
-    //     this.telefono = telefono;
-    // }
-
-    public Peticion(int id, int idClient, String nombreProyecto, String fechaTentiva, String descripcion, int cantidad,
-            String telefono){
+    public Peticion(int id, int idClient, String nombreProyecto, String fechaTentiva, String descripcion, int cantidad, String telefono){
         this.id = id;
         this.idClient = idClient; 
         this.nombreProyecto = nombreProyecto; 

@@ -1,4 +1,4 @@
-package escuela;
+package objetos;
 public class Cliente{
     private int id; 
     private int cuenta;

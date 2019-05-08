@@ -1,4 +1,4 @@
-package escuela;
+package objetos;
 public class Venta{
     private int id; 
     private String fechaExpedicion; 

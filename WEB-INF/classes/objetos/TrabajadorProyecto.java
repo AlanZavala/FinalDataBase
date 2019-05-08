@@ -1,4 +1,4 @@
-package escuela;
+package objetos;
 public class TrabajadorProyecto{
     private int iDTrabajador;
     private int iDProyecto;
