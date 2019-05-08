@@ -2,8 +2,8 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*; 
 import java.sql.*;
-import escuela.Producto;
-import escuela.Alumno;
+import objetos.Producto;
+import objetos.Alumno;
 import java.util.Vector;
 
 import javax.servlet.annotation.WebServlet;
@@ -14,13 +14,6 @@ public class ShowPQuery extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
-			
-			// PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-			// PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-			// PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-
-			// writer.println("The first line");
-			// writer.println("The second line");
 
 			String base = getServletContext().getInitParameter("base");
 			String usuario = getServletContext().getInitParameter("usuario");
@@ -32,7 +25,6 @@ public class ShowPQuery extends HttpServlet{
 		
 			System.out.println(url);
 			Connection con = DriverManager.getConnection(url,usuario,password);
-			//writer.close();
 
 			Statement stat = con.createStatement();
 			String nombre=request.getParameter("nombre");
@@ -43,8 +35,6 @@ public class ShowPQuery extends HttpServlet{
 
 			
 			String sql2 = "SELECT * FROM producto;";
-			//writer2.println(sql2);
-			//writer2.close();
 
 			ResultSet res = stat.executeQuery(sql2);
 
@@ -53,26 +43,6 @@ public class ShowPQuery extends HttpServlet{
             while(res.next()){
 
 				Producto aux = new Producto();
-
-				// aux.id = res.getInt("idProducto");
-
-				// writer3.println(aux.id);
-				// aux.uso = res.getString("Uso");
-				// writer3.println(aux.uso);
-				// aux.fechaLlegada = res.getString("fechaDeLlegada");
-				// writer3.println(aux.fechaLlegada);
-    //             aux.fechaVenta = res.getString("fechaDeVenta");  
-    //             writer3.println(aux.fechaVenta);             
-    //             aux.precioProveedor = res.getFloat("precioProveedor");
-    //             writer3.println(aux.precioProveedor);
-    //             aux.precioCliente = res.getFloat("precioCliente");
-    //             writer3.println(aux.precioCliente);
-    //             aux.proveedor = res.getString("proveedor");
-    //             writer3.println(aux.proveedor);
-    //             aux.tabla = res.getInt("tabla");
-    //             writer3.println(aux.tabla);
-    //             aux.ganancia = res.getFloat("ganancia");
-    //             writer3.println(aux.ganancia);
 
 				aux.setId(res.getInt("idProducto"));
 				aux.setNombre(res.getString("nombre"));
@@ -85,16 +55,9 @@ public class ShowPQuery extends HttpServlet{
 				aux.setTabla(res.getInt("tabla"));
 				aux.setGanancia(res.getFloat("ganancia"));
 
-
-
 				productos.add(aux);
 
             }
-
-            //writer3.println("the vector size is "+productos.size());
-            // writer3.println("hello "+productos.get(0).id);
-            // writer3.println("hello "+productos.get(1).id);
-            //writer3.close();
 
 			stat.close();
             con.close();
@@ -112,17 +75,11 @@ public class ShowPQuery extends HttpServlet{
 		}
 		catch(Exception e){			
 			try{
-				//PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 				e.printStackTrace();
-				//writer4.println(e);
-				//writer4.close();
 			}
 			catch(Exception e2){
 				try{
-				//PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 				e.printStackTrace();
-				//writer5.println(e);
-				//writer5.close();
 			}
 			catch(Exception e3){
 				e3.printStackTrace();

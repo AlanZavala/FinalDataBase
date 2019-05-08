@@ -3,8 +3,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
 import java.util.Vector;
-import escuela.Cliente;
-import escuela.Venta;
+import objetos.Cliente;
+import objetos.Venta;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -14,15 +14,10 @@ public class NewVenta extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
-			// PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-   //          PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-   //          PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 			
 			String base = getServletContext().getInitParameter("base");
 			String usuario = getServletContext().getInitParameter("usuario");
 			String password = getServletContext().getInitParameter("pass");
-			//writer.println("The first lines");
-            //writer.println("The second line");
 
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
@@ -38,25 +33,15 @@ public class NewVenta extends HttpServlet{
 			Float precio = Float.parseFloat(request.getParameter("precio"));
 			int userTrabajador =Integer.parseInt(request.getParameter("user_trabajador"));
 
-			// Cliente newCliente = new Cliente(cliente, telefono, correo);
 			Venta venta = new Venta(idVenta, fecha, precio, cliente, userTrabajador);
 
 			Statement stat = con.createStatement();
-			String sql = "INSERT INTO venta VALUES( "+idVenta+", '" + fecha + "', " + precio + ", " + cliente + ", "  + userTrabajador + ");";		
-			// String sql2 = "INSERT INTO cliente VALUES(" + cliente + "," + telefono+ ",'" + correo +"');";
-
-			// stat.executeUpdate(sql2);
+			String sql = "INSERT INTO venta VALUES( "+idVenta+", '" + fecha + "', " + precio + ", " + cliente + ", "  + userTrabajador + ");";
 
 			stat.executeUpdate(sql);
 
-			// ResultSet res = stat.executeQuery(sql2);
-
 			String sql3 = "SELECT * FROM venta where idVenta="+idVenta+";";
-
-            //writer2.println(sql2);
             
-
-
             ResultSet res = stat.executeQuery(sql3);
 
             Vector<Venta> ventas = new Vector<Venta>();
@@ -66,8 +51,6 @@ public class NewVenta extends HttpServlet{
 
                	aux.setId(res.getInt("idVenta"));
 
-               	//writer2.println("HolaBB "+res.getInt("idVenta"));
-
                 aux.setFecha(res.getString("fechaDeExpedicion"));                
 
                 aux.setPrecio(res.getFloat("precioTotal"));
@@ -76,7 +59,6 @@ public class NewVenta extends HttpServlet{
                 
                 ventas.add(aux);
             }
-            //writer2.close();
             
             stat.close();
             con.close();
@@ -90,17 +72,11 @@ public class NewVenta extends HttpServlet{
 		}
 		catch(Exception e){			
 			try{
-                //PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
                 e.printStackTrace();
-                //writer4.println(e);
-                //writer4.close();
             }
             catch(Exception e2){
                 try{
-                //PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
                 e.printStackTrace();
-                //writer5.println(e);
-                //writer5.close();
             }
             catch(Exception e3){
                 e3.printStackTrace();

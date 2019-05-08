@@ -17,13 +17,6 @@ public class Session extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
-			
-			// PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8"); 
-			// PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-			// PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-
-			// writer.println("The first line");
-			// writer.println("The second line");
 
 			String base = getServletContext().getInitParameter("base");
 			String usuario = getServletContext().getInitParameter("usuario");
@@ -35,7 +28,6 @@ public class Session extends HttpServlet{
 		
 			System.out.println(url);
 			Connection con = DriverManager.getConnection(url,usuario,password);
-			//writer.close();
 			String nombre=request.getParameter("name");
 			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
 			int window=Integer.parseInt(request.getParameter("pestana"));
@@ -74,9 +66,6 @@ public class Session extends HttpServlet{
 			Fin del proyecto venta
 			*/
 
-
-            //writer3.close();
-
 			stat.close();
             con.close();
 
@@ -89,8 +78,6 @@ public class Session extends HttpServlet{
 
 			if(window==1){
 				disp = getServletContext().getRequestDispatcher("/adminPass.jsp");
-
-
 			}
 			else if(window==2){
 				disp = getServletContext().getRequestDispatcher("/pass.jsp");
@@ -150,17 +137,11 @@ public class Session extends HttpServlet{
 		}
 		catch(Exception e){			
 			try{
-				//PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 				e.printStackTrace();
-				//writer4.println(e);
-				//writer4.close();
 			}
 			catch(Exception e2){
 				try{
-				//PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
 				e.printStackTrace();
-				//writer5.println(e);
-				//writer5.close();
 			}
 			catch(Exception e3){
 				e3.printStackTrace();

@@ -4,7 +4,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.Date;
-import escuela.Trabajador;
+import objetos.Trabajador;
 import javax.servlet.annotation.WebServlet;
 import java.util.Vector;
 @WebServlet("/BorrarWorker") 
@@ -12,12 +12,6 @@ public class BorrarTrabajador extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
-            // PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
-            // PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto2.txt", "UTF-8");
-            // PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto3.txt", "UTF-8");
-
-            // writer.println("The firster lines");
-            // writer.println("The second line");
 
             String base = getServletContext().getInitParameter("base");
             String usuario = getServletContext().getInitParameter("usuario");
@@ -26,7 +20,6 @@ public class BorrarTrabajador extends HttpServlet{
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url,usuario,pass);
-            //writer.close();
     
             Statement stat = con.createStatement();
 
@@ -36,20 +29,12 @@ public class BorrarTrabajador extends HttpServlet{
             int window= Integer.parseInt(request.getParameter("pestana"));
 
             String sql2="Delete from trabajador_proyecto where idTrabajador="+id+";";
-            //writer2.println(sql2);
             stat.executeUpdate(sql2);
 
             String sql="Delete from trabajador where idTrabajador="+id+";";
-            //writer2.println(sql);
             stat.executeUpdate(sql);
-
-            //String sql0 = "Delete from cuenta where ID="+cuenta+";";
-            //stat.executeUpdate(sql0);
             
-            //
             String sql4 = "SELECT * FROM trabajador;";
-            //writer2.println(sql3);
-            //writer2.close();
 
             ResultSet res = stat.executeQuery(sql4);
 
@@ -72,9 +57,6 @@ public class BorrarTrabajador extends HttpServlet{
 
             }
 
-            // writer3.println("the vector size is "+trabajadores.size());
-            // writer3.close();
-
             stat.close();
             con.close();
 
@@ -92,17 +74,11 @@ public class BorrarTrabajador extends HttpServlet{
 		}
 		catch(Exception e){
 			try{
-                // PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
                 e.printStackTrace();
-                // writer4.println(e);
-                // writer4.close();
             }
             catch(Exception e2){
                 try{
-                // PrintWriter writer5 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
                 e.printStackTrace();
-                // writer5.println(e);
-                // writer5.close();
             }
             catch(Exception e3){
                 e3.printStackTrace();
