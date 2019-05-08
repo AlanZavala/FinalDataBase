@@ -3,7 +3,6 @@ import javax.servlet.*;
 import javax.servlet.http.*; 
 import java.sql.*;
 import objetos.Producto;
-import objetos.Alumno;
 import java.util.Vector;
 
 import javax.servlet.annotation.WebServlet;

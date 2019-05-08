@@ -2,10 +2,10 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
-import escuela.Producto;
-import escuela.Proyecto;
-import escuela.Cliente;
-import escuela.Trabajador;
+import objetos.Producto;
+import objetos.Proyecto;
+import objetos.Cliente;
+import objetos.Trabajador;
 
 import java.util.Vector;
 

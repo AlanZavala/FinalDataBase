@@ -4,8 +4,8 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.Date;
-import escuela.Proyecto;
-import escuela.Producto;
+import objetos.Proyecto;
+import objetos.Producto;
 import javax.servlet.annotation.WebServlet;
 import java.util.Vector;
 @WebServlet("/buscarPytWorker") 

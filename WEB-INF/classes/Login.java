@@ -2,7 +2,7 @@ import java.sql.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import escuela.Trabajador;
+import objetos.Trabajador;
 import javax.servlet.annotation.WebServlet;
 import java.util.Vector;
 
