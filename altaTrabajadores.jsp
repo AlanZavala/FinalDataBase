@@ -22,9 +22,6 @@
     </style>
 
     <body>
-        <!-- <a href="adminPass.jsp">
-            <i class="fas fa-arrow-circle-left"></i>
-        </a> -->
 
         <form action ="./Session" method= "post">
             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
@@ -40,14 +37,11 @@
 
         <h4 class="text-center mt-2 font-weight-bold"> 
             <c:out  value = "${requestScope.mensaje}"/> 
-            <!-- ¡ Bienvenido <%= request.getParameter("name")%>! -->
         </h4>
 
         
 
         <form action="./registro" method="post" class="mt-5">
-
-            <!-- <img src="img/sign.png" alt=""> -->
 
             <div id="registro" class="row justify-content-center mx-0">
                 <div class="section d-flex flex-column">

@@ -62,11 +62,6 @@
                 right: 30px;
                 top: 30px;
             }
-
-/*             
-            #test3, #cuenta{
-                display: none;
-            } */
         </style>
 
         <title>Entrada user</title>
@@ -74,13 +69,10 @@
     </head>
 
     <body>
-                
-        <!-- Button trigger modal -->
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
             Log out
         </button>
           
-        <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -109,31 +101,16 @@
         </h1>
       
         <section class="row justify-content-center align-items-center mx-0">
-            
-            <!-- <section class="mt-0">                  
-                <div class="card text-white bg-secondary my-0 mr-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Hacer una nueva venta</h5>
-                    <div class="card-body">
-                            <p class="card-text">Realiza una venta a un nuevo cliente. Ingresa todos los datos necesarios.</p>
-                        <a href="ventas.jsp">
-                            <input class="proyecto_buton btn btn-success" type="submit"  value="Venta">
-                        </a>                        
-                    </div>
-                </div>                                        
-            </section> -->
 
             <form action="./Session" method="post">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Proyecto/Venta</h5>
                     <div class="card-body">
                         <p class="card-text"> Agrega un nuevo proyecto/venta a la tienda.</p>
-                        <!-- <a href="ProyectoVenta.jsp"> -->
                             <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
                             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                             <input type="text" id="pestana" name="pestana" class="input" value="8">
-                        <!-- </a> -->
-                        
                     </div>
                 </div>
             </form>
@@ -157,13 +134,10 @@
                     <h5 class="card-header card-title">Nuevo diseño</h5>
                     <div class="card-body">
                         <p class="card-text">Agrega un nuevo diseño a la tienda y pónlo a la venta.</p>
-                        <!-- <a href="RegistroProducto.jsp"> -->
                             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                             <input type="text" id="pestana" name="pestana" class="input" value="5"> 
                             <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
-                        <!-- </a> -->
-                        
                     </div>
                 </div>
             </form>

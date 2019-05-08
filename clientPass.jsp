@@ -62,11 +62,6 @@
                 right: 30px;
                 top: 30px;
             }
-
-/*             
-            #test3, #cuenta{
-                display: none;
-            } */
         </style>
 
         <title>Entrada cliente</title>
@@ -74,13 +69,10 @@
     </head>
 
     <body>
-                
-        <!-- Button trigger modal -->
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
             Log out
         </button>
           
-        <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -127,12 +119,10 @@
                     <h5 class="card-header card-title">Ver compras anteriores</h5>
                     <div class="card-body">
                         <p class="card-text">Visualiza tus compras o proyectos que ya has realizado.</p>
-                        <!-- <a href="RegistroProducto.jsp"> -->
                             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                             <input type="text" id="pestana" name="pestana" class="input" value="11"> 
                             <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
-                        <!-- </a> -->
                         
                     </div>
                 </div>

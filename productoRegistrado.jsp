@@ -112,7 +112,5 @@
         <br>
         <br>
         <br>
-        
-      <!--   <a href="./pass.jsp">Menu</a> -->
     </body>
 </html>

@@ -20,9 +20,6 @@
     <body>
 
         <br> <br>
-        <!-- <a href="./adminPass.jsp">
-            <p>Back</p>
-        </a> -->
         <form action ="./ShowWorkers" method= "post">
             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
             <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
@@ -31,21 +28,6 @@
             <input class="proyecto_buton btn btn-success" type="submit"  value="Back" id="boton_pro">
         </form> 
         <br>
-        <!--<form action ="./buscarProyecto" method="post">
-            <select id="optBusq" name= "optBusq">
-              <option value="All">All</option>
-              <option value="Nombre">Nombre</option>
-              <option value="Id">Id</option>
-              
-            </select>
-
-            <input type="text" id="valueBusca" name="valueBusca" class="input" required> 
-            <input class="proyecto_buton btn btn-success" type="submit"  value="Buscar">
-                        </div>
-
-       </form>-->
-
-       <!--Nombre del trabaajdor-->
 
        <table border="1" id="main_t">
             <tr class="visible">

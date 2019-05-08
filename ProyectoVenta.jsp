@@ -32,8 +32,6 @@
         <h4 class="text-center mt-2 font-weight-bold">Nueva Venta/Proyecto</h4>
 
         <form action="./proyectoVenta" method="post" class="mt-5">
-
-            <!-- <img src="img/product.jpg" alt=""> -->
             <div id="registro" class="row justify-content-center mx-0">
                 <div class="section d-flex flex-column">
                     <input type="text" id="id" name="id" class="input" required>            
@@ -64,10 +62,6 @@
                     <span class="user_label">Descripción</span>
                 </div>
 
-                <!--<div class="section d-flex flex-column">
-                    <input type="text" id="cliente" name="cliente" class="input" required>            
-                    <span class="user_label">idCliente</span> 
-                </div>-->
                 <div class="section d-flex flex-column">
                     <select name= "cliente" required>
                         <option>Seleccionar Cliente</option>
@@ -77,27 +71,12 @@
                     </select>            
                     <span class="user_label">ID Cliente</span>
                 </div>
-
-                
-
+               
                 <div class="section d-flex flex-column">
                     <input type="text" id="cantidad" name="cantidad" class="input" required>            
                     <span class="user_label">Cantidad</span> 
                 </div>
 
-                <!-- <div class="section d-flex flex-column">
-                    <input type="text" id="idTrabajador" name="idTrabajador" class="input" required>            
-                    <span class="user_label">idTrabajador que atendio</span> 
-                </div> -->
-                <!-- <div class="section d-flex flex-column">
-                    <select name= "idTrabajador">
-                        <option>Seleccionar Cliente</option>
-                        <c:forEach items="${requestScope.trabajadores}" var="trabaja">
-                            <option value="${clien.id}">Cuenta: <c:out value="${clien.cuenta}"/> - ID: <c:out value="${clien.id}"/></option>
-                        </c:forEach>
-                    </select>            
-                    <span class="user_label">ID Cliente</span>
-                </div> -->
                 <div class="section d-flex flex-column">
                     <c:forEach items="${requestScope.trabajadores}" var="trabaja">
                         <input type="text" id="idTrabajador" name="idTrabajador" class="input" value="${trabaja.id}" required>            

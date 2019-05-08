@@ -32,8 +32,6 @@
         <h4 class="text-center mt-2 font-weight-bold">Nuevo diseño</h4>
 
         <form action="./RegistroProducto" method="post" class="mt-5">
-
-            <!-- <img src="img/product.jpg" alt=""> -->
             <div id="registro" class="row justify-content-center mx-0">
                 <div class="section d-flex flex-column">
                     <input type="text" id="id" name="id" class="input" required>            

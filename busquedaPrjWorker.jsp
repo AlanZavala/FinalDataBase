@@ -45,8 +45,6 @@
                 <th>Fecha de termino</th>
                 <th>Duracion</th>
                 <th>Descripcion</th> 
-                <!-- <th>Añadir</th>
-                <th>Eliminar</th> -->
 
             </tr>
             <c:forEach items="${requestScope.proyectos}" var="proyecto">

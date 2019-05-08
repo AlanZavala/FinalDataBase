@@ -24,9 +24,6 @@
     <body>
 
         <br> <br>
-        <!-- <a href="./adminPass.jsp">        
-            <p>Menu</p>
-        </a> -->
         <form action ="./Session" method= "post">
             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
             <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
@@ -40,7 +37,6 @@
         <table border="1" id="main_t">
             <tr class="visible">
                 <th>ID</th>
-                <!-- <th>ID cliente</th> -->
                 <th>Nombre del proyecto</th>
                 
                 <th>Descripción</th>
@@ -50,7 +46,6 @@
 
             <tr class="invisible">
                 <th></th>
-                <!-- <th></th> -->
                 <th></th>
                 <th></th>
                 <th></th>

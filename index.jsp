@@ -26,10 +26,6 @@
                 <span class="user_label">Password</span>                    
                 
                 <input class="login_button" type="submit"  value="LOG IN">
-
-                <!--<a href="registro.jsp">
-                    <p>Registrar usuario</p>
-                </a>-->
             </div>
         </form>
 

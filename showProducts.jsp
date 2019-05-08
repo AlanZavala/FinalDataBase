@@ -20,9 +20,6 @@
     <body>
 
         <br> <br>
-        <!-- <a href="./adminPass.jsp">        
-            <p>Menu</p>
-        </a> -->
         <form action ="./Session" method= "post">
             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
             <input type="text" id="pestana" name="pestana" class="input" value="${requestScope.response3}"> 
@@ -45,7 +42,6 @@
             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
             <input type="text" id="valueBusca" name="valueBusca" class="input" required> 
             <input class="proyecto_buton btn btn-success" type="submit"  value="Buscar" id="boton_pro">
-                        <!-- </div> -->
        </form>
 
         <table border="1" id="main_t">
