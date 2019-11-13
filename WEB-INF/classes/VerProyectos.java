@@ -1,4 +1,4 @@
-import java.io.*;
+/*import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
@@ -102,4 +102,4 @@ public class VerProyectos extends HttpServlet{
 		}
 	}
 
-}
+}*/

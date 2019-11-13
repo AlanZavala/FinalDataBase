@@ -3,6 +3,10 @@ public class Cuenta{
     private int username;
     private String password;
 
+    public Cuenta(){
+        
+    }
+
     public Cuenta (int username, String password){
         this.username = username; 
         this.password = password;

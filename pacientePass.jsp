@@ -14,7 +14,7 @@
             body{
                 font-family: 'Raleway';
                 margin: 0;                
-                background-color: #222222;                           
+                background-color: #698ed6;                           
             }
             #cuenta, #nombre, #pestana, #name{
                 display: none;
@@ -64,13 +64,13 @@
             }
         </style>
 
-        <title>Entrada user</title>
+        <title>Entrada cliente</title>
         
     </head>
 
     <body>
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
-            Log out
+            Salir
         </button>
           
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -86,7 +86,7 @@
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <a href="index.jsp">
-                    <button type="button" class="btn btn-primary">Log out</button>
+                    <button type="button" class="btn btn-primary">Salir</button>
                 </a>
                 
                 </div>
@@ -97,77 +97,36 @@
 
         <br> <br>
         <h1> 
-            ¡ Bienvenido <c:out value = "${requestScope.response}" /> !
+            ¡ Bienvenido !
         </h1>
       
         <section class="row justify-content-center align-items-center mx-0">
-
             <form action="./Session" method="post">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Proyecto/Venta</h5>
+                    <h5 class="card-header card-title">Ver progreso</h5>
                     <div class="card-body">
-                        <p class="card-text"> Agrega un nuevo proyecto/venta a la tienda.</p>
-                            <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
-                            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
-                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
-                            <input type="text" id="pestana" name="pestana" class="input" value="8">
-                    </div>
-                </div>
-            </form>
-
-            <form action="./ShowToWorkers" method="post">
-                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Mis proyectos</h5>
-                    <div class="card-body">
-                            <p class="card-text">Revisa los proyectos en los que estás envuelto y haz las modificaciones necesarias.</p>
-                        
-                        <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
+                        <p class="card-text">Aquí puedes ver las estadísticas de tu progreso.</p>                        
+                        <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                         <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
-                        <input type="text" id="pestana" name="pestana" class="input" value="2">  
-                        <input class="proyecto_buton btn btn-success" type="submit"  value="Proyectos">
+                        <input type="text" id="pestana" name="pestana" class="input" value="9">  
+                        <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
                     </div>
                 </div>
             </form>
 
-             <form action="./Session" method="post">
+             <form action="./RecentVentas" method="post">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Nuevo diseño</h5>
+                    <h5 class="card-header card-title">Registrar progreso</h5>
                     <div class="card-body">
-                        <p class="card-text">Agrega un nuevo diseño a la tienda y pónlo a la venta.</p>
+                        <p class="card-text">Registra tu rutina de hoy.</p>
                             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
-                            <input type="text" id="pestana" name="pestana" class="input" value="5"> 
-                            <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
+                            <input type="text" id="pestana" name="pestana" class="input" value="11"> 
+                            <input class="proyecto_buton btn btn-success" type="submit"  value="Registrar">
+                        
                     </div>
                 </div>
             </form>
-
-            <form action="./ShowProducts" method="post">
-                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Ver diseños</h5>
-                    <div class="card-body">
-                            <p class="card-text">Observa todos los diseños que están en la tienda y la descripcion de cada uno.</p>
-                            <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
-                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
-                            <input type="text" id="pestana" name="pestana" class="input" value="2">  
-                        <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
-                    </div>
-                </div>
-            </form>
-
-            <form action="./ShowPeticion" method="post">
-                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Ver peticiones</h5>
-                    <div class="card-body">
-                            <p class="card-text">Observa todas las peticiones de proyectos que los clientes han realizado.</p>
-                            <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
-                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
-                            <input type="text" id="pestana" name="pestana" class="input" value="2">  
-                        <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
-                    </div>
-                </div>
-            </form>
-
         </section>
             
 
@@ -180,4 +139,3 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>
-

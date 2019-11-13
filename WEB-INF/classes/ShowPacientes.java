@@ -2,14 +2,14 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
-import objetos.Producto;
-import objetos.Trabajador;
+import objetos.Cuenta;
+import objetos.Paciente;
 import java.util.Vector;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/ShowWorkers")
-public class ShowWorkersQuery extends HttpServlet{
+@WebServlet("/ShowPacientes")
+public class ShowPacientes extends HttpServlet{
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
@@ -27,42 +27,40 @@ public class ShowWorkersQuery extends HttpServlet{
 			Connection con = DriverManager.getConnection(url,usuario,password);
 
 			Statement stat = con.createStatement();
-			String sql;
+			
 			String nombre=request.getParameter("nombre");
 			int cuenta=Integer.parseInt(request.getParameter("cuenta"));
             
             int window= Integer.parseInt(request.getParameter("pestana"));
 			
-			String sql2 = "SELECT * FROM trabajador;";
+			String sql2 = "SELECT * FROM paciente;";
 
 			ResultSet res = stat.executeQuery(sql2);
 
-			Vector<Trabajador> trabajadores = new Vector<Trabajador>();
+			Vector<Paciente> pacientes = new Vector<Paciente>();
 
             while(res.next()){
-                Trabajador aux = new Trabajador();
-                aux.setId(res.getInt("idTrabajador"));
-                aux.setDireccion(res.getString("direccion"));
-                aux.setTelefono(res.getInt("telefono"));
-                aux.setCorreo(res.getString("correo"));
-                aux.setPuesto(res.getString("puesto"));
-                aux.setEdad(res.getInt("edad")); 
-                aux.setNombre(res.getString("nombre")); 
-                aux.setApellido(res.getString("apellido")); 
-                aux.setCuenta(res.getInt("cuenta")); 
-                aux.setContrasenia(res.getString("contrasenia")); 
-                trabajadores.add(aux);
+                Paciente aux = new Paciente();
+                aux.setId(res.getInt("ID"));
+                aux.setCuenta(res.getInt("cuenta"));
+                aux.setNombre(res.getString("nombre"));
+                aux.setApellido(res.getString("apellido"));   
+                aux.setIdRutina(res.getInt("idRutina"));
+                aux.setEdad(res.getString("edad"));
+                aux.setTipoU(res.getString("tipo_u"));   
+                aux.setGenero(res.getString("genero"));            
+                pacientes.add(aux);
             }
 
 			stat.close();
             con.close();
 
-			request.setAttribute("trabajadores", trabajadores);
+			request.setAttribute("pacientes", pacientes);
 			request.setAttribute("response", nombre);
             request.setAttribute("response2", cuenta);
             request.setAttribute("response3", window);
 
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/showWorkers.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/showPacientes.jsp");
 
 			if(disp!=null){
 				disp.forward(request, response);

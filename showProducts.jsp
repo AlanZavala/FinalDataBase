@@ -4,7 +4,7 @@
 
 <html>
     <head>
-        <title>Products</title>
+        <title>Pacientes</title>
         <meta http-equiv="content-type" content="text/html" charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
         <link href="css/show2.css" rel="stylesheet">   
@@ -15,6 +15,9 @@
         }
         td{
             text-align: center;
+        }
+        body{
+            background-color: #698ed6;
         }
     </style>
     <body>
@@ -47,15 +50,15 @@
         <table border="1" id="main_t">
             <tr class="visible">
                 <th>ID</th>
-                <th>Uso</th>
+                <!--<th>Uso</th>-->
                 <th>Nombre</th>
-                <th>Fecha de llegada</th>
+                <!--<th>Fecha de llegada</th>
                 <th>Fecha de venta</th>
                 <th>Precio proveedor</th>
                 <th>Precio cliente</th>
                 <th>Proveedor</th>
                 <th>Tabla</th>
-                <th>Ganancia</th>
+                <th>Ganancia</th>-->
                 <th></th>
             </tr>
 
@@ -80,15 +83,15 @@
                             <c:out value="${product.id}" />
                             <br />
                         </td>
-                        <td >
+                        <!--<td >
                             <c:out value="${product.uso}" />
                             <br />
-                        </td>
+                        </td>-->
                         <td>
                             <c:out value="${product.nombre}" />
                             <br />
                         </td>
-                        <td>
+                        <!-- <td>
                             <c:out value="${product.fechaLlegada}" />
                             <br />
                         </td>
@@ -118,7 +121,7 @@
                         <td>
                             <c:out value="${product.ganancia}" />
                             <br />
-                        </td>
+                        </td> -->
                         
                         <td>
                             <form action ="./BorrarPro" method="post">

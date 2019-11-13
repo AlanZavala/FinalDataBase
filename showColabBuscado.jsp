@@ -15,7 +15,7 @@
         }
         td{
             text-align: center;
-        }
+        } 
     </style>
     <body>
 
@@ -28,7 +28,7 @@
             <input class="proyecto_buton btn btn-success" type="submit"  value="Menu" id="boton_pro">
         </form> 
         <br>
-        <form action ="./buscarPytWorker" method="post" id="above">
+        <form action ="./BuscarColab" method="post" id="above">
             <select id="optBusq" name= "optBusq">
               <option value="All">All</option>
               <option value="Nombre">Nombre</option>
@@ -46,14 +46,11 @@
        <table border="1" id="main_t">
             <tr class="visible">
                 <th>ID</th>
-                <th>Nombre</th>
-                <th>Fecha de inicio</th> 
-                <th>Fecha de término</th>
-                <th>Duración</th>
-                <th>Descripción</th> 
-                <th>idCliente</th> 
-                <th>NoProductos</th> 
-                <th>PrecioTotal</th> 
+                <th>Cuenta</th>
+                <th>Nombre</th> 
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Género</th>
             </tr>
             <tr class="invisible">
                 <th></th>
@@ -66,26 +63,26 @@
                 <th></th> 
                 <th></th>                 
             </tr>
-            <c:forEach items="${requestScope.proyectos}" var="proyecto">
+            <c:forEach items="${requestScope.colaboradores}" var="colab">
                 <tr>
                         <td>
-                            <c:out value="${proyecto.id}" />
+                            <c:out value="${colab.id}" />
                             <br />
                         </td>
                         <td>
-                            <c:out value="${proyecto.nombre}" />
+                            <c:out value="${colab.nombre}" />
                             <br />
                         </td>
                         <td>
-                            <c:out value="${proyecto.fechaInicio}" />
+                            <c:out value="${colab.fechaInicio}" />
                             <br />
                         </td>
                         <td>
-                            <c:out value="${proyecto.fechaFin}" />
+                            <c:out value="${colab.fechaFin}" />
                             <br />
                         </td>
                         <td>
-                            <c:out value="${proyecto.duracion}" />
+                            <c:out value="${colab.duracion}" />
                             <br />
                         </td>
                         <td>

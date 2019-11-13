@@ -1,4 +1,4 @@
-import java.sql.*;
+/*import java.sql.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*; 
@@ -102,4 +102,4 @@ public class Registro extends HttpServlet{
 
 	
 
-}
+}*/

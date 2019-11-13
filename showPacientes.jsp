@@ -4,7 +4,7 @@
 
 <html>
     <head>
-        <title>Show Clients</title>
+        <title>Pacientes</title>
         <meta http-equiv="content-type" content="text/html" charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
         <link href="css/show2.css" rel="stylesheet">   
@@ -19,6 +19,9 @@
         h4{
             text-align: center;
         }
+        body{
+            background-color: #e6a400;
+        }
     </style>
     <body>
 
@@ -31,14 +34,19 @@
         </form>  
         <br>
 
-        <h4 class="text-center mt-2 font-weight-bold">Mostrar clientes</h4>
+        <h4 class="text-center mt-2 font-weight-bold">Mostrar pacientes</h4>
 
         <table border="1" id="main_t">
             <tr class="visible">
                 <th>ID</th>
                 <th>Cuenta</th>
-                <th>Teléfono</th>
-                <th>Correo</th>                
+                <th>Contraseña</th>
+                <th>Nombre</th> 
+                <th>Apellido</th>  
+                <th>Edad</th>  
+                <th>Tipo de usuario</th>
+                <th>Género</th> 
+                <th>Id Rutina</th>                    
             </tr>
 
             <tr class="invisible">
@@ -46,25 +54,50 @@
                 <th></th>
                 <th></th>
                 <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
 
 
-            <c:forEach items="${requestScope.clientes}" var="client">
+            <c:forEach items="${requestScope.pacientes}" var="paciente">
                 <tr>
                     <td>
-                        <c:out value="${client.id}" />
+                        <c:out value="${paciente.id}" />
                         <br />
                     </td>
                     <td >
-                        <c:out value="${client.cuenta}" />
+                        <c:out value="${paciente.cuenta}" />
                         <br />
                     </td>
                     <td>
-                        <c:out value="${client.telefono}" />
+                        <c:out value="${paciente.contrasenia}" />
                         <br />
                     </td>
                     <td>
-                        <c:out value="${client.correo}" />
+                        <c:out value="${paciente.nombre}" />
+                        <br/>
+                    </td>  
+                    <td>
+                        <c:out value="${paciente.apellido}" />
+                        <br/>
+                    </td>  
+                    <td>
+                        <c:out value="${paciente.edad}" />
+                        <br/>
+                    </td>  
+                    <td>
+                        <c:out value="${paciente.tipo_u}" />
+                        <br/>
+                    </td> 
+                    <td>
+                        <c:out value="${paciente.genero}" />
+                        <br/>
+                    </td>  
+                    <td>
+                        <c:out value="${paciente.idRutina}" />
                         <br/>
                     </td>                        
                 </tr>

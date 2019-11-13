@@ -14,7 +14,7 @@
         #pestana, #name, #cuenta, #nombre{
             display: none;
         }
-        td{
+        td{ 
             text-align: center;
         }
 

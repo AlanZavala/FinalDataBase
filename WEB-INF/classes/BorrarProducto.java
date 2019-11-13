@@ -1,4 +1,4 @@
-import java.sql.*;
+/*import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.io.*;
 import javax.servlet.*;
@@ -87,4 +87,4 @@ public class BorrarProducto extends HttpServlet{
             }    
 		}
 	}	
-}
+}*/

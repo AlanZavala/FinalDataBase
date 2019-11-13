@@ -2,7 +2,7 @@ import java.sql.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import objetos.Trabajador;
+import objetos.Colaborador;
 import javax.servlet.annotation.WebServlet;
 import java.util.Vector;
 
@@ -16,32 +16,37 @@ public class Login extends HttpServlet{
             String base = getServletContext().getInitParameter("base");
 			String usuario = getServletContext().getInitParameter("usuario");
             String pass = getServletContext().getInitParameter("pass");
+
             
             Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url,usuario,pass);
 
-            String verifyRoll=request.getParameter("username");  
+            String verifyRoll = request.getParameter("username");  
 
-            int username = Integer.parseInt(request.getParameter("username"));
+            int usuarioA = Integer.parseInt(request.getParameter("username"));
             
-            String password = request.getParameter("password");            
+            String passwordA = request.getParameter("password");            
 
 
             Statement stat = con.createStatement();
 
-            String sql ="select * from trabajador;";
+            String sql ="select * from colaborador;";
             
             ResultSet res = stat.executeQuery(sql);
 
+            String sql2 ="insert into cuenta (ID, contrasenia) values (1, 'prueba');";
+            
+            ResultSet res2 = stat.executeQuery(sql2);
 
-            Vector<Trabajador> productos = new Vector<Trabajador>();
+
+            Vector<Colaborador> cuentas = new Vector<Colaborador>();
             int checkCuenta;
             String nombre="";
             boolean checkLog = false;
             while(res.next()){
                 
-                if(res.getInt("cuenta")==username && res.getString("contrasenia").equals(password)){
+                if(res.getInt("cuenta")==usuarioA && res.getString("contrasenia").equals(passwordA)){
                     nombre=res.getString("nombre");
 
                     checkLog=true;
@@ -51,33 +56,14 @@ public class Login extends HttpServlet{
             }
 
 
-            String sql2= "select * from cliente;";
-
-            ResultSet res2 = stat.executeQuery(sql2);
-
-            if(verifyRoll.charAt(0)=='3'){
-                
-                while(res2.next()){
-                    
-                    if(res2.getInt("cuenta")==username && res2.getString("contrasenia").equals(password)){
-                        nombre=res2.getString("cuenta");
-
-                        checkLog=true;
-                        break;
-                    }
-
-                }
-            }
-
-
             stat.close();
             con.close();
 
-            RequestDispatcher disp =  getServletContext().getRequestDispatcher("/productoRegistrado.jsp");
+            RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showUsuarios.jsp");
 
             if(checkLog){
                 request.setAttribute("response", nombre);
-                request.setAttribute("response2", username);
+                request.setAttribute("response2", usuarioA);
                 
             }
             if(checkLog){
@@ -87,10 +73,10 @@ public class Login extends HttpServlet{
                 }
                 else if(verifyRoll.charAt(0)== '2'){
                     
-                    disp = getServletContext().getRequestDispatcher("/pass.jsp");
+                    disp = getServletContext().getRequestDispatcher("/entrenadorPass.jsp");
                 } else if(verifyRoll.charAt(0)== '3'){
                     
-                    disp = getServletContext().getRequestDispatcher("/clientPass.jsp");
+                    disp = getServletContext().getRequestDispatcher("/pacientePass.jsp");
                 }
             }
             else{

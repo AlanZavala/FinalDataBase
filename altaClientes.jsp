@@ -11,11 +11,14 @@
         <link rel="stylesheet" href="css/all.css">
         <link href="css/formulario.css" rel="stylesheet">
 
-        <title>Registro cliente</title>
+        <title>Registro paciente</title>
     </head>
     <style>
         #name, #cuenta, #pestana, #nombre{
             display: none;
+        }
+        body{
+            background-color: #e6a400;
         }
         
     </style>
@@ -30,7 +33,7 @@
             <input class="proyecto_buton fas fa-arrow-circle-left" type="submit"  value="Atrás" id="boton_pro">
         </form> 
 
-        <h4 class="text-center mt-2 font-weight-bold">Nuevo cliente</h4>
+        <h4 class="text-center mt-2 font-weight-bold" style="color: black">Nuevo paciente</h4>
 
         <form action="./registroCliente" method="post" class="mt-5">
 
@@ -58,6 +61,11 @@
                 <div class="section d-flex flex-column">
                     <input type="email" id="correo" name="correo" class="input" required>            
                     <span class="user_label">Correo</span> 
+                </div>
+
+                <div class="section d-flex flex-column">
+                    <input type="text" id="correo" name="" class="input" required>            
+                    <span class="user_label">Tipo de usuario</span> 
                 </div>
 
             </div>

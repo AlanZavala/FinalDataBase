@@ -2,10 +2,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
-import objetos.Producto;
-import objetos.Proyecto;
-import objetos.Cliente;
-import objetos.Trabajador;
+import objetos.Paciente;
 
 import java.util.Vector;
 
@@ -37,31 +34,31 @@ public class Session extends HttpServlet{
 			/*
 			Esto es para proyecto venta
 			*/
-			String sql4 = "select * from cliente;";			
+			String sql4 = "select * from paciente;";			
 			ResultSet res2 = stat.executeQuery(sql4);
 
-			Vector<Cliente> clientes = new Vector<Cliente>();
+			Vector<Paciente> pacientes = new Vector<Paciente>();
 
 			while(res2.next()){
-				Cliente aux2 = new Cliente();
+				Paciente aux2 = new Paciente();
 				aux2.setId(res2.getInt("ID"));
 				aux2.setCuenta(res2.getInt("cuenta"));				
-				clientes.add(aux2);
+				pacientes.add(aux2);
 			}
 
-			String sql5 = "select * from trabajador where cuenta="+cuenta+";";			
-			ResultSet res3 = stat.executeQuery(sql5);
+			// String sql5 = "select * from trabajador where cuenta="+cuenta+";";			
+			// ResultSet res3 = stat.executeQuery(sql5);
 
-			Vector<Trabajador> trabajadores = new Vector<Trabajador>();
+			// Vector<Trabajador> trabajadores = new Vector<Trabajador>();
 
-			while(res3.next()){				
-				Trabajador aux3 = new Trabajador();
-				aux3.setId(res3.getInt("idTrabajador"));
-				aux3.setNombre(res3.getString("nombre"));
-				aux3.setCuenta(res3.getInt("cuenta"));
-				trabajadores.add(aux3);
-				break;						
-			}
+			// while(res3.next()){				
+			// 	Trabajador aux3 = new Trabajador();
+			// 	aux3.setId(res3.getInt("idTrabajador"));
+			// 	aux3.setNombre(res3.getString("nombre"));
+			// 	aux3.setCuenta(res3.getInt("cuenta"));
+			// 	trabajadores.add(aux3);
+			// 	break;						
+			// }
 			/*
 			Fin del proyecto venta
 			*/
@@ -105,15 +102,15 @@ public class Session extends HttpServlet{
 			else if(window == 7){
 				window=1;
 				request.setAttribute("response3", window);
-				request.setAttribute("clientes", clientes);
-            	request.setAttribute("trabajadores", trabajadores);
+				//request.setAttribute("clientes", clientes);
+            	//request.setAttribute("trabajadores", trabajadores);
 				disp = getServletContext().getRequestDispatcher("/ProyectoVenta.jsp");
 			}
 			else if(window==8){
 				window=2;
 				request.setAttribute("response3", window);
-				request.setAttribute("clientes", clientes);
-            	request.setAttribute("trabajadores", trabajadores);
+				//request.setAttribute("clientes", clientes);
+            	//request.setAttribute("trabajadores", trabajadores);
 				disp = getServletContext().getRequestDispatcher("/ProyectoVenta.jsp");
 			}
 			else if(window==9){

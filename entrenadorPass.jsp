@@ -14,7 +14,7 @@
             body{
                 font-family: 'Raleway';
                 margin: 0;                
-                background-color: #222222;                           
+                background-color: #698ed6;                           
             }
             #cuenta, #nombre, #pestana, #name{
                 display: none;
@@ -64,13 +64,13 @@
             }
         </style>
 
-        <title>Entrada cliente</title>
+        <title>Entrada entrenador</title>
         
     </head>
 
     <body>
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
-            Log out
+            Salir
         </button>
           
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -86,7 +86,7 @@
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <a href="index.jsp">
-                    <button type="button" class="btn btn-primary">Log out</button>
+                    <button type="button" class="btn btn-primary">Salir</button>
                 </a>
                 
                 </div>
@@ -97,36 +97,37 @@
 
         <br> <br>
         <h1> 
-            ¡ Bienvenido !
+            ¡ Bienvenido entrenador <c:out value = "${requestScope.response}" /> !
         </h1>
       
         <section class="row justify-content-center align-items-center mx-0">
-            <form action="./Session" method="post">
+
+             <!-- <form action="./Session" method="post">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Realizar Compra/Proyecto</h5>
+                    <h5 class="card-header card-title">Nuevo diseño</h5>
                     <div class="card-body">
-                        <p class="card-text">Realiza una nueva compra o encarga un nuevo proyecto.</p>                        
-                        <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
-                        <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
-                        <input type="text" id="pestana" name="pestana" class="input" value="9">  
-                        <input class="proyecto_buton btn btn-success" type="submit"  value="Nuevo">
+                        <p class="card-text">Agrega un nuevo diseño a la tienda y pónlo a la venta.</p>
+                            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
+                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
+                            <input type="text" id="pestana" name="pestana" class="input" value="5"> 
+                            <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
+                    </div>
+                </div>
+            </form> -->
+
+            <form action="./ShowProducts" method="post">
+                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
+                    <h5 class="card-header card-title">Ver pacientes</h5>
+                    <div class="card-body">
+                            <p class="card-text">Observa todos los detalles de los pacientes registrados.</p>
+                            <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
+                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
+                            <input type="text" id="pestana" name="pestana" class="input" value="2">  
+                        <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
                     </div>
                 </div>
             </form>
 
-             <form action="./RecentVentas" method="post">
-                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Ver compras anteriores</h5>
-                    <div class="card-body">
-                        <p class="card-text">Visualiza tus compras o proyectos que ya has realizado.</p>
-                            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
-                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
-                            <input type="text" id="pestana" name="pestana" class="input" value="11"> 
-                            <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
-                        
-                    </div>
-                </div>
-            </form>
         </section>
             
 
@@ -139,3 +140,4 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>
+

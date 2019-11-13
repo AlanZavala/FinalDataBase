@@ -12,20 +12,25 @@
         <script src="js/jquery-3.3.1.min.js"></script>
 
         <title>Página de inicio</title>
+        <style>
+            body{
+                background-color: #698ed6; 
+            }
+        </style>
     </head>
 
     <body>
-       
+        
         <form action="./Login" method="post" data-sn="home">
-            <img src="img/logo.png" class="logo">
+            <img src="img/LogoFit.jpeg" class="logo">
             <div class="register">
                 <input type="text" id="username" name="username" class="input">            
-                <span class="user_label">Username</span>
+                <span class="user_label">Usuario</span>
 
                 <input type="password" id="password" name="password" class="input">            
-                <span class="user_label">Password</span>                    
+                <span class="user_label">Contraseña</span>                    
                 
-                <input class="login_button" type="submit"  value="LOG IN">
+                <input class="login_button" type="submit"  value="ENTRAR">
             </div>
         </form>
 

@@ -11,13 +11,15 @@
         <link rel="stylesheet" href="css/all.css">
         <link href="css/formulario.css" rel="stylesheet">
 
-        <title>Registro</title>
+        <title>Registro entrenador</title>
     </head>
     <style>
         #name, #cuenta, #pestana, #nombre{
             display: none;
         }
-      
+        body{
+            background-color: #e6a400;
+        }
         
     </style>
 
@@ -31,7 +33,7 @@
             <input class="proyecto_buton fas fa-arrow-circle-left" type="submit"  value="Atrás" id="boton_pro">
         </form> 
 
-        <h4 class="text-center mt-2 font-weight-bold">Nuevo empleado</h4>
+        <h4 class="text-center mt-2 font-weight-bold" style="color: black">Nuevo entrenador</h4>
         <br>
         <br>
 
@@ -89,10 +91,10 @@
                     <span class="user_label">Dirección</span>
                 </div>
     
-                <div class="section d-flex flex-column">
+                <!--<div class="section d-flex flex-column">
                     <input type="text" id="puesto" name="puesto" class="input" required>            
                     <span class="user_label">Puesto</span>
-                </div>    
+                </div> -->   
 
             </div>
             

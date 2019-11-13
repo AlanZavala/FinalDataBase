@@ -1,4 +1,4 @@
-import java.sql.*;
+/*import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.io.*;
 import javax.servlet.*;
@@ -84,4 +84,4 @@ public class RecentVentas extends HttpServlet{
 
 	}	
 
-}
+}*/

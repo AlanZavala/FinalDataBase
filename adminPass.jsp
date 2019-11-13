@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+ 
 <html>
     <head>
         <meta charset="utf-8">
@@ -8,12 +8,12 @@
         <meta http-equiv="content-type" content="text/html" charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/admin.css">                
+        <link rel="stylesheet" href="css/admin.css">                 
         <style>
             body{
                 font-family: 'Raleway';
                 margin: 0;
-                background-color: #222222;                           
+                background-color: #f1bc31;                           
             }
             h1{
                 color: white;
@@ -70,7 +70,7 @@
     <body>
             
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
-            Log out
+            Salir
         </button>
 
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -83,10 +83,10 @@
                 </button>
                 </div>
                 
-                <div class="modal-footer">
+                <div class="modal-footer"> 
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <a href="index.jsp">
-                    <button type="button" class="btn btn-primary">Log out</button>
+                    <button type="button" class="btn btn-primary">Salir</button>
                 </a>
                 
                 </div>
@@ -97,7 +97,7 @@
 
         <br> <br>
         <h1> 
-            ¡ Bienvenido <c:out value = "${requestScope.response}"/> !
+            ¡ Bienvenido Dr. <c:out value = "${requestScope.response}"/> !
         </h1>
   
 
@@ -105,63 +105,9 @@
 
             <form action="./Session" method="post">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Proyecto/Venta</h5>
+                    <h5 class="card-header card-title">Dar de alta entrenadores</h5>
                     <div class="card-body">
-                        <p class="card-text"> Agrega un nuevo proyecto/venta a la tienda.</p>
-                            <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
-                            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
-                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
-                            <input type="text" id="pestana" name="pestana" class="input" value="7">
-                        
-                    </div>
-                </div>
-            </form>
-
-            <form action="./ShowProjects" method="post">
-                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Ver proyectos</h5>
-                    <div class="card-body">
-                        <p class="card-text">Revisa los proyectos en los que estás envuelto y haz las modificaciones necesarias.</p>
-                        <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
-                        <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
-                        <input type="text" id="pestana" name="pestana" class="input" value="1"> 
-                        <input class="proyecto_buton btn btn-success" type="submit"  value="Proyectos">
-                    </div>
-                </div>
-            </form>
-
-            <form action="./Session" method="post">
-                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Nuevo diseño</h5>
-                    <div class="card-body">
-                        <p class="card-text">Agrega un nuevo diseño a la tienda y pónlo a la venta.</p>
-                            <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
-                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
-                            <input type="text" id="pestana" name="pestana" class="input" value="4"> 
-                            <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
-                        
-                    </div>
-                </div>
-            </form>
-
-            <form action="./ShowProducts" method="post">
-                    <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                        <h5 class="card-header card-title">Ver diseños</h5>
-                        <div class="card-body">
-                            <p class="card-text">Observa todos los diseños que están en la tienda y la descripcion de cada uno.</p>
-                            <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
-                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
-                            <input type="text" id="pestana" name="pestana" class="input" value="1"> 
-                            <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
-                        </div>
-                    </div>
-            </form>
-
-            <form action="./Session" method="post">
-                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Dar de alta trabajadores</h5>
-                    <div class="card-body">
-                        <p class="card-text"> Agrega a un nuevo empleado e ingresa los datos necesarios para darlo de alta en la empresa.</p>
+                        <p class="card-text"> Agrega a un nuevo entrenador.</p>
                             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                             <input type="text" id="pestana" name="pestana" class="input" value="3"> 
@@ -172,11 +118,11 @@
                 </div>
             </form>
  
-            <form action="./ShowWorkers" method="post">
+            <form action="./ShowUsuarios" method="post">
                     <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                        <h5 class="card-header card-title">Ver trabajadores</h5>
+                        <h5 class="card-header card-title">Ver entrenadores</h5>
                         <div class="card-body">
-                            <p class="card-text"> Observa a todos los trabajadores de la empresa y sus detalles. </p>
+                            <p class="card-text"> Observa a todos los entrenadores asociados en el programa.</p>
                             <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                             <input type="text" id="pestana" name="pestana" class="input" value="1"> 
@@ -187,9 +133,9 @@
 
             <form action="./Session" method="post">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Dar de alta clientes</h5>
+                    <h5 class="card-header card-title">Dar de alta pacientes</h5>
                     <div class="card-body">
-                        <p class="card-text"> Agrega a un nuevo cliente e ingresa los datos necesarios para darlo de alta en la empresa.</p>
+                        <p class="card-text"> Agrega a un nuevo paciente e ingresa los datos necesarios para darlo de alta.</p>
                             <input type="text" id="name" name="name" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                             <input type="text" id="pestana" name="pestana" class="input" value="6"> 
@@ -199,30 +145,17 @@
                 </div>
             </form>
  
-            <form action="./ShowClients" method="post">
+            <form action="./ShowPacientes" method="post">
                     <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                        <h5 class="card-header card-title">Ver clientes</h5>
+                        <h5 class="card-header card-title">Ver pacientes</h5>
                         <div class="card-body">
-                            <p class="card-text"> Observa a todos los clientes de la empresa y sus detalles. </p>
+                            <p class="card-text"> Observa a todos los pacientes y sus detalles. </p>
                             <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
                             <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}"> 
                             <input type="text" id="pestana" name="pestana" class="input" value="1"> 
                             <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">   
                         </div>
                     </div>
-            </form>
-
-            <form action="./ShowPeticion" method="post">
-                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                    <h5 class="card-header card-title">Ver peticiones</h5>
-                    <div class="card-body">
-                            <p class="card-text">Observa todas las peticiones de proyectos que los clientes han realizado.</p>
-                            <input type="text" id="nombre" name="nombre" class="input" value="${requestScope.response}"> 
-                            <input type="text" id="cuenta" name="cuenta" class="input" value="${requestScope.response2}">
-                            <input type="text" id="pestana" name="pestana" class="input" value="1">  
-                        <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
-                    </div>
-                </div>
             </form>
 
              
